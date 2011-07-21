@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/audit/!svn/ver/544/trunk/audisp/plugins/remote
+END
+audisp-remote.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/audit/!svn/ver/540/trunk/audisp/plugins/remote/audisp-remote.c
+END
+remote-config.c
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/audit/!svn/ver/506/trunk/audisp/plugins/remote/remote-config.c
+END
+au-remote.conf
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/remote/au-remote.conf
+END
+audisp-remote.conf
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/audit/!svn/ver/506/trunk/audisp/plugins/remote/audisp-remote.conf
+END
+remote-fgets.c
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/audit/!svn/ver/544/trunk/audisp/plugins/remote/remote-fgets.c
+END
+test-queue.c
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/audit/!svn/ver/512/trunk/audisp/plugins/remote/test-queue.c
+END
+audisp-remote.8
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/audit/!svn/ver/513/trunk/audisp/plugins/remote/audisp-remote.8
+END
+remote-config.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/audit/!svn/ver/460/trunk/audisp/plugins/remote/remote-config.h
+END
+audisp-remote.conf.5
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/audit/!svn/ver/506/trunk/audisp/plugins/remote/audisp-remote.conf.5
+END
+queue.c
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/audit/!svn/ver/515/trunk/audisp/plugins/remote/queue.c
+END
+notes.txt
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/audit/!svn/ver/459/trunk/audisp/plugins/remote/notes.txt
+END
+remote-fgets.h
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/audit/!svn/ver/540/trunk/audisp/plugins/remote/remote-fgets.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/audit/!svn/ver/540/trunk/audisp/plugins/remote/Makefile.am
+END
+queue.h
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/audit/!svn/ver/515/trunk/audisp/plugins/remote/queue.h
+END

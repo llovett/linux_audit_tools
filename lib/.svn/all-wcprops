@@ -1,0 +1,179 @@
+K 25
+svn:wc:ra_dav:version-url
+V 33
+/svn/audit/!svn/ver/481/trunk/lib
+END
+ppc_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/437/trunk/lib/ppc_table.h
+END
+deprecated.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/291/trunk/lib/deprecated.c
+END
+machinetab.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/366/trunk/lib/machinetab.h
+END
+alpha_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/audit/!svn/ver/437/trunk/lib/alpha_table.h
+END
+armeb_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/audit/!svn/ver/437/trunk/lib/armeb_table.h
+END
+libaudit.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/432/trunk/lib/libaudit.h
+END
+s390x_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/audit/!svn/ver/437/trunk/lib/s390x_table.h
+END
+gen_tables.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/146/trunk/lib/gen_tables.c
+END
+netlink.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/audit/!svn/ver/292/trunk/lib/netlink.c
+END
+i386_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/437/trunk/lib/i386_table.h
+END
+flagtab.h
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/audit/!svn/ver/1/trunk/lib/flagtab.h
+END
+errormsg.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/237/trunk/lib/errormsg.h
+END
+gen_tables.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/1/trunk/lib/gen_tables.h
+END
+actiontab.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/audit/!svn/ver/1/trunk/lib/actiontab.h
+END
+s390_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/437/trunk/lib/s390_table.h
+END
+optab.h
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/audit/!svn/ver/1/trunk/lib/optab.h
+END
+x86_64_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/437/trunk/lib/x86_64_table.h
+END
+audit_logging.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/audit/!svn/ver/481/trunk/lib/audit_logging.c
+END
+ia64_table.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/437/trunk/lib/ia64_table.h
+END
+fieldtab.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/audit/!svn/ver/1/trunk/lib/fieldtab.h
+END
+private.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/audit/!svn/ver/291/trunk/lib/private.h
+END
+lookup_table.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/366/trunk/lib/lookup_table.c
+END
+ftypetab.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/audit/!svn/ver/1/trunk/lib/ftypetab.h
+END
+msg_typetab.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/audit/!svn/ver/432/trunk/lib/msg_typetab.h
+END
+errtab.h
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/audit/!svn/ver/1/trunk/lib/errtab.h
+END
+message.c
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/audit/!svn/ver/1/trunk/lib/message.c
+END
+syscall-update.txt
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/366/trunk/lib/syscall-update.txt
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/366/trunk/lib/Makefile.am
+END
+libaudit.c
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/452/trunk/lib/libaudit.c
+END

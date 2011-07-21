@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/236/trunk/bindings/python
+END
+auparse_python.c
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/audit/!svn/ver/236/trunk/bindings/python/auparse_python.c
+END
+setup.py
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/20/trunk/bindings/python/setup.py
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/120/trunk/bindings/python/Makefile.am
+END

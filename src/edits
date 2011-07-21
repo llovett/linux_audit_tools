@@ -1,0 +1,64 @@
+I. IMPLEMENTING THE HASH TABLE...
+
+We could use the built-in hash table. We could construct
+the hash table inside of ausearch-lol.c --> lol_create(),
+or create a function that gets called right along side of it.
+This sounds like a good idea, because we want the hash table
+to be a "helper" to finding things inside of the lol, so when
+the lol becomes available, we also want the table to be
+available.
+
+I.1) Adding to the hash table
+
+We do insertions and searches on the hash table inside of
+ausearch-lol.c --> lol_add_record(). We can use the timestamp
+extracted from char *buff as the hash key. What is returned
+to us by the hash table is a list of indices to check in the
+lol for equivalent events. We do a linear search on this list
+(the table uses separate-chaining, each chain consists of
+simultaneous events).
+
+ENTRY r, *re;
+sprintf(r.key, "%d%d", e.sec, e.milli);
+
+....
+
+if (events_are_equal(&l->e, &e)) {
+   ...
+   r.data = (void *)i;
+}
+
+....
+
+re = hsearch(r, ENTER);
+if (NULL == re) {
+   fputs("Fatal error: could not store audit record.\n", stderr);
+   return 0;
+}
+
+I.2) Destroying the hash table
+
+We can clear & destroy the hash table inside of ausearch-lol -->
+lol_clear(). This way, we know we're done with the table, since
+we're no longer using the lol at this point.
+
+II. BETTER CHECK_EVENTS (in ausearch-lol.c)
+
+Can we expand our range of single-record events? Then we could
+mark events as being L_COMPLETE more often and get them out of
+our hair. When we've found a ready event, let's put them on a
+queue to be processed later (and so we don't have to do a huge
+linear search on the lol looking for completed events).
+
+  ||
+  ||
+ \  /
+  \/
+
+III. IMPLEMENTING THE READY_EVENT QUEUE
+
+As with the hash table, we can build/destroy the queue alongside
+the lol. Adding things to the queue takes place inside of
+ausearch-lol.c --> check_events(). Removing things from the queue
+happens during ausearch-lol.c --> get_ready_event().
+

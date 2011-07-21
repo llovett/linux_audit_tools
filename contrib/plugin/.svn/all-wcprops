@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/226/trunk/contrib/plugin
+END
+audisp-example.c
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/audit/!svn/ver/226/trunk/contrib/plugin/audisp-example.c
+END
+audisp-example.conf
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/audit/!svn/ver/1/trunk/contrib/plugin/audisp-example.conf
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/223/trunk/contrib/plugin/Makefile
+END

@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/audit/!svn/ver/540/trunk/init.d
+END
+audit.rules
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/1/trunk/init.d/audit.rules
+END
+libaudit.conf
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/1/trunk/init.d/libaudit.conf
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/120/trunk/init.d/Makefile.am
+END
+auditd.cron
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/1/trunk/init.d/auditd.cron
+END
+auditd.init
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/315/trunk/init.d/auditd.init
+END
+audispd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/audit/!svn/ver/540/trunk/init.d/audispd.conf
+END
+auditd.sysconfig
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/506/trunk/init.d/auditd.sysconfig
+END
+auditd.conf
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/370/trunk/init.d/auditd.conf
+END

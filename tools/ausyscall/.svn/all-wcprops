@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/440/trunk/tools/ausyscall
+END
+ausyscall.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/366/trunk/tools/ausyscall/ausyscall.c
+END
+ausyscall.8
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/440/trunk/tools/ausyscall/ausyscall.8
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/120/trunk/tools/ausyscall/Makefile.am
+END

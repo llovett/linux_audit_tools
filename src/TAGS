@@ -1,0 +1,2667 @@
+
+ausearch-lol.h,684
+#define AUSEARCH_LOL_HEADERAUSEARCH_LOL_HEADER25,907
+typedef enum { L_EMPTY, L_BUILDING, L_COMPLETE } lol_t;L_EMPTY32,1022
+typedef enum { L_EMPTY, L_BUILDING, L_COMPLETE } lol_t;L_BUILDING32,1022
+typedef enum { L_EMPTY, L_BUILDING, L_COMPLETE } lol_t;L_COMPLETE32,1022
+typedef enum { L_EMPTY, L_BUILDING, L_COMPLETE } lol_t;lol_t32,1022
+typedef struct _lolnode{_lolnode36,1224
+  llist *l;			// The linked listl37,1249
+  int status;			// 0 = empty, 1 in use, 2 completestatus38,1282
+} lolnode;lolnode39,1333
+  lolnode *array;array44,1452
+  int maxi;		// Largest index usedmaxi45,1470
+  int limit;		// Number of nodes in the arraylimit46,1505
+} lol;lol47,1551
+
+ausearch-match.c,278
+int match(llist *l)match44,1604
+static int strmatch(const char *needle, const char *haystack)strmatch217,5290
+static int user_match(llist *l)user_match233,5615
+static int group_match(llist *l)group_match261,6234
+static int context_match(llist *l)context_match284,6718
+
+hashtab.h,963
+#define HASHTAB_HHASHTAB_H2,18
+#define LF_THRESH LF_THRESH4,37
+static int PRIMES[] = { 53, 97, 193, 389, 769, 1543, 3079, 6151, 12289, 24593,PRIMES6,61
+static int PRIME_INDEX = 0;PRIME_INDEX10,317
+typedef struct ht_entry {ht_entry13,386
+  char key[256];key14,412
+  void *datum;datum15,429
+  struct ht_entry *next, *prev;next17,445
+  struct ht_entry *next, *prev;prev17,445
+} ht_entry;ht_entry18,477
+typedef struct hash_node {hash_node21,519
+  ht_entry *datum;datum22,546
+  int length;length23,565
+} hnode;hnode24,579
+typedef struct htable {htable26,589
+  hnode *array; /** Chains in the table **/array27,613
+  int size;     /** Number of entries in the table **/size28,657
+  int length;   /** Number of buckets in the table **/length29,712
+  int (*compar)(const void *, const void *); /** Comparator function **/compar30,767
+  unsigned long (*hash)(const char *key); /** Hash function **/hash31,840
+} htable;htable32,904
+
+ausearch-parse.c,1622
+#define NAME_OFFSET NAME_OFFSET39,1220
+static const char key_sep[2] = { AUDIT_KEY_SEPARATOR, 0 };key_sep40,1243
+static int audit_avc_init(search_items *s)audit_avc_init61,2290
+int extract_search_items(llist *l)extract_search_items77,2611
+static int parse_syscall(lnode *n, search_items *s)parse_syscall165,4633
+static int parse_dir(const lnode *n, search_items *s)parse_dir494,10716
+static int common_path_parser(search_items *s, char *path)common_path_parser520,11204
+static int avc_parse_path(const lnode *n, search_items *s)avc_parse_path593,12779
+static int parse_path(const lnode *n, search_items *s)parse_path609,13050
+static int parse_obj(const lnode *n, search_items *s)parse_obj649,13823
+static int parse_user(const lnode *n, search_items *s)parse_user677,14285
+static int parse_login(const lnode *n, search_items *s)parse_login963,19504
+static int parse_daemon1(const lnode *n, search_items *s)parse_daemon11054,21166
+static int parse_daemon2(const lnode *n, search_items *s)parse_daemon21140,22669
+static int parse_sockaddr(const lnode *n, search_items *s)parse_sockaddr1186,23491
+static int parse_integrity(const lnode *n, search_items *s)parse_integrity1277,25608
+static int parse_avc(const lnode *n, search_items *s)parse_avc1371,27224
+static int parse_kernel_anom(const lnode *n, search_items *s)parse_kernel_anom1525,29872
+static int parse_simple_message(const lnode *n, search_items *s)parse_simple_message1653,32036
+static int parse_tty(const lnode *n, search_items *s)parse_tty1794,34776
+static int parse_pkt(const lnode *n, search_items *s)parse_pkt1906,36666
+
+ausearch-int.h,716
+#define AUINT_HEADERAUINT_HEADER25,893
+typedef struct _int_node{_int_node31,1079
+  int num;		// The numbernum32,1105
+  unsigned int hits;	// The number of times this was attempted to be addedhits33,1131
+  int aux1;		// Extra spot for dataaux134,1206
+  struct _int_node* next;	// Next string node pointernext35,1242
+} int_node;int_node36,1296
+  int_node *head;		// List headhead41,1416
+  int_node *cur;		// Pointer to current nodecur42,1448
+  unsigned int cnt;	// How many items in this listcnt43,1493
+} ilist;ilist44,1544
+static inline void ilist_first(ilist *l) { l->cur = l->head; }ilist_first47,1583
+static inline int_node *ilist_get_cur(ilist *l) { return l->cur; }ilist_get_cur49,1678
+
+auditd-config.c,4767
+#define TCP_PORT_MAX TCP_PORT_MAX42,1285
+struct nv_pairnv_pair45,1336
+	const char *name;name47,1353
+	const char *value;value48,1372
+	const char *option;option49,1392
+struct kw_pair kw_pair52,1417
+	const char *name;name54,1435
+	int (*parser)(struct nv_pair *, int, struct daemon_conf *);parser55,1454
+	int max_options;max_options56,1515
+struct nv_listnv_list59,1537
+	const char *name;name61,1555
+	int option;option62,1574
+static const struct kw_pair keywords[] = keywords128,4487
+static const struct nv_list log_formats[] =log_formats162,6343
+static const struct nv_list flush_techniques[] =flush_techniques169,6453
+static const struct nv_list failure_actions[] =failure_actions178,6653
+static const struct nv_list size_actions[] =size_actions191,6947
+static const struct nv_list qos_options[] =qos_options201,7156
+static const struct nv_list node_name_formats[] =node_name_formats208,7292
+static const struct nv_list yes_no_values[] =yes_no_values218,7499
+const char *email_command = "/usr/lib/sendmail";email_command225,7596
+static int allow_links = 0;allow_links226,7645
+void set_allow_links(int allow)set_allow_links229,7675
+static void clear_config(struct daemon_conf *config)clear_config237,7779
+static log_test_t log_test = TEST_AUDITD;log_test278,9037
+int load_config(struct daemon_conf *config, log_test_t lt)load_config279,9079
+static char *get_line(FILE *f, char *buf)get_line414,11978
+static int nv_split(char *buf, struct nv_pair *nv)nv_split426,12172
+static const struct kw_pair *kw_lookup(const char *val)kw_lookup469,12950
+static int log_file_parser(struct nv_pair *nv, int line,log_file_parser480,13148
+static int num_logs_parser(struct nv_pair *nv, int line, num_logs_parser564,15052
+static int qos_parser(struct nv_pair *nv, int line, qos_parser599,15802
+static int dispatch_parser(struct nv_pair *nv, int line,dispatch_parser615,16209
+static int name_format_parser(struct nv_pair *nv, int line,name_format_parser684,17883
+static int name_parser(struct nv_pair *nv, int line,name_parser700,18336
+static int max_log_size_parser(struct nv_pair *nv, int line, max_log_size_parser711,18599
+static int max_log_size_action_parser(struct nv_pair *nv, int line, max_log_size_action_parser742,19278
+static int log_format_parser(struct nv_pair *nv, int line, log_format_parser759,19738
+static int log_group_parser(struct nv_pair *nv, int line, log_group_parser775,20166
+static int flush_parser(struct nv_pair *nv, int line,flush_parser807,20855
+static int freq_parser(struct nv_pair *nv, int line,freq_parser823,21282
+static int space_left_parser(struct nv_pair *nv, int line, space_left_parser861,22109
+static int check_exe_name(const char *val, int line)check_exe_name892,22782
+static int space_action_parser(struct nv_pair *nv, int line, space_action_parser931,23633
+int validate_email(const char *acct)validate_email959,24484
+static int action_mail_acct_parser(struct nv_pair *nv, int line, action_mail_acct_parser999,25212
+static int admin_space_left_parser(struct nv_pair *nv, int line, admin_space_left_parser1022,25655
+static int admin_space_left_action_parser(struct nv_pair *nv, int line, admin_space_left_action_parser1054,26353
+static int disk_full_action_parser(struct nv_pair *nv, int line, disk_full_action_parser1084,27229
+static int disk_error_action_parser(struct nv_pair *nv, int line, disk_error_action_parser1111,28023
+static int priority_boost_parser(struct nv_pair *nv, int line,priority_boost_parser1138,28822
+static int tcp_listen_port_parser(struct nv_pair *nv, int line,tcp_listen_port_parser1177,29686
+static int tcp_listen_queue_parser(struct nv_pair *nv, int line,tcp_listen_queue_parser1222,30685
+static int tcp_max_per_addr_parser(struct nv_pair *nv, int line,tcp_max_per_addr_parser1270,31802
+static int use_libwrap_parser(struct nv_pair *nv, int line,use_libwrap_parser1317,32908
+static int tcp_client_ports_parser(struct nv_pair *nv, int line,tcp_client_ports_parser1335,33358
+static int tcp_client_max_idle_parser(struct nv_pair *nv, int line,tcp_client_max_idle_parser1411,35213
+static int enable_krb5_parser(struct nv_pair *nv, int line,enable_krb5_parser1452,36202
+static int krb5_principal_parser(struct nv_pair *nv, int line,krb5_principal_parser1477,36788
+static int krb5_key_file_parser(struct nv_pair *nv, int line,krb5_key_file_parser1491,37139
+static int sanity_check(struct daemon_conf *config)sanity_check1510,37679
+const char *audit_lookup_format(int fmt)audit_lookup_format1532,38339
+int create_log_file(const char *val)create_log_file1543,38539
+void free_config(struct daemon_conf *config)free_config1555,38776
+int resolve_node(struct daemon_conf *config)resolve_node1570,39277
+
+ausearch-llist.c,563
+void list_create(llist *l)list_create28,947
+void list_last(llist *l)list_last62,1634
+lnode *list_next(llist *l)list_next75,1822
+lnode *list_prev(llist *l)list_prev83,1930
+void list_append(llist *l, lnode *node)list_append95,2091
+int list_find_item(llist *l, unsigned int i)list_find_item122,2584
+void list_clear(llist* l)list_clear141,3017
+int list_get_event(llist* l, event *e)list_get_event204,4157
+lnode *list_find_msg(llist *l, int i)list_find_msg215,4338
+lnode *list_find_msg_range(llist *l, int low, int high)list_find_msg_range230,4684
+
+auditd-listen.c,3358
+#define DEFAULT_BUF_SZ DEFAULT_BUF_SZ59,1656
+typedef struct ev_tcp {ev_tcp61,1685
+	struct ev_io io;io62,1709
+	struct sockaddr_in addr;addr63,1727
+	struct ev_tcp *next, *prev;next64,1753
+	struct ev_tcp *next, *prev;prev64,1753
+	unsigned int bufptr;bufptr65,1782
+	int client_active;client_active66,1804
+	gss_ctx_id_t gss_context;gss_context69,1910
+	char *remote_name;remote_name70,1937
+	int remote_name_len;remote_name_len71,1957
+	unsigned char buffer [MAX_AUDIT_MESSAGE_LENGTH + 17];buffer73,1986
+} ev_tcp;ev_tcp74,2041
+static int listen_socket;listen_socket76,2052
+static struct ev_io tcp_listen_watcher;tcp_listen_watcher77,2078
+static int min_port, max_port, max_per_addr;min_port78,2118
+static int min_port, max_port, max_per_addr;max_port78,2118
+static int min_port, max_port, max_per_addr;max_per_addr78,2118
+static int use_libwrap = 1;use_libwrap79,2163
+static gss_cred_id_t server_creds;server_creds82,2258
+static char *my_service_name, *my_gss_realm;my_service_name83,2293
+static char *my_service_name, *my_gss_realm;my_gss_realm83,2293
+static int use_gss = 0;use_gss84,2338
+static char msgbuf[MAX_AUDIT_MESSAGE_LENGTH + 1];msgbuf85,2362
+static struct ev_tcp *client_chain = NULL;client_chain88,2420
+static char *sockaddr_to_ipv4(struct sockaddr_in *addr)sockaddr_to_ipv490,2464
+static char *sockaddr_to_addr4(struct sockaddr_in *addr)sockaddr_to_addr4100,2707
+static void set_close_on_exec (int fd)set_close_on_exec111,2980
+static void close_client (struct ev_tcp *client)close_client120,3140
+static int ar_write (int sock, const void *buf, int len)ar_write142,3726
+static int ar_read (int sock, void *buf, int len)ar_read161,4050
+static int recv_token (int s, gss_buffer_t tok)recv_token186,4714
+int send_token(int s, gss_buffer_t tok)send_token235,5850
+static void gss_failure_2 (const char *msg, int status, int type)gss_failure_2271,6634
+static void gss_failure (const char *msg, int major_status, int minor_status)gss_failure292,7111
+#define KCHECK(KCHECK299,7319
+static int server_acquire_creds(const char *service_name,server_acquire_creds307,7659
+static int negotiate_credentials (ev_tcp *io)negotiate_credentials354,9082
+static void client_ack (void *ack_data, const unsigned char *header,client_ack463,12034
+static void client_message (struct ev_tcp *io, unsigned int length,client_message510,13213
+static void auditd_tcp_client_handler( struct ev_loop *loop,auditd_tcp_client_handler541,14055
+#define auditd_tcpd_check(auditd_tcpd_check710,18570
+int allow_severity = LOG_INFO, deny_severity = LOG_NOTICE;allow_severity712,18614
+int allow_severity = LOG_INFO, deny_severity = LOG_NOTICE;deny_severity712,18614
+static int auditd_tcpd_check(int sock)auditd_tcpd_check713,18673
+static int check_num_connections(struct sockaddr_in *aaddr)check_num_connections730,19103
+static void auditd_tcp_listen_handler( struct ev_loop *loop,auditd_tcp_listen_handler747,19427
+void auditd_set_ports(int minp, int maxp, int max_p_addr)auditd_set_ports863,22847
+int auditd_tcp_listen_init ( struct ev_loop *loop, struct daemon_conf *config )auditd_tcp_listen_init870,22974
+void auditd_tcp_listen_uninit ( struct ev_loop *loop )auditd_tcp_listen_uninit960,25321
+void auditd_tcp_listen_check_idle (struct ev_loop *loop )auditd_tcp_listen_check_idle986,25838
+
+ausearch-avc.c,631
+void alist_create(alist *l)alist_create30,967
+anode *alist_next(alist *l)alist_next37,1046
+void alist_append(alist *l, anode *node)alist_append45,1155
+int alist_find_subj(alist *l)alist_find_subj86,1901
+anode *alist_next_subj(alist *l)alist_next_subj101,2107
+int alist_find_obj(alist *l)alist_find_obj113,2287
+anode *alist_next_obj(alist *l)alist_next_obj128,2492
+int alist_find_avc(alist *l)alist_find_avc140,2671
+anode *alist_next_avc(alist *l)alist_next_avc155,2891
+void alist_clear(alist* l)alist_clear167,3085
+void anode_init(anode *an)anode_init184,3337
+void anode_clear(anode *an)anode_clear193,3487
+
+auditd-dispatch.h,51
+#define AUDITD_DISPATCH_HAUDITD_DISPATCH_H25,913
+
+ausearch-time.c,1454
+#define SECONDS_IN_DAY SECONDS_IN_DAY29,1004
+time_t start_time = 0, end_time = 0;start_time35,1186
+time_t start_time = 0, end_time = 0;end_time35,1186
+struct nv_pair {nv_pair37,1224
+    int        value;value38,1241
+    const char *name;name39,1263
+static struct nv_pair timetab[] = {timetab42,1289
+#define TIME_NAMES TIME_NAMES52,1606
+int lookup_time(const char *name)lookup_time54,1663
+static void clear_tm(struct tm *t)clear_tm67,1895
+static void set_tm_now(struct tm *d)set_tm_now78,2253
+static void set_tm_today(struct tm *d)set_tm_today86,2409
+static void set_tm_yesterday(struct tm *d)set_tm_yesterday96,2681
+static void set_tm_recent(struct tm *d)set_tm_recent106,2984
+static void set_tm_this_week(struct tm *d)set_tm_this_week114,3182
+static void set_tm_week_ago(struct tm *d)set_tm_week_ago126,3530
+static void set_tm_this_month(struct tm *d)set_tm_this_month138,3851
+static void set_tm_this_year(struct tm *d)set_tm_this_year149,4188
+static void add_tm(struct tm *d, struct tm *t)add_tm162,4635
+static void replace_time(struct tm *t1, struct tm *t2)replace_time176,4944
+static void replace_date(struct tm *t1, struct tm *t2)replace_date184,5184
+static int lookup_and_set_time(const char *da, struct tm *d)lookup_and_set_time215,5940
+int ausearch_time_start(const char *da, const char *ti)ausearch_time_start258,6682
+int ausearch_time_end(const char *da, const char *ti)ausearch_time_end329,8180
+
+auditd.c,2919
+#define EV_STOP(EV_STOP51,1451
+#define DEFAULT_BUF_SZ	DEFAULT_BUF_SZ53,1537
+#define DMSG_SIZE DMSG_SIZE54,1564
+#define SUCCESS SUCCESS55,1605
+#define FAILURE FAILURE56,1623
+#define SUBJ_LEN SUBJ_LEN57,1641
+volatile int stop = 0;stop60,1682
+static int fd = -1;fd63,1723
+static struct daemon_conf config;config64,1743
+static const char *pidfile = "/var/run/auditd.pid";pidfile65,1777
+static int init_pipe[2];init_pipe66,1829
+static int do_fork = 1;do_fork67,1854
+static struct auditd_reply_list *rep = NULL;rep68,1878
+static int hup_info_requested = 0, usr1_info_requested = 0;hup_info_requested69,1923
+static int hup_info_requested = 0, usr1_info_requested = 0;usr1_info_requested69,1923
+static char subj[SUBJ_LEN];subj70,1983
+static struct ev_periodic periodic_watcher;periodic_watcher71,2011
+enum startup_state {startup_disable=0, startup_enable, startup_nochange,startup_state80,2296
+enum startup_state {startup_disable=0, startup_enable, startup_nochange,startup_disable80,2296
+enum startup_state {startup_disable=0, startup_enable, startup_nochange,startup_enable80,2296
+enum startup_state {startup_disable=0, startup_enable, startup_nochange,startup_nochange80,2296
+	startup_INVALID};startup_INVALID81,2369
+static const char *startup_states[] = {"disable", "enable", "nochange"};startup_states82,2388
+static void usage(void)usage87,2495
+static void term_handler(struct ev_loop *loop, struct ev_signal *sig,term_handler101,2734
+static void thread_killer( int sig )thread_killer110,2880
+static void hup_handler( struct ev_loop *loop, struct ev_signal *sig, int revents )hup_handler118,2974
+static void user1_handler(struct ev_loop *loop, struct ev_signal *sig,user1_handler133,3324
+static void user2_handler( struct ev_loop *loop, struct ev_signal *sig, int revents )user2_handler149,3675
+static void child_handler(struct ev_loop *loop, struct ev_signal *sig,child_handler159,3942
+static void distribute_event(struct auditd_reply_list *rep)distribute_event166,4090
+static unsigned seq_num = 0;seq_num203,5277
+int send_audit_event(int type, const char *str)send_audit_event204,5306
+static int write_pid_file(void)write_pid_file242,6263
+static void avoid_oom_killer(void)avoid_oom_killer265,6754
+static int become_daemon(void)become_daemon294,7650
+static void tell_parent(int status)tell_parent356,8771
+static void netlink_handler(struct ev_loop *loop, struct ev_io *io,netlink_handler367,8983
+static void periodic_handler(struct ev_loop *loop, struct ev_periodic *per,periodic_handler444,10974
+void periodic_reconfigure(void)periodic_reconfigure451,11144
+int main(int argc, char *argv[])main463,11470
+static void close_down(void)close_down805,20016
+static void clean_exit(void)clean_exit825,20472
+static int get_reply(int fd, struct audit_reply *rep, int seq)get_reply841,20782
+static char *getsubj(char *subj)getsubj877,21647
+
+hashtab-util.h,43
+#define AUREPORT_HT_HAUREPORT_HT_H26,909
+
+auditd-sendmail.c,171
+int sendmail(const char *subject, const char *content, const char *mail_acct)sendmail38,1212
+static int safe_popen(pid_t *pid, const char *mail_acct)safe_popen72,1972
+
+ausearch.c,748
+#define TABLE_SIZE TABLE_SIZE47,1412
+static FILE *log_fd = NULL;log_fd49,1435
+static lol lo;lo50,1463
+static htable *ev_table;ev_table51,1478
+static int found = 0;found52,1503
+static int input_is_pipe = 0;input_is_pipe53,1525
+static int timeout_interval = 3;	/* timeout in seconds */timeout_interval54,1555
+static int is_pipe(int fd)is_pipe66,1897
+int main(int argc, char *argv[])main78,2062
+static int process_logs(void)process_logs127,3173
+static int process_log_fd(void)process_log_fd187,4453
+static void alarm_handler(int signal)alarm_handler218,4995
+static int process_stdin(void)process_stdin223,5076
+static int process_file(char *filename)process_file235,5275
+static int get_record(llist **l)get_record252,5681
+
+aureport-options.c,4647
+char *user_file = NULL;user_file38,1249
+int force_logs = 0;force_logs39,1273
+unsigned int event_id = -1;event_id42,1340
+const slist *event_node_list = NULL;event_node_list43,1368
+const char *event_key = NULL;event_key44,1405
+const char *event_filename = NULL;event_filename45,1435
+const char *event_exe = NULL;event_exe46,1470
+const char *event_comm = NULL;event_comm47,1500
+const char *event_hostname = NULL;event_hostname48,1531
+const char *event_terminal = NULL;event_terminal49,1566
+const char *event_subject = NULL;event_subject50,1601
+const char *event_object = NULL;event_object51,1635
+int event_exit = 0, event_exit_is_set = 0;event_exit52,1668
+int event_exit = 0, event_exit_is_set = 0;event_exit_is_set52,1668
+int event_ppid = -1, event_session_id = -2;event_ppid53,1711
+int event_ppid = -1, event_session_id = -2;event_session_id53,1711
+const char *dummy = "dummy";dummy56,1789
+report_type_t report_type = RPT_UNSET;report_type57,1818
+report_det_t report_detail = D_UNSET;report_detail58,1857
+report_t report_format = RPT_DEFAULT;report_format59,1895
+failed_t event_failed = F_BOTH;event_failed60,1933
+conf_act_t event_conf_act = C_NEITHER;event_conf_act61,1965
+success_t event_success = S_SUCCESS;event_success62,2004
+int event_pid = 0;event_pid63,2041
+struct nv_pair {nv_pair65,2061
+    int        value;value66,2078
+    const char *name;name67,2100
+enum {  R_INFILE, R_TIME_END, R_TIME_START, R_VERSION, R_SUMMARY, R_LOG_TIMES,R_INFILE70,2126
+enum {  R_INFILE, R_TIME_END, R_TIME_START, R_VERSION, R_SUMMARY, R_LOG_TIMES,R_TIME_END70,2126
+enum {  R_INFILE, R_TIME_END, R_TIME_START, R_VERSION, R_SUMMARY, R_LOG_TIMES,R_TIME_START70,2126
+enum {  R_INFILE, R_TIME_END, R_TIME_START, R_VERSION, R_SUMMARY, R_LOG_TIMES,R_VERSION70,2126
+enum {  R_INFILE, R_TIME_END, R_TIME_START, R_VERSION, R_SUMMARY, R_LOG_TIMES,R_SUMMARY70,2126
+enum {  R_INFILE, R_TIME_END, R_TIME_START, R_VERSION, R_SUMMARY, R_LOG_TIMES,R_LOG_TIMES70,2126
+	R_CONFIGS, R_LOGINS, R_USERS, R_TERMINALS, R_HOSTS, R_EXES, R_FILES,R_CONFIGS71,2205
+	R_CONFIGS, R_LOGINS, R_USERS, R_TERMINALS, R_HOSTS, R_EXES, R_FILES,R_LOGINS71,2205
+	R_CONFIGS, R_LOGINS, R_USERS, R_TERMINALS, R_HOSTS, R_EXES, R_FILES,R_USERS71,2205
+	R_CONFIGS, R_LOGINS, R_USERS, R_TERMINALS, R_HOSTS, R_EXES, R_FILES,R_TERMINALS71,2205
+	R_CONFIGS, R_LOGINS, R_USERS, R_TERMINALS, R_HOSTS, R_EXES, R_FILES,R_HOSTS71,2205
+	R_CONFIGS, R_LOGINS, R_USERS, R_TERMINALS, R_HOSTS, R_EXES, R_FILES,R_EXES71,2205
+	R_CONFIGS, R_LOGINS, R_USERS, R_TERMINALS, R_HOSTS, R_EXES, R_FILES,R_FILES71,2205
+	R_AVCS, R_SYSCALLS, R_PIDS, R_EVENTS, R_ACCT_MODS,  R_AVCS72,2275
+	R_AVCS, R_SYSCALLS, R_PIDS, R_EVENTS, R_ACCT_MODS,  R_SYSCALLS72,2275
+	R_AVCS, R_SYSCALLS, R_PIDS, R_EVENTS, R_ACCT_MODS,  R_PIDS72,2275
+	R_AVCS, R_SYSCALLS, R_PIDS, R_EVENTS, R_ACCT_MODS,  R_EVENTS72,2275
+	R_AVCS, R_SYSCALLS, R_PIDS, R_EVENTS, R_ACCT_MODS,  R_ACCT_MODS72,2275
+	R_INTERPRET, R_HELP, R_ANOMALY, R_RESPONSE, R_SUMMARY_DET, R_CRYPTO,R_INTERPRET73,2329
+	R_INTERPRET, R_HELP, R_ANOMALY, R_RESPONSE, R_SUMMARY_DET, R_CRYPTO,R_HELP73,2329
+	R_INTERPRET, R_HELP, R_ANOMALY, R_RESPONSE, R_SUMMARY_DET, R_CRYPTO,R_ANOMALY73,2329
+	R_INTERPRET, R_HELP, R_ANOMALY, R_RESPONSE, R_SUMMARY_DET, R_CRYPTO,R_RESPONSE73,2329
+	R_INTERPRET, R_HELP, R_ANOMALY, R_RESPONSE, R_SUMMARY_DET, R_CRYPTO,R_SUMMARY_DET73,2329
+	R_INTERPRET, R_HELP, R_ANOMALY, R_RESPONSE, R_SUMMARY_DET, R_CRYPTO,R_CRYPTO73,2329
+	R_MAC, R_FAILED, R_SUCCESS, R_ADD, R_DEL, R_AUTH, R_NODE, R_IN_LOGS,R_MAC74,2399
+	R_MAC, R_FAILED, R_SUCCESS, R_ADD, R_DEL, R_AUTH, R_NODE, R_IN_LOGS,R_FAILED74,2399
+	R_MAC, R_FAILED, R_SUCCESS, R_ADD, R_DEL, R_AUTH, R_NODE, R_IN_LOGS,R_SUCCESS74,2399
+	R_MAC, R_FAILED, R_SUCCESS, R_ADD, R_DEL, R_AUTH, R_NODE, R_IN_LOGS,R_ADD74,2399
+	R_MAC, R_FAILED, R_SUCCESS, R_ADD, R_DEL, R_AUTH, R_NODE, R_IN_LOGS,R_DEL74,2399
+	R_MAC, R_FAILED, R_SUCCESS, R_ADD, R_DEL, R_AUTH, R_NODE, R_IN_LOGS,R_AUTH74,2399
+	R_MAC, R_FAILED, R_SUCCESS, R_ADD, R_DEL, R_AUTH, R_NODE, R_IN_LOGS,R_NODE74,2399
+	R_MAC, R_FAILED, R_SUCCESS, R_ADD, R_DEL, R_AUTH, R_NODE, R_IN_LOGS,R_IN_LOGS74,2399
+	R_KEYS, R_TTY };R_KEYS75,2469
+	R_KEYS, R_TTY };R_TTY75,2469
+static struct nv_pair optiontab[] = {optiontab77,2488
+#define OPTION_NAMES OPTION_NAMES136,3954
+static int audit_lookup_option(const char *name)audit_lookup_option139,4018
+static void usage(void)usage149,4234
+static int set_report(report_type_t r)set_report187,5833
+static int set_detail(report_det_t d)set_detail198,6029
+int check_params(int count, char *vars[])check_params215,6363
+
+ausearch-nvpair.c,283
+void nvlist_create(nvlist *l)nvlist_create29,963
+nvnode *nvlist_next(nvlist *l)nvlist_next36,1044
+void nvlist_append(nvlist *l, nvnode *node)nvlist_append44,1156
+int nvlist_find_val(nvlist *l, long val)nvlist_find_val66,1606
+void nvlist_clear(nvlist* l)nvlist_clear81,1826
+
+auditctl-llist.c,309
+void list_create(llist *l)list_create28,936
+void list_first(llist *l)list_first35,1014
+void list_last(llist *l)list_last40,1064
+lnode *list_next(llist *l)list_next53,1252
+void list_append(llist *l, struct audit_rule_data *r, size_t sz)list_append61,1360
+void list_clear(llist* l)list_clear89,1843
+
+Makefile,12357
+pkgdatadir = $(datadir)/auditpkgdatadir42,1548
+pkgincludedir = $(includedir)/auditpkgincludedir43,1578
+pkglibdir = $(libdir)/auditpkglibdir44,1614
+pkglibexecdir = $(libexecdir)/auditpkglibexecdir45,1642
+am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cdam__cd46,1678
+install_sh_DATA = $(install_sh) -c -m 644install_sh_DATA47,1737
+install_sh_PROGRAM = $(install_sh) -cinstall_sh_PROGRAM48,1779
+install_sh_SCRIPT = $(install_sh) -cinstall_sh_SCRIPT49,1817
+INSTALL_HEADER = $(INSTALL_DATA)INSTALL_HEADER50,1854
+transform = $(program_transform_name)transform51,1887
+NORMAL_INSTALL = :NORMAL_INSTALL52,1925
+PRE_INSTALL = :PRE_INSTALL53,1944
+POST_INSTALL = :POST_INSTALL54,1960
+NORMAL_UNINSTALL = :NORMAL_UNINSTALL55,1977
+PRE_UNINSTALL = :PRE_UNINSTALL56,1998
+POST_UNINSTALL = :POST_UNINSTALL57,2016
+build_triplet = x86_64-unknown-linux-gnubuild_triplet58,2035
+host_triplet = x86_64-unknown-linux-gnuhost_triplet59,2076
+target_triplet = x86_64-unknown-linux-gnutarget_triplet60,2116
+sbin_PROGRAMS = auditd$(EXEEXT) auditctl$(EXEEXT) aureport$(EXEEXT) \sbin_PROGRAMS61,2158
+subdir = srcsubdir63,2264
+DIST_COMMON = $(noinst_HEADERS) $(srcdir)/Makefile.am \DIST_COMMON64,2277
+ACLOCAL_M4 = $(top_srcdir)/aclocal.m4ACLOCAL_M466,2356
+am__aclocal_m4_deps = $(top_srcdir)/src/libev/libev.m4 \am__aclocal_m4_deps67,2394
+am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \am__configure_deps69,2479
+mkinstalldirs = $(install_sh) -dmkinstalldirs71,2566
+CONFIG_HEADER = $(top_builddir)/config.hCONFIG_HEADER72,2599
+CONFIG_CLEAN_VPATH_FILES =CONFIG_CLEAN_VPATH_FILES73,2640
+am__installdirs = "$(DESTDIR)$(sbindir)"am__installdirs74,2667
+PROGRAMS = $(sbin_PROGRAMS)PROGRAMS75,2708
+am_auditctl_OBJECTS = auditctl.$(OBJEXT) auditctl-llist.$(OBJEXT) \am_auditctl_OBJECTS76,2736
+auditctl_OBJECTS = $(am_auditctl_OBJECTS)auditctl_OBJECTS78,2826
+auditctl_LDADD = $(LDADD)auditctl_LDADD79,2868
+am_auditd_OBJECTS = auditd-auditd.$(OBJEXT) \am_auditd_OBJECTS80,2894
+auditd_OBJECTS = $(am_auditd_OBJECTS)auditd_OBJECTS86,3144
+am__DEPENDENCIES_1 =am__DEPENDENCIES_187,3182
+auditd_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \auditd_LINK88,3203
+am_aureport_OBJECTS = aureport.$(OBJEXT) auditd-config.$(OBJEXT) \am_aureport_OBJECTS91,3360
+aureport_OBJECTS = $(am_aureport_OBJECTS)aureport_OBJECTS99,3785
+aureport_LDADD = $(LDADD)aureport_LDADD100,3827
+am_ausearch_OBJECTS = ausearch.$(OBJEXT) auditd-config.$(OBJEXT) \am_ausearch_OBJECTS101,3853
+ausearch_OBJECTS = $(am_ausearch_OBJECTS)ausearch_OBJECTS109,4279
+ausearch_LDADD = $(LDADD)ausearch_LDADD110,4321
+am_autrace_OBJECTS = autrace.$(OBJEXT) delete_all.$(OBJEXT) \am_autrace_OBJECTS111,4347
+autrace_OBJECTS = $(am_autrace_OBJECTS)autrace_OBJECTS113,4435
+autrace_LDADD = $(LDADD)autrace_LDADD114,4475
+DEFAULT_INCLUDES = -I. -I$(top_builddir)DEFAULT_INCLUDES115,4500
+depcomp =depcomp116,4541
+am__depfiles_maybe =am__depfiles_maybe117,4551
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \COMPILE118,4572
+LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \LTCOMPILE120,4681
+CCLD = $(CC)CCLD123,4865
+LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \LINK124,4878
+SOURCES = $(auditctl_SOURCES) $(auditd_SOURCES) $(aureport_SOURCES) \SOURCES127,5020
+DIST_SOURCES = $(auditctl_SOURCES) $(auditd_SOURCES) \DIST_SOURCES129,5130
+RECURSIVE_TARGETS = all-recursive check-recursive dvi-recursive \RECURSIVE_TARGETS131,5245
+HEADERS = $(noinst_HEADERS)HEADERS138,5624
+RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\RECURSIVE_CLEAN_TARGETS139,5652
+AM_RECURSIVE_TARGETS = $(RECURSIVE_TARGETS:-recursive=) \AM_RECURSIVE_TARGETS141,5767
+ETAGS = etagsETAGS144,5898
+CTAGS = ctagsCTAGS145,5912
+DIST_SUBDIRS = $(SUBDIRS)DIST_SUBDIRS146,5926
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)DISTFILES147,5952
+am__relativize = \am__relativize148,6021
+ACLOCAL = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run aclocal-1.11ACLOCAL173,6841
+AMTAR = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run tarAMTAR174,6943
+AR = arAR175,7034
+AUTOCONF = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoconfAUTOCONF176,7042
+AUTOHEADER = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoheaderAUTOHEADER177,7141
+AUTOMAKE = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run automake-1.11AUTOMAKE178,7244
+AWK = gawkAWK179,7348
+CC = gccCC180,7359
+CCDEPMODE = depmode=gcc3CCDEPMODE181,7368
+CFLAGS = -gCFLAGS182,7393
+CPP = gcc -ECPP183,7405
+CPPFLAGS = CPPFLAGS184,7418
+CYGPATH_W = echoCYGPATH_W185,7430
+DEBUG = -DNDEBUGDEBUG186,7447
+DEFS = -DHAVE_CONFIG_HDEFS187,7464
+DEPDIR = .depsDEPDIR188,7487
+DLLTOOL = falseDLLTOOL189,7502
+DSYMUTIL = DSYMUTIL190,7518
+DUMPBIN = DUMPBIN191,7530
+ECHO_C = ECHO_C192,7541
+ECHO_N = -nECHO_N193,7551
+ECHO_T = ECHO_T194,7563
+EGREP = /bin/grep -EEGREP195,7573
+EXEEXT = EXEEXT196,7594
+FGREP = /bin/grep -FFGREP197,7604
+GREP = /bin/grepGREP198,7625
+INSTALL = /bin/install -cINSTALL199,7642
+INSTALL_DATA = ${INSTALL} -m 644INSTALL_DATA200,7668
+INSTALL_PROGRAM = ${INSTALL}INSTALL_PROGRAM201,7701
+INSTALL_SCRIPT = ${INSTALL}INSTALL_SCRIPT202,7730
+INSTALL_STRIP_PROGRAM = $(install_sh) -c -sINSTALL_STRIP_PROGRAM203,7758
+LD = /usr/bin/ld -m elf_x86_64LD204,7802
+LDFLAGS = LDFLAGS205,7833
+LIBOBJS = LIBOBJS206,7844
+LIBPRELUDE_CFLAGS = LIBPRELUDE_CFLAGS207,7855
+LIBPRELUDE_LDFLAGS = LIBPRELUDE_LDFLAGS208,7876
+LIBS = -Lmt -lauditmtLIBS209,7898
+LIBTOOL = $(SHELL) $(top_builddir)/libtoolLIBTOOL210,7920
+LIBTOOL_DEPS = ./ltmain.shLIBTOOL_DEPS211,7963
+LIBWRAP_LIBS = -lwrap -lnslLIBWRAP_LIBS212,7990
+LIPO = LIPO213,8018
+LN_S = ln -sLN_S214,8026
+LTLIBOBJS = LTLIBOBJS215,8039
+MAKEINFO = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run makeinfoMAKEINFO216,8052
+MANIFEST_TOOL = :MANIFEST_TOOL217,8151
+MKDIR_P = /bin/mkdir -pMKDIR_P218,8169
+NM = /usr/bin/nm -BNM219,8193
+NMEDIT = NMEDIT220,8213
+OBJDUMP = objdumpOBJDUMP221,8223
+OBJEXT = oOBJEXT222,8241
+OTOOL = OTOOL223,8252
+OTOOL64 = OTOOL64224,8261
+PACKAGE = auditPACKAGE225,8272
+PACKAGE_BUGREPORT = PACKAGE_BUGREPORT226,8288
+PACKAGE_NAME = auditPACKAGE_NAME227,8309
+PACKAGE_STRING = audit 2.1.3PACKAGE_STRING228,8330
+PACKAGE_TARNAME = auditPACKAGE_TARNAME229,8359
+PACKAGE_URL = PACKAGE_URL230,8383
+PACKAGE_VERSION = 2.1.3PACKAGE_VERSION231,8398
+PATH_SEPARATOR = :PATH_SEPARATOR232,8422
+PYTHON = /usr/bin/pythonPYTHON233,8441
+PYTHON_EXEC_PREFIX = ${exec_prefix}PYTHON_EXEC_PREFIX234,8466
+PYTHON_PLATFORM = linux2PYTHON_PLATFORM235,8502
+PYTHON_PREFIX = ${prefix}PYTHON_PREFIX236,8527
+PYTHON_VERSION = 3.1PYTHON_VERSION237,8553
+RANLIB = ranlibRANLIB238,8574
+SED = /bin/sedSED239,8590
+SET_MAKE = SET_MAKE240,8605
+SHELL = /bin/shSHELL241,8617
+STRIP = stripSTRIP242,8633
+VERSION = 2.1.3VERSION243,8647
+abs_builddir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/srcabs_builddir244,8663
+abs_srcdir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/srcabs_srcdir245,8738
+abs_top_builddir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunkabs_top_builddir246,8811
+abs_top_srcdir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunkabs_top_srcdir247,8886
+ac_ct_AR = arac_ct_AR248,8959
+ac_ct_CC = gccac_ct_CC249,8973
+ac_ct_DUMPBIN = ac_ct_DUMPBIN250,8988
+am__include = includeam__include251,9005
+am__leading_dot = .am__leading_dot252,9027
+am__quote = am__quote253,9047
+am__tar = ${AMTAR} chof - "$$tardir"am__tar254,9060
+am__untar = ${AMTAR} xf -am__untar255,9097
+bindir = ${exec_prefix}/binbindir256,9123
+build = x86_64-unknown-linux-gnubuild257,9151
+build_alias = build_alias258,9184
+build_cpu = x86_64build_cpu259,9199
+build_os = linux-gnubuild_os260,9218
+build_vendor = unknownbuild_vendor261,9239
+builddir = .builddir262,9262
+datadir = ${datarootdir}datadir263,9275
+datarootdir = ${prefix}/sharedatarootdir264,9300
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}docdir265,9330
+dvidir = ${docdir}dvidir266,9377
+exec_prefix = ${prefix}exec_prefix267,9396
+gss_libs = gss_libs268,9420
+host = x86_64-unknown-linux-gnuhost269,9432
+host_alias = host_alias270,9464
+host_cpu = x86_64host_cpu271,9478
+host_os = linux-gnuhost_os272,9496
+host_vendor = unknownhost_vendor273,9516
+htmldir = ${docdir}htmldir274,9538
+includedir = ${prefix}/includeincludedir275,9558
+infodir = ${datarootdir}/infoinfodir276,9589
+install_sh = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/install-shinstall_sh277,9619
+libdir = ${exec_prefix}/liblibdir278,9708
+libev_LIBS = -lm libev_LIBS279,9736
+libexecdir = ${exec_prefix}/libexeclibexecdir280,9754
+localedir = ${datarootdir}/localelocaledir281,9790
+localstatedir = ${prefix}/varlocalstatedir282,9824
+mandir = ${datarootdir}/manmandir283,9854
+mkdir_p = /bin/mkdir -pmkdir_p284,9882
+oldincludedir = /usr/includeoldincludedir285,9906
+pdfdir = ${docdir}pdfdir286,9935
+pkgpyexecdir = ${pyexecdir}/auditpkgpyexecdir287,9954
+pkgpythondir = ${pythondir}/auditpkgpythondir288,9988
+prefix = /usr/localprefix289,10022
+program_transform_name = s,x,x,program_transform_name290,10042
+psdir = ${docdir}psdir291,10074
+pyexecdir = ${exec_prefix}/lib/python3.1/site-packagespyexecdir292,10092
+pythondir = ${prefix}/lib/python3.1/site-packagespythondir293,10147
+sbindir = /sbinsbindir294,10197
+sharedstatedir = ${prefix}/comsharedstatedir295,10213
+srcdir = .srcdir296,10244
+sysconfdir = ${prefix}/etcsysconfdir297,10255
+target = x86_64-unknown-linux-gnutarget298,10282
+target_alias = target_alias299,10316
+target_cpu = x86_64target_cpu300,10332
+target_os = linux-gnutarget_os301,10352
+target_vendor = unknowntarget_vendor302,10374
+top_build_prefix = ../top_build_prefix303,10398
+top_builddir = ..top_builddir304,10421
+top_srcdir = ..top_srcdir305,10439
+CONFIG_CLEAN_FILES = *.rej *.origCONFIG_CLEAN_FILES306,10455
+AUTOMAKE_OPTIONS = no-dependenciesAUTOMAKE_OPTIONS307,10489
+SUBDIRS = testSUBDIRS308,10524
+INCLUDES = -I${top_srcdir} -I${top_srcdir}/lib -I${top_srcdir}/src/libevINCLUDES309,10539
+LDADD = -lpthreadLDADD310,10612
+AM_CFLAGS = -D_REENTRANT -D_GNU_SOURCEAM_CFLAGS311,10630
+noinst_HEADERS = auditd-config.h auditd-event.h auditd-listen.h ausearch-llist.h ausearch-options.h auditctl-llist.h aureport-options.h ausearch-parse.h aureport-scan.h ausearch-lookup.h ausearch-int.h auditd-dispatch.h ausearch-string.h ausearch-nvpair.h ausearch-common.h ausearch-avc.h ausearch-time.h ausearch-lol.hnoinst_HEADERS312,10669
+auditd_SOURCES = auditd.c auditd-event.c auditd-config.c auditd-reconfig.c auditd-sendmail.c auditd-dispatch.c auditd-listen.cauditd_SOURCES313,10989
+auditd_CFLAGS = -fPIE -DPIE -g -D_REENTRANT -D_GNU_SOURCE -fno-strict-aliasing auditd_CFLAGS314,11116
+auditd_LDFLAGS = -pie -Wl,-z,relroauditd_LDFLAGS315,11196
+auditd_DEPENDENCIES = mt/libauditmt.a libev/libev.aauditd_DEPENDENCIES316,11231
+auditd_LDADD = -lwrap -lnsl -lm  -Llibev -lev -lrt -lpthread -lm $(gss_libs)auditd_LDADD317,11283
+auditctl_SOURCES = auditctl.c auditctl-llist.c delete_all.cauditctl_SOURCES318,11360
+auditctl_DEPENDENCIES = mt/libauditmt.a auditctl_DEPENDENCIES319,11420
+aureport_SOURCES = aureport.c auditd-config.c ausearch-llist.c aureport-options.c ausearch-string.c ausearch-parse.c aureport-scan.c aureport-output.c ausearch-lookup.c ausearch-int.c ausearch-time.c ausearch-nvpair.c ausearch-avc.c ausearch-lol.caureport_SOURCES320,11461
+aureport_DEPENDENCIES = mt/libauditmt.aaureport_DEPENDENCIES321,11709
+ausearch_SOURCES = ausearch.c auditd-config.c ausearch-llist.c ausearch-options.c ausearch-report.c ausearch-match.c ausearch-string.c ausearch-parse.c ausearch-int.c ausearch-time.c ausearch-nvpair.c ausearch-lookup.c ausearch-avc.c ausearch-lol.causearch_SOURCES322,11749
+ausearch_DEPENDENCIES = mt/libauditmt.aausearch_DEPENDENCIES323,11998
+autrace_SOURCES = autrace.c delete_all.c auditctl-llist.cautrace_SOURCES324,12038
+autrace_DEPENDENCIES = mt/libauditmt.aautrace_DEPENDENCIES325,12096
+
+auditctl.c,2357
+#define NUM_OPTIONS NUM_OPTIONS44,1531
+#define LINE_SIZE LINE_SIZE51,1789
+static int fd = -1;fd61,2016
+static int list_requested = 0;list_requested62,2036
+static int add = AUDIT_FILTER_UNSET, del = AUDIT_FILTER_UNSET, action = -1;add63,2067
+static int add = AUDIT_FILTER_UNSET, del = AUDIT_FILTER_UNSET, action = -1;del63,2067
+static int add = AUDIT_FILTER_UNSET, del = AUDIT_FILTER_UNSET, action = -1;action63,2067
+static int ignore = 0;ignore64,2143
+static int exclude = 0;exclude65,2166
+static int multiple = 0;multiple66,2190
+static struct audit_rule_data *rule_new = NULL;rule_new67,2215
+static char key[AUDIT_MAX_KEY_LEN+1];key68,2263
+static int keylen;keylen69,2301
+static int printed;printed70,2320
+static const char key_sep[2] = { AUDIT_KEY_SEPARATOR, 0 };key_sep71,2340
+static int reset_vars(void)reset_vars83,2644
+static void usage(void)usage108,3141
+static int lookup_filter(const char *str, int *filter)lookup_filter144,4997
+static int lookup_action(const char *str, int *act)lookup_action162,5444
+static int audit_rule_setup(char *opt, int *filter, int *act, int lineno)audit_rule_setup179,5789
+static int check_path(const char *path)check_path235,6881
+static int audit_setup_watch_name(struct audit_rule_data **rulep, char *path)audit_setup_watch_name274,7894
+static int audit_setup_perms(struct audit_rule_data *rule, const char *opt)audit_setup_perms306,8542
+static int lookup_itype(const char *kind)lookup_itype344,9210
+static int lookup_iseverity(const char *severity)lookup_iseverity358,9564
+static int check_ids_key(const char *k)check_ids_key372,9953
+static int equiv_parse(char *optarg, char **mp, char **sub)equiv_parse411,10756
+int audit_request_rule_list(int fd)audit_request_rule_list427,11060
+void check_rule_mismatch(int lineno, const char *option)check_rule_mismatch437,11210
+static int setopt(int count, int lineno, char *vars[])setopt473,12126
+static char *get_line(FILE *f, char *buf)get_line930,23540
+static int fileopt(const char *file)fileopt948,24038
+int main(int argc, char *argv[])main1060,26343
+static int handle_request(int status)handle_request1131,28120
+static void get_reply(void)get_reply1212,30155
+int key_match(struct audit_reply *rep)key_match1251,31055
+static int audit_print_reply(struct audit_reply *rep)audit_print_reply1286,31969
+
+ausearch-common.h,1429
+#define AUREPORT_COMMON_HAUREPORT_COMMON_H25,916
+const slist *event_node_list;event_node_list36,1249
+typedef enum { F_BOTH, F_FAILED, F_SUCCESS } failed_t;F_BOTH46,1545
+typedef enum { F_BOTH, F_FAILED, F_SUCCESS } failed_t;F_FAILED46,1545
+typedef enum { F_BOTH, F_FAILED, F_SUCCESS } failed_t;F_SUCCESS46,1545
+typedef enum { F_BOTH, F_FAILED, F_SUCCESS } failed_t;failed_t46,1545
+typedef enum { C_NEITHER, C_ADD, C_DEL } conf_act_t;C_NEITHER47,1600
+typedef enum { C_NEITHER, C_ADD, C_DEL } conf_act_t;C_ADD47,1600
+typedef enum { C_NEITHER, C_ADD, C_DEL } conf_act_t;C_DEL47,1600
+typedef enum { C_NEITHER, C_ADD, C_DEL } conf_act_t;conf_act_t47,1600
+typedef enum { S_UNSET=-1, S_FAILED, S_SUCCESS } success_t;S_UNSET48,1653
+typedef enum { S_UNSET=-1, S_FAILED, S_SUCCESS } success_t;S_FAILED48,1653
+typedef enum { S_UNSET=-1, S_FAILED, S_SUCCESS } success_t;S_SUCCESS48,1653
+typedef enum { S_UNSET=-1, S_FAILED, S_SUCCESS } success_t;success_t48,1653
+typedef enum { RPT_RAW, RPT_DEFAULT, RPT_INTERP, RPT_PRETTY } report_t;RPT_RAW49,1713
+typedef enum { RPT_RAW, RPT_DEFAULT, RPT_INTERP, RPT_PRETTY } report_t;RPT_DEFAULT49,1713
+typedef enum { RPT_RAW, RPT_DEFAULT, RPT_INTERP, RPT_PRETTY } report_t;RPT_INTERP49,1713
+typedef enum { RPT_RAW, RPT_DEFAULT, RPT_INTERP, RPT_PRETTY } report_t;RPT_PRETTY49,1713
+typedef enum { RPT_RAW, RPT_DEFAULT, RPT_INTERP, RPT_PRETTY } report_t;report_t49,1713
+
+ausearch-options.c,5624
+char *user_file = NULL;user_file39,1301
+int force_logs = 0;force_logs40,1325
+unsigned int event_id = -1;event_id43,1405
+gid_t event_gid = -1, event_egid = -1;event_gid44,1433
+gid_t event_gid = -1, event_egid = -1;event_egid44,1433
+ilist *event_type = NULL;event_type45,1472
+pid_t event_pid = -1, event_ppid = -1;event_pid46,1498
+pid_t event_pid = -1, event_ppid = -1;event_ppid46,1498
+success_t event_success = S_UNSET;event_success47,1537
+int event_exact_match = 0;event_exact_match48,1572
+uid_t event_uid = -1, event_euid = -1, event_loginuid = -2;event_uid49,1599
+uid_t event_uid = -1, event_euid = -1, event_loginuid = -2;event_euid49,1599
+uid_t event_uid = -1, event_euid = -1, event_loginuid = -2;event_loginuid49,1599
+int event_syscall = -1;event_syscall50,1659
+int event_ua = 0, event_ga = 0, event_se = 0;event_ua51,1683
+int event_ua = 0, event_ga = 0, event_se = 0;event_ga51,1683
+int event_ua = 0, event_ga = 0, event_se = 0;event_se51,1683
+int just_one = 0;just_one52,1729
+int event_session_id = -2;event_session_id53,1747
+int event_exit = 0, event_exit_is_set = 0;event_exit54,1774
+int event_exit = 0, event_exit_is_set = 0;event_exit_is_set54,1774
+int line_buffered = 0;line_buffered55,1817
+const char *event_key = NULL;event_key56,1840
+const char *event_filename = NULL;event_filename57,1870
+const char *event_exe = NULL;event_exe58,1905
+const char *event_comm = NULL;event_comm59,1935
+const char *event_hostname = NULL;event_hostname60,1966
+const char *event_terminal = NULL;event_terminal61,2001
+const char *event_subject = NULL;event_subject62,2036
+const char *event_object = NULL;event_object63,2070
+report_t report_format = RPT_DEFAULT;report_format64,2103
+ilist *event_type;event_type65,2141
+const slist *event_node_list = NULL;event_node_list67,2161
+struct nv_pair {nv_pair69,2199
+    int        value;value70,2216
+    const char *name;name71,2238
+enum { S_EVENT, S_COMM, S_FILENAME, S_ALL_GID, S_EFF_GID, S_GID, S_HELP,S_EVENT75,2265
+enum { S_EVENT, S_COMM, S_FILENAME, S_ALL_GID, S_EFF_GID, S_GID, S_HELP,S_COMM75,2265
+enum { S_EVENT, S_COMM, S_FILENAME, S_ALL_GID, S_EFF_GID, S_GID, S_HELP,S_FILENAME75,2265
+enum { S_EVENT, S_COMM, S_FILENAME, S_ALL_GID, S_EFF_GID, S_GID, S_HELP,S_ALL_GID75,2265
+enum { S_EVENT, S_COMM, S_FILENAME, S_ALL_GID, S_EFF_GID, S_GID, S_HELP,S_EFF_GID75,2265
+enum { S_EVENT, S_COMM, S_FILENAME, S_ALL_GID, S_EFF_GID, S_GID, S_HELP,S_GID75,2265
+enum { S_EVENT, S_COMM, S_FILENAME, S_ALL_GID, S_EFF_GID, S_GID, S_HELP,S_HELP75,2265
+S_HOSTNAME, S_INTERP, S_INFILE, S_MESSAGE_TYPE, S_PID, S_SYSCALL, S_OSUCCESS,S_HOSTNAME76,2338
+S_HOSTNAME, S_INTERP, S_INFILE, S_MESSAGE_TYPE, S_PID, S_SYSCALL, S_OSUCCESS,S_INTERP76,2338
+S_HOSTNAME, S_INTERP, S_INFILE, S_MESSAGE_TYPE, S_PID, S_SYSCALL, S_OSUCCESS,S_INFILE76,2338
+S_HOSTNAME, S_INTERP, S_INFILE, S_MESSAGE_TYPE, S_PID, S_SYSCALL, S_OSUCCESS,S_MESSAGE_TYPE76,2338
+S_HOSTNAME, S_INTERP, S_INFILE, S_MESSAGE_TYPE, S_PID, S_SYSCALL, S_OSUCCESS,S_PID76,2338
+S_HOSTNAME, S_INTERP, S_INFILE, S_MESSAGE_TYPE, S_PID, S_SYSCALL, S_OSUCCESS,S_SYSCALL76,2338
+S_HOSTNAME, S_INTERP, S_INFILE, S_MESSAGE_TYPE, S_PID, S_SYSCALL, S_OSUCCESS,S_OSUCCESS76,2338
+S_TIME_END, S_TIME_START, S_TERMINAL, S_ALL_UID, S_EFF_UID, S_UID, S_LOGINID,S_TIME_END77,2416
+S_TIME_END, S_TIME_START, S_TERMINAL, S_ALL_UID, S_EFF_UID, S_UID, S_LOGINID,S_TIME_START77,2416
+S_TIME_END, S_TIME_START, S_TERMINAL, S_ALL_UID, S_EFF_UID, S_UID, S_LOGINID,S_TERMINAL77,2416
+S_TIME_END, S_TIME_START, S_TERMINAL, S_ALL_UID, S_EFF_UID, S_UID, S_LOGINID,S_ALL_UID77,2416
+S_TIME_END, S_TIME_START, S_TERMINAL, S_ALL_UID, S_EFF_UID, S_UID, S_LOGINID,S_EFF_UID77,2416
+S_TIME_END, S_TIME_START, S_TERMINAL, S_ALL_UID, S_EFF_UID, S_UID, S_LOGINID,S_UID77,2416
+S_TIME_END, S_TIME_START, S_TERMINAL, S_ALL_UID, S_EFF_UID, S_UID, S_LOGINID,S_LOGINID77,2416
+S_VERSION, S_EXACT_MATCH, S_EXECUTABLE, S_CONTEXT, S_SUBJECT, S_OBJECT,S_VERSION78,2494
+S_VERSION, S_EXACT_MATCH, S_EXECUTABLE, S_CONTEXT, S_SUBJECT, S_OBJECT,S_EXACT_MATCH78,2494
+S_VERSION, S_EXACT_MATCH, S_EXECUTABLE, S_CONTEXT, S_SUBJECT, S_OBJECT,S_EXECUTABLE78,2494
+S_VERSION, S_EXACT_MATCH, S_EXECUTABLE, S_CONTEXT, S_SUBJECT, S_OBJECT,S_CONTEXT78,2494
+S_VERSION, S_EXACT_MATCH, S_EXECUTABLE, S_CONTEXT, S_SUBJECT, S_OBJECT,S_SUBJECT78,2494
+S_VERSION, S_EXACT_MATCH, S_EXECUTABLE, S_CONTEXT, S_SUBJECT, S_OBJECT,S_OBJECT78,2494
+S_PPID, S_KEY, S_RAW, S_NODE, S_IN_LOGS, S_JUST_ONE, S_SESSION, S_EXIT,S_PPID79,2566
+S_PPID, S_KEY, S_RAW, S_NODE, S_IN_LOGS, S_JUST_ONE, S_SESSION, S_EXIT,S_KEY79,2566
+S_PPID, S_KEY, S_RAW, S_NODE, S_IN_LOGS, S_JUST_ONE, S_SESSION, S_EXIT,S_RAW79,2566
+S_PPID, S_KEY, S_RAW, S_NODE, S_IN_LOGS, S_JUST_ONE, S_SESSION, S_EXIT,S_NODE79,2566
+S_PPID, S_KEY, S_RAW, S_NODE, S_IN_LOGS, S_JUST_ONE, S_SESSION, S_EXIT,S_IN_LOGS79,2566
+S_PPID, S_KEY, S_RAW, S_NODE, S_IN_LOGS, S_JUST_ONE, S_SESSION, S_EXIT,S_JUST_ONE79,2566
+S_PPID, S_KEY, S_RAW, S_NODE, S_IN_LOGS, S_JUST_ONE, S_SESSION, S_EXIT,S_SESSION79,2566
+S_PPID, S_KEY, S_RAW, S_NODE, S_IN_LOGS, S_JUST_ONE, S_SESSION, S_EXIT,S_EXIT79,2566
+S_LINEBUFFERED };S_LINEBUFFERED80,2638
+static struct nv_pair optiontab[] = {optiontab82,2657
+#define OPTION_NAMES OPTION_NAMES153,4427
+static int audit_lookup_option(const char *name)audit_lookup_option156,4491
+static void usage(void)usage166,4707
+static int convert_str_to_msg(const char *optarg)convert_str_to_msg208,7179
+static int parse_msg(const char *optarg)parse_msg238,7794
+int check_params(int count, char *vars[])check_params264,8308
+
+ausearch-string.c,387
+void slist_create(slist *l)slist_create29,956
+void slist_last(slist *l)slist_last36,1035
+snode *slist_next(slist *l)slist_next49,1224
+void slist_append(slist *l, snode *node)slist_append57,1333
+void slist_clear(slist* l)slist_clear87,1834
+int slist_add_if_uniq(slist *l, const char *str)slist_add_if_uniq106,2187
+void slist_sort_by_hits(slist *l)slist_sort_by_hits128,2543
+
+queue.c,254
+int main(int argc, char *argv[]) {main6,79
+queue *queue_create(void) {queue_create38,725
+void *queue_pop(queue *q) {queue_pop57,1073
+void *queue_push(queue *q, void *datum) {queue_push81,1483
+void queue_destroy(queue *q) {queue_destroy121,2183
+
+auditd-event.c,2924
+struct auditd_consumer_data {auditd_consumer_data46,1401
+    struct daemon_conf *config;config47,1431
+    pthread_mutex_t queue_lock;queue_lock48,1463
+    pthread_cond_t queue_nonempty;queue_nonempty49,1495
+    struct auditd_reply_list *head;head50,1530
+    struct auditd_reply_list *tail;tail51,1566
+    int log_fd;log_fd52,1602
+    FILE *log_file;log_file53,1618
+static struct auditd_consumer_data consumer_data;consumer_data80,2818
+static pthread_t event_thread;event_thread81,2868
+static int fs_space_warning = 0;fs_space_warning82,2899
+static int fs_admin_space_warning = 0;fs_admin_space_warning83,2932
+static int fs_space_left = 1;fs_space_left84,2971
+static int logging_suspended = 0;logging_suspended85,3001
+static const char *SINGLE = "1";SINGLE86,3035
+static const char *HALT = "0";HALT87,3068
+static char *format_buf = NULL;format_buf88,3099
+void shutdown_events(void)shutdown_events91,3133
+int init_event(struct daemon_conf *config)init_event100,3316
+void enqueue_event(struct auditd_reply_list *rep)enqueue_event155,4929
+void enqueue_formatted_event(char *msg, ack_func_type ack_func, void *ack_data, uint32_t sequence_id)enqueue_formatted_event216,6517
+void resume_logging(void)resume_logging254,7632
+static void *event_thread_main(void *arg) event_thread_main263,7830
+static unsigned int count = 0L;count313,9165
+static void handle_event(struct auditd_consumer_data *data)handle_event314,9197
+static void send_ack(struct auditd_consumer_data *data, int ack_type,send_ack373,10687
+static void write_to_log(const char *buf, struct auditd_consumer_data *data)write_to_log387,11076
+static void check_log_file_size(int lfd, struct auditd_consumer_data *data)check_log_file_size433,12333
+static void check_space_left(int lfd, struct daemon_conf *config)check_space_left482,13597
+static void do_space_left_action(struct daemon_conf *config, int admin)do_space_left_action526,14902
+static void do_disk_full_action(struct daemon_conf *config)do_disk_full_action585,16557
+static void do_disk_error_action(const char * func, struct daemon_conf *config, int err)do_disk_error_action617,17501
+static void rotate_logs_now(struct auditd_consumer_data *data)rotate_logs_now656,18580
+static void check_excess_logs(struct auditd_consumer_data *data)check_excess_logs667,18866
+static void rotate_logs(struct auditd_consumer_data *data, rotate_logs700,19656
+static int last_log = 1;last_log795,22422
+static void shift_logs(struct auditd_consumer_data *data)shift_logs796,22447
+static int open_audit_log(struct auditd_consumer_data *data)open_audit_log844,23759
+static void change_runlevel(const char *level)change_runlevel932,25917
+static void safe_exec(const char *exe)safe_exec955,26390
+static char *format_raw(const struct audit_reply *rep, format_raw987,27041
+static void reconfigure(struct auditd_consumer_data *data)reconfigure1043,28614
+
+ausearch-lookup.h,47
+#define AULOOKUP_HEADERAULOOKUP_HEADER25,900
+
+mt/Makefile,9342
+pkgdatadir = $(datadir)/auditpkgdatadir43,1663
+pkgincludedir = $(includedir)/auditpkgincludedir44,1693
+pkglibdir = $(libdir)/auditpkglibdir45,1729
+pkglibexecdir = $(libexecdir)/auditpkglibexecdir46,1757
+am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cdam__cd47,1793
+install_sh_DATA = $(install_sh) -c -m 644install_sh_DATA48,1852
+install_sh_PROGRAM = $(install_sh) -cinstall_sh_PROGRAM49,1894
+install_sh_SCRIPT = $(install_sh) -cinstall_sh_SCRIPT50,1932
+INSTALL_HEADER = $(INSTALL_DATA)INSTALL_HEADER51,1969
+transform = $(program_transform_name)transform52,2002
+NORMAL_INSTALL = :NORMAL_INSTALL53,2040
+PRE_INSTALL = :PRE_INSTALL54,2059
+POST_INSTALL = :POST_INSTALL55,2075
+NORMAL_UNINSTALL = :NORMAL_UNINSTALL56,2092
+PRE_UNINSTALL = :PRE_UNINSTALL57,2113
+POST_UNINSTALL = :POST_UNINSTALL58,2131
+build_triplet = x86_64-unknown-linux-gnubuild_triplet59,2150
+host_triplet = x86_64-unknown-linux-gnuhost_triplet60,2191
+target_triplet = x86_64-unknown-linux-gnutarget_triplet61,2231
+subdir = src/mtsubdir62,2273
+DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.inDIST_COMMON63,2289
+ACLOCAL_M4 = $(top_srcdir)/aclocal.m4ACLOCAL_M464,2347
+am__aclocal_m4_deps = $(top_srcdir)/src/libev/libev.m4 \am__aclocal_m4_deps65,2385
+am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \am__configure_deps67,2470
+mkinstalldirs = $(install_sh) -dmkinstalldirs69,2557
+CONFIG_HEADER = $(top_builddir)/config.hCONFIG_HEADER70,2590
+CONFIG_CLEAN_VPATH_FILES =CONFIG_CLEAN_VPATH_FILES71,2631
+LIBRARIES = $(noinst_LIBRARIES)LIBRARIES72,2658
+ARFLAGS = cruARFLAGS73,2690
+libauditmt_a_AR = $(AR) $(ARFLAGS)libauditmt_a_AR74,2704
+libauditmt_a_LIBADD =libauditmt_a_LIBADD75,2739
+am_libauditmt_a_OBJECTS = libaudit.$(OBJEXT) message.$(OBJEXT) \am_libauditmt_a_OBJECTS76,2761
+libauditmt_a_OBJECTS = $(am_libauditmt_a_OBJECTS)libauditmt_a_OBJECTS79,2916
+DEFAULT_INCLUDES = -I. -I$(top_builddir)DEFAULT_INCLUDES80,2966
+depcomp =depcomp81,3007
+am__depfiles_maybe =am__depfiles_maybe82,3017
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \COMPILE83,3038
+LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \LTCOMPILE85,3147
+CCLD = $(CC)CCLD88,3331
+LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \LINK89,3344
+SOURCES = $(libauditmt_a_SOURCES)SOURCES92,3486
+DIST_SOURCES = $(libauditmt_a_SOURCES)DIST_SOURCES93,3520
+ETAGS = etagsETAGS94,3559
+CTAGS = ctagsCTAGS95,3573
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)DISTFILES96,3587
+ACLOCAL = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run aclocal-1.11ACLOCAL97,3656
+AMTAR = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run tarAMTAR98,3758
+AR = arAR99,3849
+AUTOCONF = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoconfAUTOCONF100,3857
+AUTOHEADER = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoheaderAUTOHEADER101,3956
+AUTOMAKE = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run automake-1.11AUTOMAKE102,4059
+AWK = gawkAWK103,4163
+CC = gccCC104,4174
+CCDEPMODE = depmode=gcc3CCDEPMODE105,4183
+CFLAGS = -pgCFLAGS106,4208
+CPP = gcc -ECPP107,4221
+CPPFLAGS = CPPFLAGS108,4234
+CYGPATH_W = echoCYGPATH_W109,4246
+DEBUG = -DNDEBUGDEBUG110,4263
+DEFS = -DHAVE_CONFIG_HDEFS111,4280
+DEPDIR = .depsDEPDIR112,4303
+DLLTOOL = falseDLLTOOL113,4318
+DSYMUTIL = DSYMUTIL114,4334
+DUMPBIN = DUMPBIN115,4346
+ECHO_C = ECHO_C116,4357
+ECHO_N = -nECHO_N117,4367
+ECHO_T = ECHO_T118,4379
+EGREP = /bin/grep -EEGREP119,4389
+EXEEXT = EXEEXT120,4410
+FGREP = /bin/grep -FFGREP121,4420
+GREP = /bin/grepGREP122,4441
+INSTALL = /bin/install -cINSTALL123,4458
+INSTALL_DATA = ${INSTALL} -m 644INSTALL_DATA124,4484
+INSTALL_PROGRAM = ${INSTALL}INSTALL_PROGRAM125,4517
+INSTALL_SCRIPT = ${INSTALL}INSTALL_SCRIPT126,4546
+INSTALL_STRIP_PROGRAM = $(install_sh) -c -sINSTALL_STRIP_PROGRAM127,4574
+LD = /usr/bin/ld -m elf_x86_64LD128,4618
+LDFLAGS = LDFLAGS129,4649
+LIBOBJS = LIBOBJS130,4660
+LIBPRELUDE_CFLAGS = LIBPRELUDE_CFLAGS131,4671
+LIBPRELUDE_LDFLAGS = LIBPRELUDE_LDFLAGS132,4692
+LIBS = LIBS133,4714
+LIBTOOL = $(SHELL) $(top_builddir)/libtoolLIBTOOL134,4722
+LIBTOOL_DEPS = ./ltmain.shLIBTOOL_DEPS135,4765
+LIBWRAP_LIBS = -lwrap -lnslLIBWRAP_LIBS136,4792
+LIPO = LIPO137,4820
+LN_S = ln -sLN_S138,4828
+LTLIBOBJS = LTLIBOBJS139,4841
+MAKEINFO = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run makeinfoMAKEINFO140,4854
+MANIFEST_TOOL = :MANIFEST_TOOL141,4953
+MKDIR_P = /bin/mkdir -pMKDIR_P142,4971
+NM = /usr/bin/nm -BNM143,4995
+NMEDIT = NMEDIT144,5015
+OBJDUMP = objdumpOBJDUMP145,5025
+OBJEXT = oOBJEXT146,5043
+OTOOL = OTOOL147,5054
+OTOOL64 = OTOOL64148,5063
+PACKAGE = auditPACKAGE149,5074
+PACKAGE_BUGREPORT = PACKAGE_BUGREPORT150,5090
+PACKAGE_NAME = auditPACKAGE_NAME151,5111
+PACKAGE_STRING = audit 2.1.3PACKAGE_STRING152,5132
+PACKAGE_TARNAME = auditPACKAGE_TARNAME153,5161
+PACKAGE_URL = PACKAGE_URL154,5185
+PACKAGE_VERSION = 2.1.3PACKAGE_VERSION155,5200
+PATH_SEPARATOR = :PATH_SEPARATOR156,5224
+PYTHON = /usr/bin/pythonPYTHON157,5243
+PYTHON_EXEC_PREFIX = ${exec_prefix}PYTHON_EXEC_PREFIX158,5268
+PYTHON_PLATFORM = linux2PYTHON_PLATFORM159,5304
+PYTHON_PREFIX = ${prefix}PYTHON_PREFIX160,5329
+PYTHON_VERSION = 3.1PYTHON_VERSION161,5355
+RANLIB = ranlibRANLIB162,5376
+SED = /bin/sedSED163,5392
+SET_MAKE = SET_MAKE164,5407
+SHELL = /bin/shSHELL165,5419
+STRIP = stripSTRIP166,5435
+VERSION = 2.1.3VERSION167,5449
+abs_builddir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/src/mtabs_builddir168,5465
+abs_srcdir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/src/mtabs_srcdir169,5543
+abs_top_builddir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunkabs_top_builddir170,5619
+abs_top_srcdir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunkabs_top_srcdir171,5694
+ac_ct_AR = arac_ct_AR172,5767
+ac_ct_CC = gccac_ct_CC173,5781
+ac_ct_DUMPBIN = ac_ct_DUMPBIN174,5796
+am__include = includeam__include175,5813
+am__leading_dot = .am__leading_dot176,5835
+am__quote = am__quote177,5855
+am__tar = ${AMTAR} chof - "$$tardir"am__tar178,5868
+am__untar = ${AMTAR} xf -am__untar179,5905
+bindir = ${exec_prefix}/binbindir180,5931
+build = x86_64-unknown-linux-gnubuild181,5959
+build_alias = build_alias182,5992
+build_cpu = x86_64build_cpu183,6007
+build_os = linux-gnubuild_os184,6026
+build_vendor = unknownbuild_vendor185,6047
+builddir = .builddir186,6070
+datadir = ${datarootdir}datadir187,6083
+datarootdir = ${prefix}/sharedatarootdir188,6108
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}docdir189,6138
+dvidir = ${docdir}dvidir190,6185
+exec_prefix = ${prefix}exec_prefix191,6204
+gss_libs = gss_libs192,6228
+host = x86_64-unknown-linux-gnuhost193,6240
+host_alias = host_alias194,6272
+host_cpu = x86_64host_cpu195,6286
+host_os = linux-gnuhost_os196,6304
+host_vendor = unknownhost_vendor197,6324
+htmldir = ${docdir}htmldir198,6346
+includedir = ${prefix}/includeincludedir199,6366
+infodir = ${datarootdir}/infoinfodir200,6397
+install_sh = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/install-shinstall_sh201,6427
+libdir = ${exec_prefix}/liblibdir202,6516
+libev_LIBS = -lm libev_LIBS203,6544
+libexecdir = ${exec_prefix}/libexeclibexecdir204,6562
+localedir = ${datarootdir}/localelocaledir205,6598
+localstatedir = ${prefix}/varlocalstatedir206,6632
+mandir = ${datarootdir}/manmandir207,6662
+mkdir_p = /bin/mkdir -pmkdir_p208,6690
+oldincludedir = /usr/includeoldincludedir209,6714
+pdfdir = ${docdir}pdfdir210,6743
+pkgpyexecdir = ${pyexecdir}/auditpkgpyexecdir211,6762
+pkgpythondir = ${pythondir}/auditpkgpythondir212,6796
+prefix = /usr/localprefix213,6830
+program_transform_name = s,x,x,program_transform_name214,6850
+psdir = ${docdir}psdir215,6882
+pyexecdir = ${exec_prefix}/lib/python3.1/site-packagespyexecdir216,6900
+pythondir = ${prefix}/lib/python3.1/site-packagespythondir217,6955
+sbindir = /sbinsbindir218,7005
+sharedstatedir = ${prefix}/comsharedstatedir219,7021
+srcdir = .srcdir220,7052
+sysconfdir = ${prefix}/etcsysconfdir221,7063
+target = x86_64-unknown-linux-gnutarget222,7090
+target_alias = target_alias223,7124
+target_cpu = x86_64target_cpu224,7140
+target_os = linux-gnutarget_os225,7160
+target_vendor = unknowntarget_vendor226,7182
+top_build_prefix = ../../top_build_prefix227,7206
+top_builddir = ../..top_builddir228,7232
+top_srcdir = ../..top_srcdir229,7253
+AUTOMAKE_OPTIONS = no-dependenciesAUTOMAKE_OPTIONS230,7272
+INCLUDES = -I${top_srcdir}/lib -I${top_builddir}/libINCLUDES231,7307
+CONFIG_CLEAN_FILES = *.rej *.origCONFIG_CLEAN_FILES232,7360
+AM_CFLAGS = -fPIC -DPIC -D_REENTRANT -D_GNU_SOURCEAM_CFLAGS233,7394
+noinst_LIBRARIES = libauditmt.anoinst_LIBRARIES234,7445
+libauditmt_a_SOURCES = ${top_srcdir}/lib/libaudit.c \libauditmt_a_SOURCES235,7477
+libauditmt_a_DEPENDENCIES = $(libaudit_a_SOURCES) ${top_builddir}/config.h \libauditmt_a_DEPENDENCIES240,7693
+AM_LDFLAGS = -Wl,-z,relroAM_LDFLAGS250,8284
+lib_OBJECTS = $(libauditmt_a_OBJECTS)lib_OBJECTS251,8310
+
+aureport-scan.c,549
+summary_data sd;sd39,1264
+void reset_counters(void)reset_counters42,1321
+void destroy_counters(void)destroy_counters73,2014
+int classify_success(const llist *l)classify_success104,2720
+int classify_conf(const llist *l)classify_conf118,3167
+int scan(llist *l)scan194,4667
+int per_event_processing(llist *l)per_event_processing231,5402
+static int per_event_summary(llist *l)per_event_summary251,5660
+static int per_event_detailed(llist *l)per_event_detailed459,10221
+static void do_summary_total(llist *l)do_summary_total707,15539
+
+auditd-reconfig.c,375
+static pthread_t config_thread;config_thread37,1164
+static pthread_mutex_t config_lock;config_lock38,1196
+void init_config_manager(void)init_config_manager41,1277
+int start_config_manager(struct auditd_reply_list *rep)start_config_manager47,1409
+void shutdown_config(void)shutdown_config77,2173
+static void *config_thread_main(void *arg)config_thread_main82,2244
+
+test/ilist_test.c,25
+int main(void)main4,46
+
+test/Makefile,8983
+pkgdatadir = $(datadir)/auditpkgdatadir39,1546
+pkgincludedir = $(includedir)/auditpkgincludedir40,1576
+pkglibdir = $(libdir)/auditpkglibdir41,1612
+pkglibexecdir = $(libexecdir)/auditpkglibexecdir42,1640
+am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cdam__cd43,1676
+install_sh_DATA = $(install_sh) -c -m 644install_sh_DATA44,1735
+install_sh_PROGRAM = $(install_sh) -cinstall_sh_PROGRAM45,1777
+install_sh_SCRIPT = $(install_sh) -cinstall_sh_SCRIPT46,1815
+INSTALL_HEADER = $(INSTALL_DATA)INSTALL_HEADER47,1852
+transform = $(program_transform_name)transform48,1885
+NORMAL_INSTALL = :NORMAL_INSTALL49,1923
+PRE_INSTALL = :PRE_INSTALL50,1942
+POST_INSTALL = :POST_INSTALL51,1958
+NORMAL_UNINSTALL = :NORMAL_UNINSTALL52,1975
+PRE_UNINSTALL = :PRE_UNINSTALL53,1996
+POST_UNINSTALL = :POST_UNINSTALL54,2014
+build_triplet = x86_64-unknown-linux-gnubuild_triplet55,2033
+host_triplet = x86_64-unknown-linux-gnuhost_triplet56,2074
+target_triplet = x86_64-unknown-linux-gnutarget_triplet57,2114
+check_PROGRAMS = ilist_test$(EXEEXT)check_PROGRAMS58,2156
+subdir = src/testsubdir59,2193
+DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.inDIST_COMMON60,2211
+ACLOCAL_M4 = $(top_srcdir)/aclocal.m4ACLOCAL_M461,2269
+am__aclocal_m4_deps = $(top_srcdir)/src/libev/libev.m4 \am__aclocal_m4_deps62,2307
+am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \am__configure_deps64,2392
+mkinstalldirs = $(install_sh) -dmkinstalldirs66,2479
+CONFIG_HEADER = $(top_builddir)/config.hCONFIG_HEADER67,2512
+CONFIG_CLEAN_FILES =CONFIG_CLEAN_FILES68,2553
+CONFIG_CLEAN_VPATH_FILES =CONFIG_CLEAN_VPATH_FILES69,2574
+ilist_test_SOURCES = ilist_test.cilist_test_SOURCES70,2601
+ilist_test_OBJECTS = ilist_test.$(OBJEXT)ilist_test_OBJECTS71,2635
+ilist_test_DEPENDENCIES = ${top_builddir}/src/ausearch-int.oilist_test_DEPENDENCIES72,2677
+DEFAULT_INCLUDES = -I. -I$(top_builddir)DEFAULT_INCLUDES73,2738
+depcomp = $(SHELL) $(top_srcdir)/depcompdepcomp74,2779
+am__depfiles_maybe = depfilesam__depfiles_maybe75,2820
+am__mv = mv -fam__mv76,2850
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \COMPILE77,2865
+LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \LTCOMPILE79,2974
+CCLD = $(CC)CCLD82,3158
+LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \LINK83,3171
+SOURCES = ilist_test.cSOURCES86,3313
+DIST_SOURCES = ilist_test.cDIST_SOURCES87,3336
+ETAGS = etagsETAGS88,3364
+CTAGS = ctagsCTAGS89,3378
+am__tty_colors = \am__tty_colors90,3392
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)DISTFILES92,3440
+ACLOCAL = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run aclocal-1.11ACLOCAL93,3509
+AMTAR = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run tarAMTAR94,3611
+AR = arAR95,3702
+AUTOCONF = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoconfAUTOCONF96,3710
+AUTOHEADER = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoheaderAUTOHEADER97,3809
+AUTOMAKE = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run automake-1.11AUTOMAKE98,3912
+AWK = gawkAWK99,4016
+CC = gccCC100,4027
+CCDEPMODE = depmode=gcc3CCDEPMODE101,4036
+CFLAGS = -pgCFLAGS102,4061
+CPP = gcc -ECPP103,4074
+CPPFLAGS = CPPFLAGS104,4087
+CYGPATH_W = echoCYGPATH_W105,4099
+DEBUG = -DNDEBUGDEBUG106,4116
+DEFS = -DHAVE_CONFIG_HDEFS107,4133
+DEPDIR = .depsDEPDIR108,4156
+DLLTOOL = falseDLLTOOL109,4171
+DSYMUTIL = DSYMUTIL110,4187
+DUMPBIN = DUMPBIN111,4199
+ECHO_C = ECHO_C112,4210
+ECHO_N = -nECHO_N113,4220
+ECHO_T = ECHO_T114,4232
+EGREP = /bin/grep -EEGREP115,4242
+EXEEXT = EXEEXT116,4263
+FGREP = /bin/grep -FFGREP117,4273
+GREP = /bin/grepGREP118,4294
+INSTALL = /bin/install -cINSTALL119,4311
+INSTALL_DATA = ${INSTALL} -m 644INSTALL_DATA120,4337
+INSTALL_PROGRAM = ${INSTALL}INSTALL_PROGRAM121,4370
+INSTALL_SCRIPT = ${INSTALL}INSTALL_SCRIPT122,4399
+INSTALL_STRIP_PROGRAM = $(install_sh) -c -sINSTALL_STRIP_PROGRAM123,4427
+LD = /usr/bin/ld -m elf_x86_64LD124,4471
+LDFLAGS = LDFLAGS125,4502
+LIBOBJS = LIBOBJS126,4513
+LIBPRELUDE_CFLAGS = LIBPRELUDE_CFLAGS127,4524
+LIBPRELUDE_LDFLAGS = LIBPRELUDE_LDFLAGS128,4545
+LIBS = LIBS129,4567
+LIBTOOL = $(SHELL) $(top_builddir)/libtoolLIBTOOL130,4575
+LIBTOOL_DEPS = ./ltmain.shLIBTOOL_DEPS131,4618
+LIBWRAP_LIBS = -lwrap -lnslLIBWRAP_LIBS132,4645
+LIPO = LIPO133,4673
+LN_S = ln -sLN_S134,4681
+LTLIBOBJS = LTLIBOBJS135,4694
+MAKEINFO = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run makeinfoMAKEINFO136,4707
+MANIFEST_TOOL = :MANIFEST_TOOL137,4806
+MKDIR_P = /bin/mkdir -pMKDIR_P138,4824
+NM = /usr/bin/nm -BNM139,4848
+NMEDIT = NMEDIT140,4868
+OBJDUMP = objdumpOBJDUMP141,4878
+OBJEXT = oOBJEXT142,4896
+OTOOL = OTOOL143,4907
+OTOOL64 = OTOOL64144,4916
+PACKAGE = auditPACKAGE145,4927
+PACKAGE_BUGREPORT = PACKAGE_BUGREPORT146,4943
+PACKAGE_NAME = auditPACKAGE_NAME147,4964
+PACKAGE_STRING = audit 2.1.3PACKAGE_STRING148,4985
+PACKAGE_TARNAME = auditPACKAGE_TARNAME149,5014
+PACKAGE_URL = PACKAGE_URL150,5038
+PACKAGE_VERSION = 2.1.3PACKAGE_VERSION151,5053
+PATH_SEPARATOR = :PATH_SEPARATOR152,5077
+PYTHON = /usr/bin/pythonPYTHON153,5096
+PYTHON_EXEC_PREFIX = ${exec_prefix}PYTHON_EXEC_PREFIX154,5121
+PYTHON_PLATFORM = linux2PYTHON_PLATFORM155,5157
+PYTHON_PREFIX = ${prefix}PYTHON_PREFIX156,5182
+PYTHON_VERSION = 3.1PYTHON_VERSION157,5208
+RANLIB = ranlibRANLIB158,5229
+SED = /bin/sedSED159,5245
+SET_MAKE = SET_MAKE160,5260
+SHELL = /bin/shSHELL161,5272
+STRIP = stripSTRIP162,5288
+VERSION = 2.1.3VERSION163,5302
+abs_builddir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/src/testabs_builddir164,5318
+abs_srcdir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/src/testabs_srcdir165,5398
+abs_top_builddir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunkabs_top_builddir166,5476
+abs_top_srcdir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunkabs_top_srcdir167,5551
+ac_ct_AR = arac_ct_AR168,5624
+ac_ct_CC = gccac_ct_CC169,5638
+ac_ct_DUMPBIN = ac_ct_DUMPBIN170,5653
+am__include = includeam__include171,5670
+am__leading_dot = .am__leading_dot172,5692
+am__quote = am__quote173,5712
+am__tar = ${AMTAR} chof - "$$tardir"am__tar174,5725
+am__untar = ${AMTAR} xf -am__untar175,5762
+bindir = ${exec_prefix}/binbindir176,5788
+build = x86_64-unknown-linux-gnubuild177,5816
+build_alias = build_alias178,5849
+build_cpu = x86_64build_cpu179,5864
+build_os = linux-gnubuild_os180,5883
+build_vendor = unknownbuild_vendor181,5904
+builddir = .builddir182,5927
+datadir = ${datarootdir}datadir183,5940
+datarootdir = ${prefix}/sharedatarootdir184,5965
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}docdir185,5995
+dvidir = ${docdir}dvidir186,6042
+exec_prefix = ${prefix}exec_prefix187,6061
+gss_libs = gss_libs188,6085
+host = x86_64-unknown-linux-gnuhost189,6097
+host_alias = host_alias190,6129
+host_cpu = x86_64host_cpu191,6143
+host_os = linux-gnuhost_os192,6161
+host_vendor = unknownhost_vendor193,6181
+htmldir = ${docdir}htmldir194,6203
+includedir = ${prefix}/includeincludedir195,6223
+infodir = ${datarootdir}/infoinfodir196,6254
+install_sh = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/install-shinstall_sh197,6284
+libdir = ${exec_prefix}/liblibdir198,6373
+libev_LIBS = -lm libev_LIBS199,6401
+libexecdir = ${exec_prefix}/libexeclibexecdir200,6419
+localedir = ${datarootdir}/localelocaledir201,6455
+localstatedir = ${prefix}/varlocalstatedir202,6489
+mandir = ${datarootdir}/manmandir203,6519
+mkdir_p = /bin/mkdir -pmkdir_p204,6547
+oldincludedir = /usr/includeoldincludedir205,6571
+pdfdir = ${docdir}pdfdir206,6600
+pkgpyexecdir = ${pyexecdir}/auditpkgpyexecdir207,6619
+pkgpythondir = ${pythondir}/auditpkgpythondir208,6653
+prefix = /usr/localprefix209,6687
+program_transform_name = s,x,x,program_transform_name210,6707
+psdir = ${docdir}psdir211,6739
+pyexecdir = ${exec_prefix}/lib/python3.1/site-packagespyexecdir212,6757
+pythondir = ${prefix}/lib/python3.1/site-packagespythondir213,6812
+sbindir = /sbinsbindir214,6862
+sharedstatedir = ${prefix}/comsharedstatedir215,6878
+srcdir = .srcdir216,6909
+sysconfdir = ${prefix}/etcsysconfdir217,6920
+target = x86_64-unknown-linux-gnutarget218,6947
+target_alias = target_alias219,6981
+target_cpu = x86_64target_cpu220,6997
+target_os = linux-gnutarget_os221,7017
+target_vendor = unknowntarget_vendor222,7039
+top_build_prefix = ../../top_build_prefix223,7063
+top_builddir = ../..top_builddir224,7089
+top_srcdir = ../..top_srcdir225,7110
+INCLUDES = -I${top_srcdir} -I${top_srcdir}/lib -I${top_srcdir}/srcINCLUDES226,7129
+TESTS = $(check_PROGRAMS)TESTS227,7196
+ilist_test_LDADD = ${top_builddir}/src/ausearch-int.oilist_test_LDADD228,7222
+
+libev/ev_wrap.h,5190
+#define EV_WRAP_HEV_WRAP_H3,79
+#define now_floor now_floor4,97
+#define mn_now mn_now5,135
+#define rtmn_diff rtmn_diff6,167
+#define io_blocktime io_blocktime7,205
+#define timeout_blocktime timeout_blocktime8,249
+#define backend backend9,303
+#define activecnt activecnt10,337
+#define loop_count loop_count11,375
+#define backend_fd backend_fd12,415
+#define backend_fudge backend_fudge13,455
+#define backend_modify backend_modify14,501
+#define backend_poll backend_poll15,549
+#define evfd evfd16,593
+#define evpipe evpipe17,621
+#define pipeev pipeev18,653
+#define curpid curpid19,685
+#define postfork postfork20,717
+#define vec_ri vec_ri21,753
+#define vec_ro vec_ro22,785
+#define vec_wi vec_wi23,817
+#define vec_wo vec_wo24,849
+#define vec_eo vec_eo25,881
+#define vec_max vec_max26,913
+#define polls polls27,947
+#define pollmax pollmax28,977
+#define pollcnt pollcnt29,1011
+#define pollidxs pollidxs30,1045
+#define pollidxmax pollidxmax31,1081
+#define epoll_events epoll_events32,1121
+#define epoll_eventmax epoll_eventmax33,1165
+#define kqueue_changes kqueue_changes34,1213
+#define kqueue_changemax kqueue_changemax35,1261
+#define kqueue_changecnt kqueue_changecnt36,1313
+#define kqueue_events kqueue_events37,1365
+#define kqueue_eventmax kqueue_eventmax38,1411
+#define port_events port_events39,1461
+#define port_eventmax port_eventmax40,1503
+#define anfds anfds41,1549
+#define anfdmax anfdmax42,1579
+#define pendings pendings43,1613
+#define pendingmax pendingmax44,1649
+#define pendingcnt pendingcnt45,1689
+#define fdchanges fdchanges46,1729
+#define fdchangemax fdchangemax47,1767
+#define fdchangecnt fdchangecnt48,1809
+#define timers timers49,1851
+#define timermax timermax50,1883
+#define timercnt timercnt51,1919
+#define periodics periodics52,1955
+#define periodicmax periodicmax53,1993
+#define periodiccnt periodiccnt54,2035
+#define idles idles55,2077
+#define idlemax idlemax56,2107
+#define idlecnt idlecnt57,2141
+#define idleall idleall58,2175
+#define prepares prepares59,2209
+#define preparemax preparemax60,2245
+#define preparecnt preparecnt61,2285
+#define checks checks62,2325
+#define checkmax checkmax63,2357
+#define checkcnt checkcnt64,2393
+#define forks forks65,2429
+#define forkmax forkmax66,2459
+#define forkcnt forkcnt67,2493
+#define gotasync gotasync68,2527
+#define asyncs asyncs69,2563
+#define asyncmax asyncmax70,2595
+#define asynccnt asynccnt71,2631
+#define fs_fd fs_fd72,2667
+#define fs_w fs_w73,2697
+#define fs_2625 fs_262574,2725
+#define fs_hash fs_hash75,2759
+#undef EV_WRAP_HEV_WRAP_H77,2799
+#undef now_floornow_floor78,2816
+#undef mn_nowmn_now79,2833
+#undef rtmn_diffrtmn_diff80,2847
+#undef io_blocktimeio_blocktime81,2864
+#undef timeout_blocktimetimeout_blocktime82,2884
+#undef backendbackend83,2909
+#undef activecntactivecnt84,2924
+#undef loop_countloop_count85,2941
+#undef backend_fdbackend_fd86,2959
+#undef backend_fudgebackend_fudge87,2977
+#undef backend_modifybackend_modify88,2998
+#undef backend_pollbackend_poll89,3020
+#undef evfdevfd90,3040
+#undef evpipeevpipe91,3052
+#undef pipeevpipeev92,3066
+#undef curpidcurpid93,3080
+#undef postforkpostfork94,3094
+#undef vec_rivec_ri95,3110
+#undef vec_rovec_ro96,3124
+#undef vec_wivec_wi97,3138
+#undef vec_wovec_wo98,3152
+#undef vec_eovec_eo99,3166
+#undef vec_maxvec_max100,3180
+#undef pollspolls101,3195
+#undef pollmaxpollmax102,3208
+#undef pollcntpollcnt103,3223
+#undef pollidxspollidxs104,3238
+#undef pollidxmaxpollidxmax105,3254
+#undef epoll_eventsepoll_events106,3272
+#undef epoll_eventmaxepoll_eventmax107,3292
+#undef kqueue_changeskqueue_changes108,3314
+#undef kqueue_changemaxkqueue_changemax109,3336
+#undef kqueue_changecntkqueue_changecnt110,3360
+#undef kqueue_eventskqueue_events111,3384
+#undef kqueue_eventmaxkqueue_eventmax112,3405
+#undef port_eventsport_events113,3428
+#undef port_eventmaxport_eventmax114,3447
+#undef anfdsanfds115,3468
+#undef anfdmaxanfdmax116,3481
+#undef pendingspendings117,3496
+#undef pendingmaxpendingmax118,3512
+#undef pendingcntpendingcnt119,3530
+#undef fdchangesfdchanges120,3548
+#undef fdchangemaxfdchangemax121,3565
+#undef fdchangecntfdchangecnt122,3584
+#undef timerstimers123,3603
+#undef timermaxtimermax124,3617
+#undef timercnttimercnt125,3633
+#undef periodicsperiodics126,3649
+#undef periodicmaxperiodicmax127,3666
+#undef periodiccntperiodiccnt128,3685
+#undef idlesidles129,3704
+#undef idlemaxidlemax130,3717
+#undef idlecntidlecnt131,3732
+#undef idleallidleall132,3747
+#undef preparesprepares133,3762
+#undef preparemaxpreparemax134,3778
+#undef preparecntpreparecnt135,3796
+#undef checkschecks136,3814
+#undef checkmaxcheckmax137,3828
+#undef checkcntcheckcnt138,3844
+#undef forksforks139,3860
+#undef forkmaxforkmax140,3873
+#undef forkcntforkcnt141,3888
+#undef gotasyncgotasync142,3903
+#undef asyncsasyncs143,3919
+#undef asyncmaxasyncmax144,3933
+#undef asynccntasynccnt145,3949
+#undef fs_fdfs_fd146,3965
+#undef fs_wfs_w147,3978
+#undef fs_2625fs_2625148,3990
+#undef fs_hashfs_hash149,4005
+
+libev/ev_vars.h,53
+#define VARx(VARx40,2097
+#undef VARxVARx163,5066
+
+libev/ev.c,14224
+#   define EV_USE_CLOCK_SYSCALL EV_USE_CLOCK_SYSCALL54,2371
+#    define EV_USE_REALTIME EV_USE_REALTIME56,2432
+#    define EV_USE_MONOTONIC EV_USE_MONOTONIC59,2501
+#   define EV_USE_MONOTONIC EV_USE_MONOTONIC66,2611
+#   define EV_USE_REALTIME EV_USE_REALTIME69,2676
+#   define EV_USE_MONOTONIC EV_USE_MONOTONIC73,2749
+#   define EV_USE_REALTIME EV_USE_REALTIME76,2814
+#   define EV_USE_NANOSLEEP EV_USE_NANOSLEEP82,2909
+#   define EV_USE_NANOSLEEP EV_USE_NANOSLEEP84,2947
+#   define EV_USE_SELECT EV_USE_SELECT90,3057
+#   define EV_USE_SELECT EV_USE_SELECT92,3092
+#   define EV_USE_POLL EV_USE_POLL98,3189
+#   define EV_USE_POLL EV_USE_POLL100,3222
+#   define EV_USE_EPOLL EV_USE_EPOLL106,3331
+#   define EV_USE_EPOLL EV_USE_EPOLL108,3365
+#   define EV_USE_KQUEUE EV_USE_KQUEUE114,3493
+#   define EV_USE_KQUEUE EV_USE_KQUEUE116,3528
+#   define EV_USE_PORT EV_USE_PORT122,3635
+#   define EV_USE_PORT EV_USE_PORT124,3668
+#   define EV_USE_INOTIFY EV_USE_INOTIFY130,3781
+#   define EV_USE_INOTIFY EV_USE_INOTIFY132,3817
+#   define EV_USE_EVENTFD EV_USE_EVENTFD138,3906
+#   define EV_USE_EVENTFD EV_USE_EVENTFD140,3942
+# define WIN32_LEAN_AND_MEANWIN32_LEAN_AND_MEAN172,4360
+#  define EV_SELECT_IS_WINSOCKET EV_SELECT_IS_WINSOCKET175,4443
+#  define EV_USE_CLOCK_SYSCALL EV_USE_CLOCK_SYSCALL183,4643
+#  define EV_USE_CLOCK_SYSCALL EV_USE_CLOCK_SYSCALL185,4683
+#  define EV_USE_MONOTONIC EV_USE_MONOTONIC191,4826
+#  define EV_USE_MONOTONIC EV_USE_MONOTONIC193,4862
+# define EV_USE_REALTIME EV_USE_REALTIME198,4931
+#  define EV_USE_NANOSLEEP EV_USE_NANOSLEEP203,5043
+#  define EV_USE_NANOSLEEP EV_USE_NANOSLEEP205,5079
+# define EV_USE_SELECT EV_USE_SELECT210,5146
+#  define EV_USE_POLL EV_USE_POLL215,5214
+#  define EV_USE_POLL EV_USE_POLL217,5245
+#  define EV_USE_EPOLL EV_USE_EPOLL223,5382
+#  define EV_USE_EPOLL EV_USE_EPOLL225,5414
+# define EV_USE_KQUEUE EV_USE_KQUEUE230,5477
+# define EV_USE_PORT EV_USE_PORT234,5530
+#  define EV_USE_INOTIFY EV_USE_INOTIFY239,5660
+#  define EV_USE_INOTIFY EV_USE_INOTIFY241,5694
+#  define EV_PID_HASHSIZE EV_PID_HASHSIZE247,5777
+#  define EV_PID_HASHSIZE EV_PID_HASHSIZE249,5812
+#  define EV_INOTIFY_HASHSIZE EV_INOTIFY_HASHSIZE255,5901
+#  define EV_INOTIFY_HASHSIZE EV_INOTIFY_HASHSIZE257,5940
+#  define EV_USE_EVENTFD EV_USE_EVENTFD263,6088
+#  define EV_USE_EVENTFD EV_USE_EVENTFD265,6122
+# define EV_VERIFY EV_VERIFY276,6286
+# define EV_USE_4HEAP EV_USE_4HEAP280,6346
+# define EV_HEAP_CACHE_AT EV_HEAP_CACHE_AT284,6413
+# undef EV_USE_MONOTONICEV_USE_MONOTONIC290,6572
+# define EV_USE_MONOTONIC EV_USE_MONOTONIC291,6597
+# undef EV_USE_REALTIMEEV_USE_REALTIME295,6656
+# define EV_USE_REALTIME EV_USE_REALTIME296,6680
+# undef EV_USE_INOTIFYEV_USE_INOTIFY300,6735
+# define EV_USE_INOTIFY EV_USE_INOTIFY301,6758
+#  undef EV_USE_INOTIFYEV_USE_INOTIFY316,7056
+#  define EV_USE_INOTIFY EV_USE_INOTIFY317,7080
+# define clock_gettime(clock_gettime329,7378
+# undef EV_USE_MONOTONICEV_USE_MONOTONIC330,7449
+# define EV_USE_MONOTONIC EV_USE_MONOTONIC331,7474
+# define EV_FREQUENT_CHECK EV_FREQUENT_CHECK349,7783
+# define EV_FREQUENT_CHECK EV_FREQUENT_CHECK351,7838
+#define TIME_EPSILON TIME_EPSILON362,8169
+#define MIN_TIMEJUMP MIN_TIMEJUMP364,8221
+#define MAX_BLOCKTIME MAX_BLOCKTIME365,8319
+# define expect(expect369,8538
+# define noinline noinline370,8608
+# define expect(expect372,8677
+# define noinlinenoinline373,8720
+#  define inlineinline375,8786
+#define expect_false(expect_false379,8819
+#define expect_true(expect_true380,8870
+#define inline_size inline_size381,8921
+# define inline_speed inline_speed384,8978
+# define inline_speed inline_speed386,9027
+#define NUMPRI NUMPRI389,9076
+#define ABSPRI(ABSPRI390,9122
+#define EMPTY EMPTY392,9172
+#define EMPTY2(EMPTY2393,9247
+typedef ev_watcher *W;W395,9305
+typedef ev_watcher_list *WL;WL396,9328
+typedef ev_watcher_time *WT;WT397,9357
+#define ev_active(ev_active399,9387
+#define ev_at(ev_at400,9425
+static EV_ATOMIC_T have_realtime; /* did clock_gettime (CLOCK_REALTIME) work? */have_realtime405,9632
+static EV_ATOMIC_T have_monotonic; /* did clock_gettime (CLOCK_MONOTONIC) work? */have_monotonic409,9742
+static void (*syserr_cb)(const char *msg);syserr_cb418,9959
+ev_set_syserr_cb (void (*cb)(const char *msg))ev_set_syserr_cb421,10008
+ev_syserr (const char *msg)ev_syserr427,10099
+ev_realloc_emul (void *ptr, long size)ev_realloc_emul442,10286
+static void *(*alloc)(void *ptr, long size) = ev_realloc_emul;alloc456,10599
+ev_set_allocator (void *(*cb)(void *ptr, long size))ev_set_allocator459,10668
+ev_realloc (void *ptr, long size)ev_realloc465,10760
+#define ev_malloc(ev_malloc478,10967
+#define ev_free(ev_free479,11014
+  WL head;head485,11159
+  unsigned char events;events486,11170
+  unsigned char reify;reify487,11194
+  unsigned char emask; /* the epoll backend stores the actual kernel mask in here */emask488,11217
+  unsigned char unused;unused489,11302
+  unsigned int egen;  /* generation counter to counter epoll bugs */egen491,11343
+  SOCKET handle;handle494,11446
+} ANFD;ANFD496,11470
+  W w;w500,11496
+  int events;events501,11503
+} ANPENDING;ANPENDING502,11517
+  WL head;head508,11605
+} ANFS;ANFS509,11616
+    ev_tstamp at;at515,11689
+    WT w;w516,11707
+  } ANHE;ANHE517,11717
+  #define ANHE_w(ANHE_w519,11728
+  #define ANHE_at(ANHE_at520,11800
+  #define ANHE_at_cache(ANHE_at_cache521,11873
+  typedef WT ANHE;ANHE523,11957
+  #define ANHE_w(ANHE_w525,11977
+  #define ANHE_at(ANHE_at526,12010
+  #define ANHE_at_cache(ANHE_at_cache527,12047
+  struct ev_loopev_loop532,12104
+    ev_tstamp ev_rt_now;ev_rt_now534,12125
+    #define ev_rt_now ev_rt_now535,12150
+    #define VAR(VAR536,12192
+    #undef VARVAR538,12252
+  static struct ev_loop default_loop_struct;default_loop_struct542,12296
+  struct ev_loop *ev_default_loop_ptr;ev_default_loop_ptr543,12341
+  ev_tstamp ev_rt_now;ev_rt_now547,12388
+  #define VAR(VAR548,12411
+  #undef VARVAR550,12474
+  static int ev_default_loop_ptr;ev_default_loop_ptr552,12488
+ev_time (void)ev_time559,12622
+get_clock (void)get_clock576,12938
+ev_now (EV_P)ev_now592,13202
+ev_sleep (ev_tstamp delay)ev_sleep599,13253
+#define MALLOC_ROUND MALLOC_ROUND628,13995
+array_nextsize (int elem, int cur, int cnt)array_nextsize631,14115
+array_realloc (int elem, void *base, int *cur, int cnt)array_realloc652,14602
+#define array_init_zero(array_init_zero658,14747
+#define array_needsize(array_needsize661,14843
+#define array_free(array_free680,15471
+ev_feed_event (EV_P_ void *w, int revents)ev_feed_event686,15665
+queue_events (EV_P_ W *events, int eventcnt, int type)queue_events703,16116
+fd_event (EV_P_ int fd, int revents)fd_event714,16362
+ev_feed_fd_event (EV_P_ int fd, int revents)ev_feed_fd_event729,16615
+fd_reify (EV_P)fd_reify736,16747
+fd_change (EV_P_ int fd, int flags)fd_change780,17770
+fd_kill (EV_P_ int fd)fd_kill794,18075
+fd_valid (int fd)fd_valid806,18278
+fd_ebadf (EV_P)fd_ebadf817,18457
+fd_enomem (EV_P)fd_enomem829,18709
+fd_rearm_all (EV_P)fd_rearm_all843,18959
+#define DHEAP DHEAP872,19699
+#define HEAP0 HEAP0873,19715
+#define HPARENT(HPARENT874,19778
+#define UPHEAP_DONE(UPHEAP_DONE875,19835
+downheap (ANHE *heap, int N, int k)downheap879,19917
+#define HEAP0 HEAP0923,21352
+#define HPARENT(HPARENT924,21368
+#define UPHEAP_DONE(UPHEAP_DONE925,21398
+downheap (ANHE *heap, int N, int k)downheap929,21474
+upheap (ANHE *heap, int k)upheap959,21973
+adjustheap (ANHE *heap, int N, int k)adjustheap980,22310
+reheap (ANHE *heap, int N)reheap990,22573
+  WL head;head1004,22935
+  EV_ATOMIC_T gotsig;gotsig1005,22946
+} ANSIG;ANSIG1006,22968
+static ANSIG *signals;signals1008,22978
+static int signalmax;signalmax1009,23001
+static EV_ATOMIC_T gotsig;gotsig1011,23024
+fd_intern (int fd)fd_intern1016,23151
+evpipe_init (EV_P)evpipe_init1028,23370
+evpipe_write (EV_P_ EV_ATOMIC_T *flag)evpipe_write1056,23993
+pipecb (EV_P_ ev_io *iow, int revents)pipecb1079,24403
+ev_sighandler (int signum)ev_sighandler1123,25234
+ev_feed_signal_event (EV_P_ int signum)ev_feed_signal_event1138,25475
+static WL childs [EV_PID_HASHSIZE];childs1159,25942
+static ev_signal childev;childev1163,25995
+# define WIFCONTINUED(WIFCONTINUED1166,26043
+child_reap (EV_P_ int chain, int pid, int status)child_reap1170,26101
+# define WCONTINUED WCONTINUED1189,26694
+childcb (EV_P_ ev_signal *sw, int revents)childcb1193,26736
+ev_version_major (void)ev_version_major1234,27796
+ev_version_minor (void)ev_version_minor1240,27856
+enable_secure (void)enable_secure1247,28021
+ev_supported_backends (void)ev_supported_backends1258,28166
+ev_recommended_backends (void)ev_recommended_backends1272,28494
+ev_embeddable_backends (void)ev_embeddable_backends1291,29045
+ev_backend (EV_P)ev_backend1303,29342
+ev_loop_count (EV_P)ev_loop_count1309,29396
+ev_set_io_collect_interval (EV_P_ ev_tstamp interval)ev_set_io_collect_interval1315,29448
+ev_set_timeout_collect_interval (EV_P_ ev_tstamp interval)ev_set_timeout_collect_interval1321,29539
+loop_init (EV_P_ unsigned int flags)loop_init1327,29656
+static __attribute__ ((destructor)) void fini_lib(void)fini_lib1401,31505
+loop_destroy (EV_P)loop_destroy1408,31610
+loop_fork (EV_P)loop_fork1486,33074
+ev_loop_new (unsigned int flags)ev_loop_new1535,34017
+ev_loop_destroy (EV_P)ev_loop_destroy1550,34270
+ev_loop_fork (EV_P)ev_loop_fork1557,34344
+verify_watcher (EV_P_ W w)verify_watcher1564,34463
+verify_heap (EV_P_ ANHE *heap, int N)verify_heap1573,34735
+array_verify (EV_P_ W *ws, int cnt)array_verify1588,35220
+ev_loop_verify (EV_P)ev_loop_verify1599,35422
+ev_default_loop_init (unsigned int flags)ev_default_loop_init1665,37043
+ev_default_destroy (void)ev_default_destroy1698,37727
+ev_default_fork (void)ev_default_fork1715,37983
+ev_invoke (EV_P_ void *w, int revents)ev_invoke1727,38227
+call_pending (EV_P)call_pending1733,38321
+idle_reify (EV_P)idle_reify1755,38781
+timers_reify (EV_P)timers_reify1777,39147
+periodics_reify (EV_P)periodics_reify1809,39977
+periodics_reschedule (EV_P)periodics_reschedule1857,41657
+time_update (EV_P_ ev_tstamp max_block)time_update1879,42164
+ev_ref (EV_P)ev_ref1951,44170
+ev_unref (EV_P)ev_unref1957,44209
+ev_now_update (EV_P)ev_now_update1963,44250
+static int loop_done;loop_done1968,44305
+ev_loop (EV_P_ int flags)ev_loop1971,44333
+ev_unloop (EV_P_ int how)ev_unloop2095,47548
+wlist_add (WL *head, WL elem)wlist_add2103,47696
+wlist_del (WL *head, WL elem)wlist_del2110,47786
+clear_pending (EV_P_ W w)clear_pending2125,47990
+ev_clear_pending (EV_P_ void *w)ev_clear_pending2135,48128
+pri_adjust (EV_P_ W w)pri_adjust2152,48412
+ev_start (EV_P_ W w, int active)ev_start2161,48590
+ev_stop (EV_P_ W w)ev_stop2169,48708
+ev_io_start (EV_P_ ev_io *w)ev_io_start2178,48864
+ev_io_stop (EV_P_ ev_io *w)ev_io_stop2201,49426
+ev_timer_start (EV_P_ ev_timer *w)ev_timer_start2220,49819
+ev_timer_stop (EV_P_ ev_timer *w)ev_timer_stop2244,50431
+ev_timer_again (EV_P_ ev_timer *w)ev_timer_again2274,50975
+ev_periodic_start (EV_P_ ev_periodic *w)ev_periodic_start2300,51460
+ev_periodic_stop (EV_P_ ev_periodic *w)ev_periodic_stop2331,52426
+ev_periodic_again (EV_P_ ev_periodic *w)ev_periodic_again2359,52979
+# define SA_RESTART SA_RESTART2368,53159
+ev_signal_start (EV_P_ ev_signal *w)ev_signal_start2372,53203
+ev_signal_stop (EV_P_ ev_signal *w)ev_signal_stop2420,54260
+ev_child_start (EV_P_ ev_child *w)ev_child_start2438,54580
+ev_child_stop (EV_P_ ev_child *w)ev_child_stop2455,54945
+#  undef lstatlstat2472,55233
+#  define lstat(lstat2473,55248
+#define DEF_STAT_INTERVAL DEF_STAT_INTERVAL2476,55293
+#define NFS_STAT_INTERVAL NFS_STAT_INTERVAL2477,55330
+#define MIN_STAT_INTERVAL MIN_STAT_INTERVAL2478,55417
+# define EV_INOTIFY_BUFSIZE EV_INOTIFY_BUFSIZE2483,55545
+infy_add (EV_P_ ev_stat *w)infy_add2486,55600
+infy_del (EV_P_ ev_stat *w)infy_del2544,57673
+infy_wd (EV_P_ int slot, int wd, struct inotify_event *ev)infy_wd2561,57988
+infy_cb (EV_P_ ev_io *w, int revents)infy_cb2592,58875
+check_2625 (EV_P)check_26252604,59198
+infy_init (EV_P)infy_init2627,59645
+infy_fork (EV_P)infy_fork2647,59937
+# define EV_LSTAT(EV_LSTAT2680,60504
+# define EV_LSTAT(EV_LSTAT2682,60549
+ev_stat_stat (EV_P_ ev_stat *w)ev_stat_stat2686,60598
+stat_timer_cb (EV_P_ ev_timer *w_, int revents)stat_timer_cb2695,60775
+ev_stat_start (EV_P_ ev_stat *w)ev_stat_start2732,61879
+ev_stat_stop (EV_P_ ev_stat *w)ev_stat_stop2760,62422
+ev_idle_start (EV_P_ ev_idle *w)ev_idle_start2781,62725
+ev_idle_stop (EV_P_ ev_idle *w)ev_idle_stop2804,63123
+ev_prepare_start (EV_P_ ev_prepare *w)ev_prepare_start2827,63520
+ev_prepare_stop (EV_P_ ev_prepare *w)ev_prepare_stop2842,63812
+ev_check_start (EV_P_ ev_check *w)ev_check_start2863,64154
+ev_check_stop (EV_P_ ev_check *w)ev_check_stop2878,64428
+ev_embed_sweep (EV_P_ ev_embed *w)ev_embed_sweep2900,64787
+embed_io_cb (EV_P_ ev_io *io, int revents)embed_io_cb2906,64878
+embed_prepare_cb (EV_P_ ev_prepare *prepare, int revents)embed_prepare_cb2917,65116
+embed_fork_cb (EV_P_ ev_fork *fork_w, int revents)embed_fork_cb2933,65424
+ev_embed_start (EV_P_ ev_embed *w)ev_embed_start2958,65835
+ev_embed_stop (EV_P_ ev_embed *w)ev_embed_stop2989,66545
+ev_fork_start (EV_P_ ev_fork *w)ev_fork_start3007,66851
+ev_fork_stop (EV_P_ ev_fork *w)ev_fork_stop3022,67116
+ev_async_start (EV_P_ ev_async *w)ev_async_start3045,67467
+ev_async_stop (EV_P_ ev_async *w)ev_async_stop3062,67764
+ev_async_send (EV_P_ ev_async *w)ev_async_send3083,68094
+struct ev_onceev_once3092,68270
+  ev_io io;io3094,68287
+  ev_timer to;to3095,68299
+  void (*cb)(int revents, void *arg);cb3096,68314
+  void *arg;arg3097,68352
+once_cb (EV_P_ struct ev_once *once, int revents)once_cb3101,68381
+once_cb_io (EV_P_ ev_io *w, int revents)once_cb_io3114,68633
+once_cb_to (EV_P_ ev_timer *w, int revents)once_cb_to3122,68852
+ev_once (EV_P_ int fd, int events, ev_tstamp timeout, void (*cb)(int revents, void *arg), void *arg)ev_once3130,69067
+
+libev/Makefile,9180
+pkgdatadir = $(datadir)/auditpkgdatadir20,694
+pkgincludedir = $(includedir)/auditpkgincludedir21,724
+pkglibdir = $(libdir)/auditpkglibdir22,760
+pkglibexecdir = $(libexecdir)/auditpkglibexecdir23,788
+am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cdam__cd24,824
+install_sh_DATA = $(install_sh) -c -m 644install_sh_DATA25,883
+install_sh_PROGRAM = $(install_sh) -cinstall_sh_PROGRAM26,925
+install_sh_SCRIPT = $(install_sh) -cinstall_sh_SCRIPT27,963
+INSTALL_HEADER = $(INSTALL_DATA)INSTALL_HEADER28,1000
+transform = $(program_transform_name)transform29,1033
+NORMAL_INSTALL = :NORMAL_INSTALL30,1071
+PRE_INSTALL = :PRE_INSTALL31,1090
+POST_INSTALL = :POST_INSTALL32,1106
+NORMAL_UNINSTALL = :NORMAL_UNINSTALL33,1123
+PRE_UNINSTALL = :PRE_UNINSTALL34,1144
+POST_UNINSTALL = :POST_UNINSTALL35,1162
+build_triplet = x86_64-unknown-linux-gnubuild_triplet36,1181
+host_triplet = x86_64-unknown-linux-gnuhost_triplet37,1222
+target_triplet = x86_64-unknown-linux-gnutarget_triplet38,1262
+subdir = src/libevsubdir39,1304
+DIST_COMMON = README $(noinst_HEADERS) $(srcdir)/Makefile.am \DIST_COMMON40,1323
+ACLOCAL_M4 = $(top_srcdir)/aclocal.m4ACLOCAL_M442,1409
+am__aclocal_m4_deps = $(top_srcdir)/src/libev/libev.m4 \am__aclocal_m4_deps43,1447
+am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \am__configure_deps45,1532
+mkinstalldirs = $(install_sh) -dmkinstalldirs47,1619
+CONFIG_HEADER = $(top_builddir)/config.hCONFIG_HEADER48,1652
+CONFIG_CLEAN_FILES =CONFIG_CLEAN_FILES49,1693
+CONFIG_CLEAN_VPATH_FILES =CONFIG_CLEAN_VPATH_FILES50,1714
+LIBRARIES = $(noinst_LIBRARIES)LIBRARIES51,1741
+ARFLAGS = cruARFLAGS52,1773
+libev_a_AR = $(AR) $(ARFLAGS)libev_a_AR53,1787
+libev_a_LIBADD =libev_a_LIBADD54,1817
+am_libev_a_OBJECTS = ev.$(OBJEXT) event.$(OBJEXT)am_libev_a_OBJECTS55,1834
+libev_a_OBJECTS = $(am_libev_a_OBJECTS)libev_a_OBJECTS56,1884
+DEFAULT_INCLUDES = -I. -I$(top_builddir)DEFAULT_INCLUDES57,1924
+depcomp = $(SHELL) $(top_srcdir)/depcompdepcomp58,1965
+am__depfiles_maybe = depfilesam__depfiles_maybe59,2006
+am__mv = mv -fam__mv60,2036
+COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \COMPILE61,2051
+LTCOMPILE = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \LTCOMPILE63,2160
+CCLD = $(CC)CCLD66,2344
+LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) \LINK67,2357
+SOURCES = $(libev_a_SOURCES)SOURCES70,2499
+DIST_SOURCES = $(libev_a_SOURCES)DIST_SOURCES71,2528
+HEADERS = $(noinst_HEADERS)HEADERS72,2562
+ETAGS = etagsETAGS73,2590
+CTAGS = ctagsCTAGS74,2604
+DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)DISTFILES75,2618
+ACLOCAL = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run aclocal-1.11ACLOCAL76,2687
+AMTAR = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run tarAMTAR77,2789
+AR = arAR78,2880
+AUTOCONF = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoconfAUTOCONF79,2888
+AUTOHEADER = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoheaderAUTOHEADER80,2987
+AUTOMAKE = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run automake-1.11AUTOMAKE81,3090
+AWK = gawkAWK82,3194
+CC = gccCC83,3205
+CCDEPMODE = depmode=gcc3CCDEPMODE84,3214
+CFLAGS = -pgCFLAGS85,3239
+CPP = gcc -ECPP86,3252
+CPPFLAGS = CPPFLAGS87,3265
+CYGPATH_W = echoCYGPATH_W88,3277
+DEBUG = -DNDEBUGDEBUG89,3294
+DEFS = -DHAVE_CONFIG_HDEFS90,3311
+DEPDIR = .depsDEPDIR91,3334
+DLLTOOL = falseDLLTOOL92,3349
+DSYMUTIL = DSYMUTIL93,3365
+DUMPBIN = DUMPBIN94,3377
+ECHO_C = ECHO_C95,3388
+ECHO_N = -nECHO_N96,3398
+ECHO_T = ECHO_T97,3410
+EGREP = /bin/grep -EEGREP98,3420
+EXEEXT = EXEEXT99,3441
+FGREP = /bin/grep -FFGREP100,3451
+GREP = /bin/grepGREP101,3472
+INSTALL = /bin/install -cINSTALL102,3489
+INSTALL_DATA = ${INSTALL} -m 644INSTALL_DATA103,3515
+INSTALL_PROGRAM = ${INSTALL}INSTALL_PROGRAM104,3548
+INSTALL_SCRIPT = ${INSTALL}INSTALL_SCRIPT105,3577
+INSTALL_STRIP_PROGRAM = $(install_sh) -c -sINSTALL_STRIP_PROGRAM106,3605
+LD = /usr/bin/ld -m elf_x86_64LD107,3649
+LDFLAGS = LDFLAGS108,3680
+LIBOBJS = LIBOBJS109,3691
+LIBPRELUDE_CFLAGS = LIBPRELUDE_CFLAGS110,3702
+LIBPRELUDE_LDFLAGS = LIBPRELUDE_LDFLAGS111,3723
+LIBS = LIBS112,3745
+LIBTOOL = $(SHELL) $(top_builddir)/libtoolLIBTOOL113,3753
+LIBTOOL_DEPS = ./ltmain.shLIBTOOL_DEPS114,3796
+LIBWRAP_LIBS = -lwrap -lnslLIBWRAP_LIBS115,3823
+LIPO = LIPO116,3851
+LN_S = ln -sLN_S117,3859
+LTLIBOBJS = LTLIBOBJS118,3872
+MAKEINFO = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run makeinfoMAKEINFO119,3885
+MANIFEST_TOOL = :MANIFEST_TOOL120,3984
+MKDIR_P = /bin/mkdir -pMKDIR_P121,4002
+NM = /usr/bin/nm -BNM122,4026
+NMEDIT = NMEDIT123,4046
+OBJDUMP = objdumpOBJDUMP124,4056
+OBJEXT = oOBJEXT125,4074
+OTOOL = OTOOL126,4085
+OTOOL64 = OTOOL64127,4094
+PACKAGE = auditPACKAGE128,4105
+PACKAGE_BUGREPORT = PACKAGE_BUGREPORT129,4121
+PACKAGE_NAME = auditPACKAGE_NAME130,4142
+PACKAGE_STRING = audit 2.1.3PACKAGE_STRING131,4163
+PACKAGE_TARNAME = auditPACKAGE_TARNAME132,4192
+PACKAGE_URL = PACKAGE_URL133,4216
+PACKAGE_VERSION = 2.1.3PACKAGE_VERSION134,4231
+PATH_SEPARATOR = :PATH_SEPARATOR135,4255
+PYTHON = /usr/bin/pythonPYTHON136,4274
+PYTHON_EXEC_PREFIX = ${exec_prefix}PYTHON_EXEC_PREFIX137,4299
+PYTHON_PLATFORM = linux2PYTHON_PLATFORM138,4335
+PYTHON_PREFIX = ${prefix}PYTHON_PREFIX139,4360
+PYTHON_VERSION = 3.1PYTHON_VERSION140,4386
+RANLIB = ranlibRANLIB141,4407
+SED = /bin/sedSED142,4423
+SET_MAKE = SET_MAKE143,4438
+SHELL = /bin/shSHELL144,4450
+STRIP = stripSTRIP145,4466
+VERSION = 2.1.3VERSION146,4480
+abs_builddir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/src/libevabs_builddir147,4496
+abs_srcdir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/src/libevabs_srcdir148,4577
+abs_top_builddir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunkabs_top_builddir149,4656
+abs_top_srcdir = /usr/users/noquota/osaudit/os_sources/linux_audit/trunkabs_top_srcdir150,4731
+ac_ct_AR = arac_ct_AR151,4804
+ac_ct_CC = gccac_ct_CC152,4818
+ac_ct_DUMPBIN = ac_ct_DUMPBIN153,4833
+am__include = includeam__include154,4850
+am__leading_dot = .am__leading_dot155,4872
+am__quote = am__quote156,4892
+am__tar = ${AMTAR} chof - "$$tardir"am__tar157,4905
+am__untar = ${AMTAR} xf -am__untar158,4942
+bindir = ${exec_prefix}/binbindir159,4968
+build = x86_64-unknown-linux-gnubuild160,4996
+build_alias = build_alias161,5029
+build_cpu = x86_64build_cpu162,5044
+build_os = linux-gnubuild_os163,5063
+build_vendor = unknownbuild_vendor164,5084
+builddir = .builddir165,5107
+datadir = ${datarootdir}datadir166,5120
+datarootdir = ${prefix}/sharedatarootdir167,5145
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}docdir168,5175
+dvidir = ${docdir}dvidir169,5222
+exec_prefix = ${prefix}exec_prefix170,5241
+gss_libs = gss_libs171,5265
+host = x86_64-unknown-linux-gnuhost172,5277
+host_alias = host_alias173,5309
+host_cpu = x86_64host_cpu174,5323
+host_os = linux-gnuhost_os175,5341
+host_vendor = unknownhost_vendor176,5361
+htmldir = ${docdir}htmldir177,5383
+includedir = ${prefix}/includeincludedir178,5403
+infodir = ${datarootdir}/infoinfodir179,5434
+install_sh = ${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/install-shinstall_sh180,5464
+libdir = ${exec_prefix}/liblibdir181,5553
+libev_LIBS = -lm libev_LIBS182,5581
+libexecdir = ${exec_prefix}/libexeclibexecdir183,5599
+localedir = ${datarootdir}/localelocaledir184,5635
+localstatedir = ${prefix}/varlocalstatedir185,5669
+mandir = ${datarootdir}/manmandir186,5699
+mkdir_p = /bin/mkdir -pmkdir_p187,5727
+oldincludedir = /usr/includeoldincludedir188,5751
+pdfdir = ${docdir}pdfdir189,5780
+pkgpyexecdir = ${pyexecdir}/auditpkgpyexecdir190,5799
+pkgpythondir = ${pythondir}/auditpkgpythondir191,5833
+prefix = /usr/localprefix192,5867
+program_transform_name = s,x,x,program_transform_name193,5887
+psdir = ${docdir}psdir194,5919
+pyexecdir = ${exec_prefix}/lib/python3.1/site-packagespyexecdir195,5937
+pythondir = ${prefix}/lib/python3.1/site-packagespythondir196,5992
+sbindir = /sbinsbindir197,6042
+sharedstatedir = ${prefix}/comsharedstatedir198,6058
+srcdir = .srcdir199,6089
+sysconfdir = ${prefix}/etcsysconfdir200,6100
+target = x86_64-unknown-linux-gnutarget201,6127
+target_alias = target_alias202,6161
+target_cpu = x86_64target_cpu203,6177
+target_os = linux-gnutarget_os204,6197
+target_vendor = unknowntarget_vendor205,6219
+top_build_prefix = ../../top_build_prefix206,6243
+top_builddir = ../..top_builddir207,6269
+top_srcdir = ../..top_srcdir208,6290
+VERSION_INFO = 3:0VERSION_INFO231,7163
+EXTRA_DIST = README ev_epoll.c ev_poll.c ev_select.c libev.m4EXTRA_DIST232,7182
+AM_CFLAGS = -fPIC -DPIC -fno-strict-aliasing ${DEBUG}AM_CFLAGS233,7244
+noinst_HEADERS = ev.h ev_vars.h ev_wrap.h event.hnoinst_HEADERS234,7298
+noinst_LIBRARIES = libev.anoinst_LIBRARIES235,7348
+libev_a_SOURCES = ev.c event.clibev_a_SOURCES236,7375
+
+libev/event.h,1945
+#define EVENT_H__EVENT_H__41,2139
+#define EVLIST_TIMEOUT EVLIST_TIMEOUT61,2473
+#define EVLIST_INSERTED EVLIST_INSERTED62,2502
+#define EVLIST_SIGNAL EVLIST_SIGNAL63,2531
+#define EVLIST_ACTIVE EVLIST_ACTIVE64,2560
+#define EVLIST_INTERNAL EVLIST_INTERNAL65,2589
+#define EVLIST_INIT EVLIST_INIT66,2618
+struct eventevent68,2648
+    struct ev_io io;io72,2708
+    struct ev_signal sig;sig73,2729
+  } iosig;iosig74,2755
+  struct ev_timer to;to75,2766
+  struct event_base *ev_base;ev_base78,2817
+  void (*ev_callback)(int, short, void *arg);ev_callback79,2847
+  void *ev_arg;ev_arg80,2893
+  int ev_fd;ev_fd81,2909
+  int ev_pri;ev_pri82,2922
+  int ev_res;ev_res83,2936
+  int ev_flags;ev_flags84,2950
+  short ev_events;ev_events85,2966
+#define EV_PERSIST EV_PERSIST88,2989
+#define EVENT_SIGNAL(EVENT_SIGNAL90,3030
+#define EVENT_FD(EVENT_FD91,3085
+#define event_initialized(event_initialized93,3141
+#define evtimer_add(evtimer_add95,3208
+#define evtimer_set(evtimer_set96,3262
+#define evtimer_del(evtimer_del97,3329
+#define evtimer_pending(evtimer_pending98,3379
+#define evtimer_initialized(evtimer_initialized99,3449
+#define timeout_add(timeout_add101,3508
+#define timeout_set(timeout_set102,3564
+#define timeout_del(timeout_del103,3626
+#define timeout_pending(timeout_pending104,3678
+#define timeout_initialized(timeout_initialized105,3738
+#define signal_add(signal_add107,3799
+#define signal_set(signal_set108,3853
+#define signal_del(signal_del109,3942
+#define signal_pending(signal_pending110,3992
+#define signal_initialized(signal_initialized111,4061
+#define EVLOOP_ONCE EVLOOP_ONCE119,4270
+#define _EVENT_LOG_DEBUG _EVENT_LOG_DEBUG124,4401
+#define _EVENT_LOG_MSG _EVENT_LOG_MSG125,4428
+#define _EVENT_LOG_WARN _EVENT_LOG_WARN126,4455
+#define _EVENT_LOG_ERR _EVENT_LOG_ERR127,4482
+typedef void (*event_log_cb)(int severity, const char *msg);event_log_cb128,4509
+
+libev/ev_epoll.c,255
+epoll_modify (EV_P_ int fd, int oev, int nev)epoll_modify63,3004
+epoll_poll (EV_P_ ev_tstamp timeout)epoll_poll116,4587
+epoll_init (EV_P_ int flags)epoll_init175,6449
+epoll_destroy (EV_P)epoll_destroy195,6957
+epoll_fork (EV_P)epoll_fork201,7026
+
+libev/ev_poll.c,265
+pollidx_init (int *base, int count)pollidx_init43,2130
+poll_modify (EV_P_ int fd, int oev, int nev)poll_modify52,2341
+poll_poll (EV_P_ ev_tstamp timeout)poll_poll89,3100
+poll_init (EV_P_ int flags)poll_init122,3946
+poll_destroy (EV_P)poll_destroy135,4215
+
+libev/ev.h,7931
+#define EV_H__EV_H__41,2107
+typedef double ev_tstamp;ev_tstamp47,2163
+# define EV_MINPRI EV_MINPRI51,2287
+# define EV_MAXPRI EV_MAXPRI54,2334
+# define EV_MULTIPLICITY EV_MULTIPLICITY58,2388
+# define EV_PERIODIC_ENABLE EV_PERIODIC_ENABLE62,2450
+# define EV_STAT_ENABLE EV_STAT_ENABLE66,2511
+# define EV_IDLE_ENABLE EV_IDLE_ENABLE70,2568
+# define EV_FORK_ENABLE EV_FORK_ENABLE74,2625
+# define EV_EMBED_ENABLE EV_EMBED_ENABLE78,2683
+# define EV_ASYNC_ENABLE EV_ASYNC_ENABLE82,2742
+# define EV_ATOMIC_T EV_ATOMIC_T87,2818
+# define EV_P EV_P103,3140
+# define EV_P_ EV_P_104,3175
+# define EV_A EV_A105,3196
+# define EV_A_ EV_A_106,3215
+# define EV_DEFAULT_UC EV_DEFAULT_UC107,3236
+# define EV_DEFAULT_UC_ EV_DEFAULT_UC_108,3281
+# define EV_DEFAULT EV_DEFAULT109,3320
+# define EV_DEFAULT_ EV_DEFAULT_110,3360
+# define EV_P EV_P112,3399
+# define EV_P_EV_P_113,3418
+# define EV_AEV_A114,3433
+# define EV_A_EV_A_115,3447
+# define EV_DEFAULTEV_DEFAULT116,3462
+# define EV_DEFAULT_EV_DEFAULT_117,3482
+# define EV_DEFAULT_UCEV_DEFAULT_UC118,3503
+# define EV_DEFAULT_UC_EV_DEFAULT_UC_119,3526
+# undef EV_EMBED_ENABLEEV_EMBED_ENABLE120,3550
+# define EV_INLINE EV_INLINE124,3661
+# define EV_INLINE EV_INLINE126,3700
+#define EV_UNDEF EV_UNDEF132,3851
+#define EV_NONE EV_NONE133,3913
+#define EV_READ EV_READ134,3960
+#define EV_WRITE EV_WRITE135,4032
+#define EV_IOFDSET EV_IOFDSET136,4105
+#define EV_TIMEOUT EV_TIMEOUT137,4160
+#define EV_PERIODIC EV_PERIODIC138,4213
+#define EV_SIGNAL EV_SIGNAL139,4275
+#define EV_CHILD EV_CHILD140,4332
+#define EV_STAT EV_STAT141,4397
+#define EV_IDLE EV_IDLE142,4452
+#define EV_PREPARE EV_PREPARE143,4510
+#define EV_CHECK EV_CHECK144,4572
+#define EV_EMBED EV_EMBED145,4634
+#define EV_FORK EV_FORK146,4703
+#define EV_ASYNC EV_ASYNC147,4768
+#define EV_ERROR EV_ERROR148,4829
+# define EV_COMMON EV_COMMON152,5001
+# define EV_PROTOTYPES EV_PROTOTYPES155,5061
+#define EV_VERSION_MAJOR EV_VERSION_MAJOR158,5094
+#define EV_VERSION_MINOR EV_VERSION_MINOR159,5121
+# define EV_CB_DECLARE(EV_CB_DECLARE162,5171
+# define EV_CB_INVOKE(EV_CB_INVOKE165,5275
+#define EV_WATCHER(EV_WATCHER186,6120
+#define EV_WATCHER_LIST(EV_WATCHER_LIST193,6312
+#define EV_WATCHER_TIME(EV_WATCHER_TIME197,6418
+typedef struct ev_watcherev_watcher202,6570
+} ev_watcher;ev_watcher205,6624
+typedef struct ev_watcher_listev_watcher_list208,6697
+} ev_watcher_list;ev_watcher_list211,6766
+typedef struct ev_watcher_timeev_watcher_time214,6844
+} ev_watcher_time;ev_watcher_time217,6913
+typedef struct ev_ioev_io221,7024
+  int fd;     /* ro */fd225,7074
+  int events; /* ro */events226,7097
+} ev_io;ev_io227,7120
+typedef struct ev_timerev_timer231,7229
+  ev_tstamp repeat; /* rw */repeat235,7285
+} ev_timer;ev_timer236,7314
+typedef struct ev_periodicev_periodic240,7444
+  ev_tstamp offset; /* rw */offset244,7506
+  ev_tstamp interval; /* rw */interval245,7535
+  ev_tstamp (*reschedule_cb)(struct ev_periodic *w, ev_tstamp now); /* rw */reschedule_cb246,7566
+} ev_periodic;ev_periodic247,7643
+typedef struct ev_signalev_signal251,7736
+  int signum; /* ro */signum255,7794
+} ev_signal;ev_signal256,7817
+typedef struct ev_childev_child261,7962
+  int flags;   /* private */flags265,8018
+  int pid;     /* ro */pid266,8047
+  int rpid;    /* rw, holds the received pid */rpid267,8071
+  int rstatus; /* rw, holds the exit status, use the macros from sys/wait.h */rstatus268,8119
+} ev_child;ev_child269,8198
+typedef struct _stati64 ev_statdata;ev_statdata274,8298
+typedef struct stat ev_statdata;ev_statdata276,8342
+typedef struct ev_statev_stat281,8468
+  ev_timer timer;     /* private */timer285,8522
+  ev_tstamp interval; /* ro */interval286,8558
+  const char *path;   /* ro */path287,8589
+  ev_statdata prev;   /* ro */prev288,8620
+  ev_statdata attr;   /* ro */attr289,8651
+  int wd; /* wd for inotify, fd for kqueue */wd291,8683
+} ev_stat;ev_stat292,8729
+typedef struct ev_idleev_idle298,8874
+} ev_idle;ev_idle301,8922
+typedef struct ev_prepareev_prepare307,9093
+} ev_prepare;ev_prepare310,9147
+typedef struct ev_checkev_check314,9257
+} ev_check;ev_check317,9307
+typedef struct ev_forkev_fork321,9430
+} ev_fork;ev_fork324,9478
+typedef struct ev_embedev_embed330,9651
+  struct ev_loop *other; /* ro */other334,9702
+  ev_io io;              /* private */io335,9736
+  ev_prepare prepare;    /* private */prepare336,9775
+  ev_check check;        /* unused */check337,9814
+  ev_timer timer;        /* unused */timer338,9852
+  ev_periodic periodic;  /* unused */periodic339,9890
+  ev_idle idle;          /* unused */idle340,9928
+  ev_fork fork;          /* private */fork341,9966
+} ev_embed;ev_embed342,10005
+typedef struct ev_asyncev_async348,10130
+  EV_ATOMIC_T sent; /* private */sent352,10181
+} ev_async;ev_async353,10215
+# define ev_async_pending(ev_async_pending355,10228
+union ev_any_watcherev_any_watcher359,10343
+  struct ev_watcher w;w361,10366
+  struct ev_watcher_list wl;wl362,10389
+  struct ev_io io;io364,10419
+  struct ev_timer timer;timer365,10438
+  struct ev_periodic periodic;periodic366,10463
+  struct ev_signal signal;signal367,10494
+  struct ev_child child;child368,10521
+  struct ev_stat stat;stat370,10565
+  struct ev_idle idle;idle373,10614
+  struct ev_prepare prepare;prepare375,10644
+  struct ev_check check;check376,10673
+  struct ev_fork fork;fork378,10717
+  struct ev_embed embed;embed381,10767
+  struct ev_async async;async384,10819
+#define EVFLAG_AUTO EVFLAG_AUTO390,10920
+#define EVFLAG_NOENV EVFLAG_NOENV392,10997
+#define EVFLAG_FORKCHECK EVFLAG_FORKCHECK393,11068
+#define EVBACKEND_SELECT EVBACKEND_SELECT395,11185
+#define EVBACKEND_POLL EVBACKEND_POLL396,11244
+#define EVBACKEND_EPOLL EVBACKEND_EPOLL397,11293
+#define EVBACKEND_KQUEUE EVBACKEND_KQUEUE398,11343
+#define EVBACKEND_DEVPOLL EVBACKEND_DEVPOLL399,11391
+#define EVBACKEND_PORT EVBACKEND_PORT400,11455
+ev_default_loop_uc (void)ev_default_loop_uc429,12368
+ev_default_loop (unsigned int flags)ev_default_loop439,12627
+ev_now (void)ev_now467,13304
+ev_is_default_loop (EV_P)ev_is_default_loop476,13414
+#define EVLOOP_NONBLOCK	EVLOOP_NONBLOCK498,14088
+#define EVLOOP_ONESHOT	EVLOOP_ONESHOT499,14138
+#define EVUNLOOP_CANCEL EVUNLOOP_CANCEL500,14187
+#define EVUNLOOP_ONE EVUNLOOP_ONE501,14231
+#define EVUNLOOP_ALL EVUNLOOP_ALL502,14275
+#define ev_init(ev_init526,15450
+#define ev_io_set(ev_io_set533,15663
+#define ev_timer_set(ev_timer_set534,15781
+#define ev_periodic_set(ev_periodic_set535,15910
+#define ev_signal_set(ev_signal_set536,16049
+#define ev_child_set(ev_child_set537,16136
+#define ev_stat_set(ev_stat_set538,16243
+#define ev_idle_set(ev_idle_set539,16371
+#define ev_prepare_set(ev_prepare_set540,16457
+#define ev_check_set(ev_check_set541,16543
+#define ev_embed_set(ev_embed_set542,16629
+#define ev_fork_set(ev_fork_set543,16714
+#define ev_async_set(ev_async_set544,16800
+#define ev_io_init(ev_io_init546,16878
+#define ev_timer_init(ev_timer_init547,16993
+#define ev_periodic_init(ev_periodic_init548,17114
+#define ev_signal_init(ev_signal_init549,17239
+#define ev_child_init(ev_child_init550,17354
+#define ev_stat_init(ev_stat_init551,17472
+#define ev_idle_init(ev_idle_init552,17593
+#define ev_prepare_init(ev_prepare_init553,17696
+#define ev_check_init(ev_check_init554,17802
+#define ev_embed_init(ev_embed_init555,17906
+#define ev_fork_init(ev_fork_init556,18018
+#define ev_async_init(ev_async_init557,18121
+#define ev_is_pending(ev_is_pending559,18226
+#define ev_is_active(ev_is_active560,18377
+#define ev_priority(ev_priority562,18514
+#define ev_cb(ev_cb563,18605
+#define ev_set_priority(ev_set_priority564,18667
+#define ev_periodic_at(ev_periodic_at566,18759
+# define ev_set_cb(ev_set_cb569,18859
+
+libev/event.c,2756
+# define dLOOPev dLOOPev51,2251
+# define dLOOPbase dLOOPbase52,2321
+# define dLOOPevdLOOPev54,2392
+# define dLOOPbasedLOOPbase55,2409
+struct event_baseevent_base59,2494
+  int dummy;dummy61,2514
+static struct event_base *ev_x_cur;ev_x_cur64,2531
+ev_tv_set (struct timeval *tv, ev_tstamp at)ev_tv_set67,2580
+ev_tv_get (struct timeval *tv)ev_tv_get74,2733
+#define EVENT_STRINGIFY(EVENT_STRINGIFY82,2846
+#define EVENT_VERSION(EVENT_VERSION83,2877
+const char *event_get_version (void)event_get_version85,2949
+const char *event_get_method (void)event_get_method91,3101
+void *event_init (void)event_init96,3160
+void event_base_free (struct event_base *base)event_base_free112,3575
+int event_dispatch (void)event_dispatch122,3741
+void event_set_log_callback (event_log_cb cb)event_set_log_callback128,3834
+int event_loop (int flags)event_loop134,3904
+int event_loopexit (struct timeval *tv)event_loopexit139,3980
+ev_x_cb (struct event *ev, int revents)ev_x_cb145,4082
+ev_x_cb_sig (EV_P_ struct ev_signal *w, int revents)ev_x_cb_sig154,4281
+ev_x_cb_io (EV_P_ struct ev_io *w, int revents)ev_x_cb_io165,4513
+ev_x_cb_to (EV_P_ struct ev_timer *w, int revents)ev_x_cb_to176,4774
+void event_set (struct event *ev, int fd, short events, void (*cb)(int, short, void *), void *arg)event_set185,4957
+int event_once (int fd, short events, void (*cb)(int, short, void *), void *arg, struct timeval *tv)event_once204,5473
+int event_add (struct event *ev, struct timeval *tv)event_add209,5641
+int event_del (struct event *ev)event_del251,6539
+void event_active (struct event *ev, int res, short ncalls)event_active268,6862
+int event_pending (struct event *ev, short events, struct timeval *tv)event_pending282,7203
+int event_priority_init (int npri)event_priority_init311,7930
+int event_priority_set (struct event *ev, int pri)event_priority_set316,8022
+int event_base_set (struct event_base *base, struct event *ev)event_base_set323,8111
+int event_base_loop (struct event_base *base, int flags)event_base_loop330,8214
+int event_base_dispatch (struct event_base *base)event_base_dispatch339,8328
+ev_x_loopexit_cb (int revents, void *base)ev_x_loopexit_cb345,8431
+int event_base_loopexit (struct event_base *base, struct timeval *tv)event_base_loopexit352,8527
+struct ev_x_onceev_x_once362,8748
+  int fd;fd364,8767
+  void (*cb)(int, short, void *);cb365,8777
+  void *arg;arg366,8811
+ev_x_once_cb (int revents, void *arg)ev_x_once_cb370,8840
+int event_base_once (struct event_base *base, int fd, short events, void (*cb)(int, short, void *), void *arg, struct timeval *tv)event_base_once378,9001
+int event_base_priority_init (struct event_base *base, int npri)event_base_priority_init395,9429
+
+libev/ev_select.c,567
+#  define EV_SELECT_USE_FD_SET EV_SELECT_USE_FD_SET48,2240
+#  define EV_SELECT_USE_FD_SET EV_SELECT_USE_FD_SET50,2280
+# undef EV_SELECT_USE_FD_SETEV_SELECT_USE_FD_SET55,2356
+# define EV_SELECT_USE_FD_SET EV_SELECT_USE_FD_SET56,2385
+# undef NFDBITSNFDBITS57,2417
+# define NFDBITS NFDBITS58,2433
+# define NFDBYTES NFDBYTES62,2486
+select_modify (EV_P_ int fd, int oev, int nev)select_modify68,2559
+select_poll (EV_P_ ev_tstamp timeout)select_poll137,4386
+select_init (EV_P_ int flags)select_init266,7914
+select_destroy (EV_P)select_destroy292,8519
+
+ausearch-avc.h,1181
+#define AU_AVC_HEADERAU_AVC_HEADER25,897
+typedef enum { AVC_UNSET, AVC_DENIED, AVC_GRANTED } avc_t;AVC_UNSET31,986
+typedef enum { AVC_UNSET, AVC_DENIED, AVC_GRANTED } avc_t;AVC_DENIED31,986
+typedef enum { AVC_UNSET, AVC_DENIED, AVC_GRANTED } avc_t;AVC_GRANTED31,986
+typedef enum { AVC_UNSET, AVC_DENIED, AVC_GRANTED } avc_t;avc_t31,986
+typedef struct _anode{_anode35,1190
+  char *scontext;       // se linux subject contextscontext36,1213
+  char *tcontext;       // se linux object contexttcontext37,1265
+  avc_t avc_result;     // se linux avc denied/grantedavc_result38,1316
+  char *avc_perm;       // se linux avc permission mentionedavc_perm39,1371
+  char *avc_class;      // se linux class mentionedavc_class40,1432
+  struct _anode* next;	// Next string node pointernext41,1484
+} anode;anode42,1535
+  anode *head;		// List headhead47,1652
+  anode *cur;		// Pointer to current nodecur48,1681
+  unsigned int cnt;	// How many items in this listcnt49,1723
+} alist;alist50,1774
+static inline void alist_first(alist *l) { l->cur = l->head; }alist_first53,1813
+static inline anode *alist_get_cur(alist *l) { return l->cur; }alist_get_cur55,1905
+
+auditd-dispatch.c,517
+static int disp_pipe[2] = {-1, -1};disp_pipe38,1235
+static pid_t pid = 0;pid39,1271
+static int n_errs = 0;n_errs40,1293
+#define REPORT_LIMIT REPORT_LIMIT41,1316
+static int set_flags(int fn, int flags)set_flags44,1384
+int init_dispatcher(const struct daemon_conf *config)init_dispatcher60,1682
+void shutdown_dispatcher(void)shutdown_dispatcher111,2819
+void reconfigure_dispatcher(void)reconfigure_dispatcher131,3132
+int dispatch_event(const struct audit_reply *rep, int is_err)dispatch_event139,3298
+
+delete_all.c,54
+int delete_all_rules(int fd)delete_all_rules35,1156
+
+ausearch-time.h,698
+#define AUSEARCH_TIME_HEADERSAUSEARCH_TIME_HEADERS24,941
+enum {  T_NOW, T_RECENT, T_TODAY, T_YESTERDAY, T_THIS_WEEK, T_WEEK_AGO, T_NOW28,991
+enum {  T_NOW, T_RECENT, T_TODAY, T_YESTERDAY, T_THIS_WEEK, T_WEEK_AGO, T_RECENT28,991
+enum {  T_NOW, T_RECENT, T_TODAY, T_YESTERDAY, T_THIS_WEEK, T_WEEK_AGO, T_TODAY28,991
+enum {  T_NOW, T_RECENT, T_TODAY, T_YESTERDAY, T_THIS_WEEK, T_WEEK_AGO, T_YESTERDAY28,991
+enum {  T_NOW, T_RECENT, T_TODAY, T_YESTERDAY, T_THIS_WEEK, T_WEEK_AGO, T_THIS_WEEK28,991
+enum {  T_NOW, T_RECENT, T_TODAY, T_YESTERDAY, T_THIS_WEEK, T_WEEK_AGO, T_WEEK_AGO28,991
+	T_THIS_MONTH, T_THIS_YEAR };T_THIS_MONTH29,1064
+	T_THIS_MONTH, T_THIS_YEAR };T_THIS_YEAR29,1064
+
+ausearch-llist.h,2500
+#define AULIST_HEADERAULIST_HEADER25,898
+        time_t sec;		// Event secondssec36,1067
+        unsigned int milli;	// millisecond of the timestampmilli37,1105
+        unsigned long serial;	// Serial number of the eventserial38,1165
+	const char *node;	// Machine's node namenode39,1225
+	int type;		// type of first eventtype40,1267
+} event;event41,1302
+  pid_t ppid;           // parent process IDppid45,1329
+  pid_t pid;            // process IDpid46,1374
+  uid_t uid;            // user IDuid47,1412
+  uid_t euid;           // effective user IDeuid48,1447
+  uid_t loginuid;       // login user IDloginuid49,1492
+  gid_t gid;            // group IDgid50,1533
+  gid_t egid;           // effective group IDegid51,1569
+  success_t success;    // success flag, 1 = yes, 0 = no, -1 = unsetsuccess52,1615
+  int arch;             // archarch53,1684
+  int syscall;          // syscallsyscall54,1716
+  int session_id;       // Login session idsession_id55,1751
+  int exit;             // Syscall exit codeexit56,1795
+  int exit_is_set;      // Syscall exit code is validexit_is_set57,1840
+  char *hostname;       // remote hostnamehostname58,1894
+  slist *filename;      // filename listfilename59,1937
+  char *cwd;            // current working dircwd60,1978
+  char *exe;            // executableexe61,2025
+  slist *key;           // key fieldkey62,2063
+  char *terminal;       // terminalterminal63,2100
+  char *comm;           // comm namecomm64,2136
+  alist *avc;		// avcs for the eventavc65,2173
+  char *acct;		// account used when uid is invalidacct66,2210
+} search_items;search_items67,2261
+typedef struct _lnode{_lnode71,2374
+  char *message;		// The whole unparsed messagemessage72,2397
+  int type;             	// message type (KERNEL, USER, LOGIN, etc)type73,2445
+  unsigned long long a0;	// argv 0a074,2513
+  unsigned int item;		// Which item of the same eventitem75,2548
+  struct _lnode* next;		// Next node pointernext76,2602
+} lnode;lnode77,2647
+  lnode *head;		// List headhead82,2764
+  lnode *cur;		// Pointer to current nodecur83,2793
+  unsigned int cnt;	// How many items in this listcnt84,2835
+  event e;		// event - time & serial numbere87,2920
+  search_items s;	// items in master rec that are searchables88,2964
+} llist;llist89,3025
+static inline void list_first(llist *l) { l->cur = l->head; }list_first92,3063
+static inline lnode *list_get_cur(llist *l) { return l->cur; }list_get_cur96,3207
+
+auditd-listen.h,47
+#define AUDITD_LISTEN_HAUDITD_LISTEN_H25,904
+
+hashtab.c,557
+int streq(const void *a, const void *b) {streq149,4505
+htable *ht_create(int size, ht_create173,5250
+int ht_resize(htable *table) {ht_resize220,6239
+ht_entry *ht_insert(htable *table, ht_entry *entry) {ht_insert300,8083
+ht_entry *ht_find(htable *table, const char *key) {ht_find342,9126
+ht_entry *ht_remove(htable *table, const char *key, const void *datum) {ht_remove359,9633
+void ht_clear(htable *table) {ht_clear401,10526
+void ht_destroy(htable *table) {ht_destroy428,11098
+void print_entry(const ht_entry *entry) {print_entry442,11343
+
+ausearch-parse.h,45
+#define AUPARSE_HEADERAUPARSE_HEADER25,894
+
+ausearch-int.c,369
+void ilist_create(ilist *l)ilist_create29,970
+int_node *ilist_next(ilist *l)ilist_next36,1049
+void ilist_append(ilist *l, int num, unsigned int hits, int aux)ilist_append44,1161
+void ilist_clear(ilist* l)ilist_clear66,1581
+int ilist_add_if_uniq(ilist *l, int num, int aux)ilist_add_if_uniq85,1842
+void ilist_sort_by_hits(ilist *l)ilist_sort_by_hits123,2478
+
+auditd-config.h,5113
+#define AUDITD_CONFIG_HAUDITD_CONFIG_H25,909
+#define CONFIG_FILE CONFIG_FILE29,973
+#define MEGABYTE MEGABYTE30,1018
+typedef enum { D_FOREGROUND, D_BACKGROUND } daemon_t;D_FOREGROUND32,1046
+typedef enum { D_FOREGROUND, D_BACKGROUND } daemon_t;D_BACKGROUND32,1046
+typedef enum { D_FOREGROUND, D_BACKGROUND } daemon_t;daemon_t32,1046
+typedef enum { LF_RAW, LF_NOLOG } logging_formats;LF_RAW33,1100
+typedef enum { LF_RAW, LF_NOLOG } logging_formats;LF_NOLOG33,1100
+typedef enum { LF_RAW, LF_NOLOG } logging_formats;logging_formats33,1100
+typedef enum { FT_NONE, FT_INCREMENTAL, FT_DATA, FT_SYNC } flush_technique;FT_NONE34,1151
+typedef enum { FT_NONE, FT_INCREMENTAL, FT_DATA, FT_SYNC } flush_technique;FT_INCREMENTAL34,1151
+typedef enum { FT_NONE, FT_INCREMENTAL, FT_DATA, FT_SYNC } flush_technique;FT_DATA34,1151
+typedef enum { FT_NONE, FT_INCREMENTAL, FT_DATA, FT_SYNC } flush_technique;FT_SYNC34,1151
+typedef enum { FT_NONE, FT_INCREMENTAL, FT_DATA, FT_SYNC } flush_technique;flush_technique34,1151
+typedef enum { FA_IGNORE, FA_SYSLOG, FA_EMAIL, FA_EXEC, FA_SUSPEND,FA_IGNORE35,1227
+typedef enum { FA_IGNORE, FA_SYSLOG, FA_EMAIL, FA_EXEC, FA_SUSPEND,FA_SYSLOG35,1227
+typedef enum { FA_IGNORE, FA_SYSLOG, FA_EMAIL, FA_EXEC, FA_SUSPEND,FA_EMAIL35,1227
+typedef enum { FA_IGNORE, FA_SYSLOG, FA_EMAIL, FA_EXEC, FA_SUSPEND,FA_EXEC35,1227
+typedef enum { FA_IGNORE, FA_SYSLOG, FA_EMAIL, FA_EXEC, FA_SUSPEND,FA_SUSPEND35,1227
+		FA_SINGLE, FA_HALT } failure_action_t;FA_SINGLE36,1295
+		FA_SINGLE, FA_HALT } failure_action_t;FA_HALT36,1295
+		FA_SINGLE, FA_HALT } failure_action_t;failure_action_t36,1295
+typedef enum { SZ_IGNORE, SZ_SYSLOG, SZ_SUSPEND, SZ_ROTATE, SZ_IGNORE37,1336
+typedef enum { SZ_IGNORE, SZ_SYSLOG, SZ_SUSPEND, SZ_ROTATE, SZ_SYSLOG37,1336
+typedef enum { SZ_IGNORE, SZ_SYSLOG, SZ_SUSPEND, SZ_ROTATE, SZ_SUSPEND37,1336
+typedef enum { SZ_IGNORE, SZ_SYSLOG, SZ_SUSPEND, SZ_ROTATE, SZ_ROTATE37,1336
+		SZ_KEEP_LOGS } size_action;SZ_KEEP_LOGS38,1397
+		SZ_KEEP_LOGS } size_action;size_action38,1397
+typedef enum { QOS_NON_BLOCKING, QOS_BLOCKING } qos_t;QOS_NON_BLOCKING39,1427
+typedef enum { QOS_NON_BLOCKING, QOS_BLOCKING } qos_t;QOS_BLOCKING39,1427
+typedef enum { QOS_NON_BLOCKING, QOS_BLOCKING } qos_t;qos_t39,1427
+typedef enum { TEST_AUDITD, TEST_SEARCH } log_test_t;TEST_AUDITD40,1482
+typedef enum { TEST_AUDITD, TEST_SEARCH } log_test_t;TEST_SEARCH40,1482
+typedef enum { TEST_AUDITD, TEST_SEARCH } log_test_t;log_test_t40,1482
+typedef enum { N_NONE, N_HOSTNAME, N_FQD, N_NUMERIC, N_USER } node_t;N_NONE41,1536
+typedef enum { N_NONE, N_HOSTNAME, N_FQD, N_NUMERIC, N_USER } node_t;N_HOSTNAME41,1536
+typedef enum { N_NONE, N_HOSTNAME, N_FQD, N_NUMERIC, N_USER } node_t;N_FQD41,1536
+typedef enum { N_NONE, N_HOSTNAME, N_FQD, N_NUMERIC, N_USER } node_t;N_NUMERIC41,1536
+typedef enum { N_NONE, N_HOSTNAME, N_FQD, N_NUMERIC, N_USER } node_t;N_USER41,1536
+typedef enum { N_NONE, N_HOSTNAME, N_FQD, N_NUMERIC, N_USER } node_t;node_t41,1536
+struct daemon_confdaemon_conf43,1607
+	daemon_t daemonize;daemonize45,1628
+	qos_t qos;		/* use blocking/non-blocking sockets */qos46,1649
+	uid_t sender_uid;	/* the uid for sender of sighup */sender_uid47,1702
+	pid_t sender_pid;	/* the pid for sender of sighup */sender_pid48,1756
+	const char *sender_ctx;	/* the context for the sender of sighup */sender_ctx49,1810
+	const char *log_file;log_file50,1878
+	logging_formats log_format;log_format51,1901
+	gid_t log_group;log_group52,1930
+	unsigned int priority_boost;priority_boost53,1948
+	flush_technique flush;flush54,1978
+	unsigned int freq;freq55,2002
+	unsigned int num_logs;num_logs56,2022
+	const char *dispatcher;dispatcher57,2046
+	node_t node_name_format;node_name_format58,2071
+	const char *node_name;node_name59,2097
+	unsigned long max_log_size;max_log_size60,2121
+	size_action max_log_size_action;max_log_size_action61,2150
+	unsigned long space_left;space_left62,2184
+	failure_action_t space_left_action;space_left_action63,2211
+	const char *space_left_exe;space_left_exe64,2248
+	const char *action_mail_acct;action_mail_acct65,2277
+	unsigned long admin_space_left;admin_space_left66,2308
+	failure_action_t admin_space_left_action;admin_space_left_action67,2341
+	const char *admin_space_left_exe;admin_space_left_exe68,2384
+	failure_action_t disk_full_action;disk_full_action69,2419
+	const char *disk_full_exe;disk_full_exe70,2455
+	failure_action_t disk_error_action;disk_error_action71,2483
+	const char *disk_error_exe;disk_error_exe72,2520
+	unsigned long tcp_listen_port;tcp_listen_port73,2549
+	unsigned long tcp_listen_queue;tcp_listen_queue74,2581
+	unsigned long tcp_max_per_addr;tcp_max_per_addr75,2614
+	int use_libwrap;use_libwrap76,2647
+	unsigned long tcp_client_min_port;tcp_client_min_port77,2665
+	unsigned long tcp_client_max_port;tcp_client_max_port78,2701
+	unsigned long tcp_client_max_idle;tcp_client_max_idle79,2737
+	int enable_krb5;enable_krb580,2773
+	const char *krb5_principal;krb5_principal81,2791
+	const char *krb5_key_file;krb5_key_file82,2820
+
+aureport-output.c,894
+unsigned int line_item;line_item44,1486
+void print_title(void)print_title47,1512
+static void print_title_summary(void)print_title_summary65,1748
+static void print_title_detailed(void)print_title_detailed188,5158
+void print_per_event_item(llist *l)print_per_event_item424,12032
+void print_wrap_up(void)print_wrap_up641,18630
+static void do_summary_output(void)do_summary_output724,20536
+static void do_file_summary_output(slist *sptr)do_file_summary_output786,22632
+static void do_string_summary_output(slist *sptr)do_string_summary_output802,22918
+static void do_user_summary_output(slist *sptr)do_user_summary_output818,23206
+static void do_int_summary_output(ilist *sptr)do_int_summary_output842,23697
+static void do_syscall_summary_output(ilist *sptr)do_syscall_summary_output858,23985
+static void do_type_summary_output(ilist *sptr)do_type_summary_output881,24480
+
+ausearch-lol.c,729
+#define ARRAY_LIMIT ARRAY_LIMIT34,1123
+static int ready = 0;ready35,1146
+void lol_create(lol *lo)lol_create37,1169
+void lol_clear(lol *lo)lol_clear47,1352
+static int lol_append(lol *lo, llist *l)lol_append64,1667
+static int str2event(char *s, event *e)str2event96,2333
+static int inline events_are_equal(event *e1, event *e2)events_are_equal123,2750
+static int extract_timestamp(const char *b, event *e)extract_timestamp139,3117
+static void check_events(lol *lo, htable *table, time_t sec)check_events197,4405
+int lol_add_record(lol *lo, htable *table, char *buff)lol_add_record234,5465
+void terminate_all_events(lol *lo)terminate_all_events347,8369
+llist* get_ready_event(lol *lo)get_ready_event363,8697
+
+ausearch-lookup.c,2154
+struct nv_pair {nv_pair35,1150
+	int        value;value36,1167
+	const char *name;name37,1186
+static int machine = 0;machine42,1246
+static const char *Q = "?";Q43,1270
+static const char *results[3]= { "unset", "denied", "granted" };results44,1298
+static const char *success[3]= { "unset", "no", "yes" };success45,1363
+const char *aulookup_result(avc_t result)aulookup_result47,1421
+const char *aulookup_success(int s)aulookup_success52,1493
+const char *aulookup_syscall(llist *l, char *buf, size_t size)aulookup_syscall68,1694
+static struct nv_pair socktab[] = {socktab99,2456
+#define SOCK_NAMES SOCK_NAMES118,2965
+const char *aulookup_socketcall(long sc)aulookup_socketcall120,3022
+#define SEMOP SEMOP133,3330
+#define SEMGET SEMGET134,3357
+#define SEMCTL SEMCTL135,3384
+#define MSGSND MSGSND136,3411
+#define MSGRCV MSGRCV137,3438
+#define MSGGET MSGGET138,3465
+#define MSGCTL MSGCTL139,3492
+#define SHMAT SHMAT140,3519
+#define SHMDT SHMDT141,3546
+#define SHMGET SHMGET142,3573
+#define SHMCTL SHMCTL143,3600
+static struct nv_pair ipctab[] = {ipctab148,3683
+#define IPC_NAMES IPC_NAMES161,4022
+const char *aulookup_ipccall(long ic)aulookup_ipccall163,4076
+static nvlist uid_nvl;uid_nvl174,4287
+static int uid_list_created=0;uid_list_created175,4310
+const char *aulookup_uid(uid_t uid, char *buf, size_t size)aulookup_uid176,4341
+void aulookup_destroy_uid_list(void)aulookup_destroy_uid_list218,5141
+static nvlist gid_nvl;gid_nvl227,5271
+static int gid_list_created=0;gid_list_created228,5294
+const char *aulookup_gid(gid_t gid, char *buf, size_t size)aulookup_gid229,5325
+void aulookup_destroy_gid_list(void)aulookup_destroy_gid_list271,6124
+int is_hex_string(const char *str)is_hex_string280,6254
+static unsigned char x2c(unsigned char *buf)x2c295,6501
+char *unescape(char *buf)unescape312,6945
+static void tty_printable_char(unsigned char c)tty_printable_char354,7660
+static const char *tty_find_named_key(unsigned char **input, size_t input_len)tty_find_named_key372,8060
+#define E(E377,8315
+#undef EE379,8391
+void print_tty_data(const char *val)print_tty_data404,8884
+
+aureport-scan.h,1080
+#define AUREPORT_SCAN_HAUREPORT_SCAN_H25,913
+typedef struct sdata {sdata30,993
+	slist users;users31,1016
+	slist terms;terms32,1030
+	slist files;files33,1044
+	slist hosts;hosts34,1058
+	slist exes;exes35,1072
+	slist avc_objs;avc_objs36,1085
+	slist keys;keys37,1102
+	ilist pids;pids38,1115
+	ilist sys_list;sys_list39,1128
+	ilist anom_list;anom_list40,1145
+	ilist resp_list;resp_list41,1163
+	ilist mac_list;mac_list42,1181
+	ilist crypto_list;crypto_list43,1198
+	unsigned long changes;changes44,1218
+	unsigned long crypto;crypto45,1242
+	unsigned long acct_changes;acct_changes46,1265
+	unsigned long good_logins;good_logins47,1294
+	unsigned long bad_logins;bad_logins48,1322
+	unsigned long good_auth;good_auth49,1349
+	unsigned long bad_auth;bad_auth50,1375
+	unsigned long events;events51,1400
+	unsigned long avcs;avcs52,1423
+	unsigned long mac;mac53,1444
+	unsigned long failed_syscalls;failed_syscalls54,1464
+	unsigned long anomalies;anomalies55,1496
+	unsigned long responses;responses56,1522
+} summary_data;summary_data57,1548
+
+ausearch-report.c,4641
+struct nv_pair {nv_pair48,1463
+	int        value;value49,1480
+	const char *name;name50,1499
+enum { T_UID, T_GID, T_SYSCALL, T_ARCH, T_EXIT, T_ESCAPED, T_PERM, T_MODE, T_UID54,1582
+enum { T_UID, T_GID, T_SYSCALL, T_ARCH, T_EXIT, T_ESCAPED, T_PERM, T_MODE, T_GID54,1582
+enum { T_UID, T_GID, T_SYSCALL, T_ARCH, T_EXIT, T_ESCAPED, T_PERM, T_MODE, T_SYSCALL54,1582
+enum { T_UID, T_GID, T_SYSCALL, T_ARCH, T_EXIT, T_ESCAPED, T_PERM, T_MODE, T_ARCH54,1582
+enum { T_UID, T_GID, T_SYSCALL, T_ARCH, T_EXIT, T_ESCAPED, T_PERM, T_MODE, T_EXIT54,1582
+enum { T_UID, T_GID, T_SYSCALL, T_ARCH, T_EXIT, T_ESCAPED, T_PERM, T_MODE, T_ESCAPED54,1582
+enum { T_UID, T_GID, T_SYSCALL, T_ARCH, T_EXIT, T_ESCAPED, T_PERM, T_MODE, T_PERM54,1582
+enum { T_UID, T_GID, T_SYSCALL, T_ARCH, T_EXIT, T_ESCAPED, T_PERM, T_MODE, T_MODE54,1582
+T_SOCKADDR, T_FLAGS, T_PROMISC, T_CAPABILITY, T_SIGNAL, T_KEY, T_LIST,T_SOCKADDR55,1658
+T_SOCKADDR, T_FLAGS, T_PROMISC, T_CAPABILITY, T_SIGNAL, T_KEY, T_LIST,T_FLAGS55,1658
+T_SOCKADDR, T_FLAGS, T_PROMISC, T_CAPABILITY, T_SIGNAL, T_KEY, T_LIST,T_PROMISC55,1658
+T_SOCKADDR, T_FLAGS, T_PROMISC, T_CAPABILITY, T_SIGNAL, T_KEY, T_LIST,T_CAPABILITY55,1658
+T_SOCKADDR, T_FLAGS, T_PROMISC, T_CAPABILITY, T_SIGNAL, T_KEY, T_LIST,T_SIGNAL55,1658
+T_SOCKADDR, T_FLAGS, T_PROMISC, T_CAPABILITY, T_SIGNAL, T_KEY, T_LIST,T_KEY55,1658
+T_SOCKADDR, T_FLAGS, T_PROMISC, T_CAPABILITY, T_SIGNAL, T_KEY, T_LIST,T_LIST55,1658
+T_TTY_DATA, T_SESSION, T_CAP_BITMAP, T_NFPROTO, T_ICMPTYPE, T_PROTOCOL,T_TTY_DATA56,1729
+T_TTY_DATA, T_SESSION, T_CAP_BITMAP, T_NFPROTO, T_ICMPTYPE, T_PROTOCOL,T_SESSION56,1729
+T_TTY_DATA, T_SESSION, T_CAP_BITMAP, T_NFPROTO, T_ICMPTYPE, T_PROTOCOL,T_CAP_BITMAP56,1729
+T_TTY_DATA, T_SESSION, T_CAP_BITMAP, T_NFPROTO, T_ICMPTYPE, T_PROTOCOL,T_NFPROTO56,1729
+T_TTY_DATA, T_SESSION, T_CAP_BITMAP, T_NFPROTO, T_ICMPTYPE, T_PROTOCOL,T_ICMPTYPE56,1729
+T_TTY_DATA, T_SESSION, T_CAP_BITMAP, T_NFPROTO, T_ICMPTYPE, T_PROTOCOL,T_PROTOCOL56,1729
+T_ADDR };T_ADDR57,1801
+static int machine = -1;machine70,2199
+static unsigned long long a0;a073,2258
+void output_record(llist *l)output_record76,2347
+static void output_raw(llist *l)output_raw97,2705
+static void output_default(llist *l)output_default116,3093
+static void output_interpreted(llist *l)output_interpreted141,3670
+static void output_interpreted_node(const lnode *n)output_interpreted_node165,4134
+static struct nv_pair typetab[] = {typetab324,7283
+#define TYPE_NAMES TYPE_NAMES383,8551
+static int audit_lookup_type(const char *name)audit_lookup_type386,8609
+static void print_uid(const char *val)print_uid397,8844
+static void print_gid(const char *val)print_gid412,9081
+static void print_arch(const char *val)print_arch427,9318
+static void print_syscall(const char *val)print_syscall447,9685
+static void print_exit(const char *val)print_exit481,10346
+static void print_escaped(char *val)print_escaped498,10601
+static void print_perm(const char *val)print_perm530,11251
+static void print_mode(const char *val)print_mode572,11908
+static struct nv_pair famtab[] = {famtab611,12702
+#define FAM_NAMES FAM_NAMES638,13484
+static const char *audit_lookup_fam(int fam)audit_lookup_fam640,13538
+static void print_sockaddr(char *val)print_sockaddr651,13757
+static void print_addr(char *val)print_addr758,16264
+static struct nv_pair flagtab[] = {flagtab766,16387
+#define FLAG_NAMES FLAG_NAMES777,16680
+static void print_flags(char *val)print_flags779,16737
+static void print_promiscuous(const char *val)print_promiscuous804,17143
+static struct nv_pair captab[] = {captab824,17445
+#define CAP_NAMES CAP_NAMES861,18421
+static void print_capabilities(char *val)print_capabilities863,18475
+static void print_cap_bitmap(char *val)print_cap_bitmap882,18808
+#define MASK(MASK884,18850
+static struct nv_pair nfprototab[] = {nfprototab914,19400
+#define NFPROTO_NAMES NFPROTO_NAMES922,19649
+static void print_nfproto(char *val)print_nfproto924,19715
+static struct nv_pair icmptypetab[] = {icmptypetab946,20124
+#define ICMPTYPE_NAMES ICMPTYPE_NAMES961,20756
+static void print_icmptype(char *val)print_icmptype963,20825
+static void print_signals(char *val)print_signals982,21184
+static void print_protocol(char *val)print_protocol995,21373
+static const char key_sep[2] = { AUDIT_KEY_SEPARATOR, 0 };key_sep1013,21653
+static void print_key(char *val)print_key1014,21712
+static void print_list(char *val)print_list1045,22257
+static void print_session(char *val)print_session1058,22452
+static void interpret(char *name, char *val, int comma, int rtype)interpret1066,22579
+
+ausearch-options.h,53
+#define AUSEARCH_OPTIONS_HAUSEARCH_OPTIONS_H25,920
+
+ausearch-string.h,698
+#define AUSTRING_HEADERAUSTRING_HEADER25,902
+typedef struct _snode{_snode31,1092
+  char *str;		// The stringstr32,1115
+  char *key;		// The key stringkey33,1143
+  unsigned int hits;	// Number of times this string was attempted to be addedhits34,1175
+  struct _snode* next;	// Next string node pointernext35,1253
+} snode;snode36,1304
+  snode *head;		// List headhead41,1421
+  snode *cur;		// Pointer to current nodecur42,1450
+  unsigned int cnt;	// How many items in this listcnt43,1492
+} slist;slist44,1543
+static inline void slist_first(slist *l) { l->cur = l->head; }slist_first47,1582
+static inline snode *slist_get_cur(slist *l) { return l->cur; }slist_get_cur50,1701
+
+queue.h,391
+#define QUEUE_HQUEUE_H2,16
+typedef struct queue_list {queue_list5,68
+  int size;size6,96
+  struct queue_el *front, *back;front7,108
+  struct queue_el *front, *back;back7,108
+} queue;queue8,141
+typedef struct queue_el {queue_el11,202
+  void *datum;datum12,228
+  struct queue_el *next, *prev;next13,243
+  struct queue_el *next, *prev;prev13,243
+} queue_el;queue_el14,275
+
+auditd-event.h,423
+#define AUDITD_EVENT_HAUDITD_EVENT_H25,914
+typedef void (*ack_func_type)(void *ack_data, const unsigned char *header, const char *msg);ack_func_type29,961
+struct auditd_reply_list {auditd_reply_list31,1055
+	struct audit_reply reply;reply32,1082
+	struct auditd_reply_list *next;next33,1109
+	ack_func_type ack_func;ack_func34,1142
+	void *ack_data;ack_data35,1167
+	unsigned long sequence_id;sequence_id36,1184
+
+aureport-options.h,2226
+#define AUREPORT_OPTIONS_HAUREPORT_OPTIONS_H25,919
+typedef enum { RPT_UNSET, RPT_TIME, RPT_SUMMARY, RPT_AVC, RPT_MAC,RPT_UNSET34,1121
+typedef enum { RPT_UNSET, RPT_TIME, RPT_SUMMARY, RPT_AVC, RPT_MAC,RPT_TIME34,1121
+typedef enum { RPT_UNSET, RPT_TIME, RPT_SUMMARY, RPT_AVC, RPT_MAC,RPT_SUMMARY34,1121
+typedef enum { RPT_UNSET, RPT_TIME, RPT_SUMMARY, RPT_AVC, RPT_MAC,RPT_AVC34,1121
+typedef enum { RPT_UNSET, RPT_TIME, RPT_SUMMARY, RPT_AVC, RPT_MAC,RPT_MAC34,1121
+	RPT_CONFIG, RPT_EVENT, RPT_FILE, RPT_HOST, RPT_LOGIN,RPT_CONFIG35,1188
+	RPT_CONFIG, RPT_EVENT, RPT_FILE, RPT_HOST, RPT_LOGIN,RPT_EVENT35,1188
+	RPT_CONFIG, RPT_EVENT, RPT_FILE, RPT_HOST, RPT_LOGIN,RPT_FILE35,1188
+	RPT_CONFIG, RPT_EVENT, RPT_FILE, RPT_HOST, RPT_LOGIN,RPT_HOST35,1188
+	RPT_CONFIG, RPT_EVENT, RPT_FILE, RPT_HOST, RPT_LOGIN,RPT_LOGIN35,1188
+	RPT_ACCT_MOD, RPT_PID, RPT_SYSCALL, RPT_TERM, RPT_USER,RPT_ACCT_MOD36,1243
+	RPT_ACCT_MOD, RPT_PID, RPT_SYSCALL, RPT_TERM, RPT_USER,RPT_PID36,1243
+	RPT_ACCT_MOD, RPT_PID, RPT_SYSCALL, RPT_TERM, RPT_USER,RPT_SYSCALL36,1243
+	RPT_ACCT_MOD, RPT_PID, RPT_SYSCALL, RPT_TERM, RPT_USER,RPT_TERM36,1243
+	RPT_ACCT_MOD, RPT_PID, RPT_SYSCALL, RPT_TERM, RPT_USER,RPT_USER36,1243
+	RPT_EXE, RPT_ANOMALY, RPT_RESPONSE, RPT_CRYPTO, RPT_EXE37,1300
+	RPT_EXE, RPT_ANOMALY, RPT_RESPONSE, RPT_CRYPTO, RPT_ANOMALY37,1300
+	RPT_EXE, RPT_ANOMALY, RPT_RESPONSE, RPT_CRYPTO, RPT_RESPONSE37,1300
+	RPT_EXE, RPT_ANOMALY, RPT_RESPONSE, RPT_CRYPTO, RPT_CRYPTO37,1300
+	RPT_AUTH, RPT_KEY, RPT_TTY } report_type_t;RPT_AUTH38,1350
+	RPT_AUTH, RPT_KEY, RPT_TTY } report_type_t;RPT_KEY38,1350
+	RPT_AUTH, RPT_KEY, RPT_TTY } report_type_t;RPT_TTY38,1350
+	RPT_AUTH, RPT_KEY, RPT_TTY } report_type_t;report_type_t38,1350
+typedef enum { D_UNSET, D_SUM, D_DETAILED, D_SPECIFIC } report_det_t;D_UNSET40,1396
+typedef enum { D_UNSET, D_SUM, D_DETAILED, D_SPECIFIC } report_det_t;D_SUM40,1396
+typedef enum { D_UNSET, D_SUM, D_DETAILED, D_SPECIFIC } report_det_t;D_DETAILED40,1396
+typedef enum { D_UNSET, D_SUM, D_DETAILED, D_SPECIFIC } report_det_t;D_SPECIFIC40,1396
+typedef enum { D_UNSET, D_SUM, D_DETAILED, D_SPECIFIC } report_det_t;report_det_t40,1396
+#define UNIMPLEMENTED UNIMPLEMENTED51,1686
+
+autrace.c,353
+static int threat = 0;threat40,1247
+static void usage(void)usage45,1367
+static int insert_rule(int audit_fd, const char *field)insert_rule50,1447
+int key_match(struct audit_reply *rep)key_match138,4721
+int main(int argc, char *argv[])main153,5086
+static int count_rules(void)count_rules261,7443
+static int count_em(int fd)count_em279,7675
+
+ausearch-nvpair.h,630
+#define AUNVPAIR_HEADERAUNVPAIR_HEADER25,900
+typedef struct _nvnode{_nvnode32,1113
+  char *name;		// The name stringname33,1137
+  long val;		// The value fieldval34,1171
+  struct _nvnode* next;	// Next nvpair node pointernext35,1203
+} nvnode;nvnode36,1255
+  nvnode *head;		// List headhead41,1373
+  nvnode *cur;		// Pointer to current nodecur42,1403
+  unsigned int cnt;	// How many items in this listcnt43,1446
+} nvlist;nvlist44,1497
+static inline void nvlist_first(nvlist *l) { l->cur = l->head; }nvlist_first47,1539
+static inline nvnode *nvlist_get_cur(nvlist *l) { return l->cur; }nvlist_get_cur49,1636
+
+auditctl-llist.h,552
+#define CTLLIST_HEADERCTLLIST_HEADER25,894
+typedef struct _lnode{_lnode33,1128
+  struct audit_rule_data *r; // The rule from the kernelr34,1151
+  size_t size;		// Size of the rule structsize35,1208
+  struct _lnode *next;	// Next node pointernext36,1251
+} lnode;lnode37,1295
+  lnode *head;		// List headhead42,1412
+  lnode *cur;		// Pointer to current nodecur43,1441
+  unsigned int cnt;	// How many items in this listcnt44,1483
+} llist;llist45,1534
+static inline lnode *list_get_cur(llist *l) { return l->cur; }list_get_cur51,1653
+
+hashtab-util.c,168
+void event_to_key(char *key, event *e) {event_to_key13,258
+int compar(const void *a, const void *b) {compar27,600
+unsigned long hash(const char *key) {hash42,934
+
+aureport.c,737
+#define TABLE_SIZE TABLE_SIZE47,1426
+event very_first_event, very_last_event;very_first_event49,1449
+event very_first_event, very_last_event;very_last_event49,1449
+static FILE *log_fd = NULL;log_fd50,1490
+static lol lo;lo51,1518
+static htable *ev_table; // New additionev_table52,1533
+static int found = 0;found53,1574
+static int is_pipe(int fd)is_pipe63,1853
+int main(int argc, char *argv[])main74,1986
+static int process_logs(struct daemon_conf *config)process_logs154,3963
+static int process_log_fd(const char *filename)process_log_fd203,5012
+static int process_stdin(void)process_stdin261,6398
+static int process_file(char *filename)process_file268,6485
+static int get_record(llist **l)get_record285,6899

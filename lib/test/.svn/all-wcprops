@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/audit/!svn/ver/366/trunk/lib/test
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/120/trunk/lib/test/Makefile.am
+END
+lookup_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/366/trunk/lib/test/lookup_test.c
+END

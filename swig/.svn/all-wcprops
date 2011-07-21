@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/audit/!svn/ver/510/trunk/swig
+END
+auditswig.i
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/313/trunk/swig/auditswig.i
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/510/trunk/swig/Makefile.am
+END

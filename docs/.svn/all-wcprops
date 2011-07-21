@@ -1,0 +1,485 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/audit/!svn/ver/550/trunk/docs
+END
+audit_detect_machine.3
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/1/trunk/docs/audit_detect_machine.3
+END
+auparse_flush_feed.3
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/1/trunk/docs/auparse_flush_feed.3
+END
+auparse_get_milli.3
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_milli.3
+END
+ausearch_add_interpreted_item.3
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/audit/!svn/ver/1/trunk/docs/ausearch_add_interpreted_item.3
+END
+autrace.8
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/audit/!svn/ver/1/trunk/docs/autrace.8
+END
+auparse_get_field_str.3
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_field_str.3
+END
+zos-remote.conf.5
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/audit/!svn/ver/84/trunk/docs/zos-remote.conf.5
+END
+audit_set_enabled.3
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/1/trunk/docs/audit_set_enabled.3
+END
+audispd.8
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/440/trunk/docs/audispd.8
+END
+auparse_get_filename.3
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_filename.3
+END
+auditd.conf.5
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/550/trunk/docs/auditd.conf.5
+END
+auparse_next_field.3
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/1/trunk/docs/auparse_next_field.3
+END
+audit_log_user_command.3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/1/trunk/docs/audit_log_user_command.3
+END
+audit.rules.7
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/433/trunk/docs/audit.rules.7
+END
+auparse_get_node.3
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_node.3
+END
+audit_update_watch_perms.3
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/audit/!svn/ver/1/trunk/docs/audit_update_watch_perms.3
+END
+auparse_goto_record_num.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/1/trunk/docs/auparse_goto_record_num.3
+END
+auparse_first_record.3
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/1/trunk/docs/auparse_first_record.3
+END
+auparse_get_line_number.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_line_number.3
+END
+audit_request_status.3
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/1/trunk/docs/audit_request_status.3
+END
+ausearch_add_item.3
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/1/trunk/docs/ausearch_add_item.3
+END
+libaudit.conf.5
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/344/trunk/docs/libaudit.conf.5
+END
+audit_request_signal_info.3
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/audit/!svn/ver/1/trunk/docs/audit_request_signal_info.3
+END
+audit_set_failure.3
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/1/trunk/docs/audit_set_failure.3
+END
+auparse_timestamp_compare.3
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/audit/!svn/ver/1/trunk/docs/auparse_timestamp_compare.3
+END
+set_aumessage_mode.3
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/1/trunk/docs/set_aumessage_mode.3
+END
+ausearch-expression.5
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/audit/!svn/ver/368/trunk/docs/ausearch-expression.5
+END
+ausearch_next_event.3
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/audit/!svn/ver/1/trunk/docs/ausearch_next_event.3
+END
+ausearch_add_regex.3
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/368/trunk/docs/ausearch_add_regex.3
+END
+auparse_get_serial.3
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_serial.3
+END
+get_auditfail_action.3
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/1/trunk/docs/get_auditfail_action.3
+END
+auparse_interpret_field.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/1/trunk/docs/auparse_interpret_field.3
+END
+audit_getloginuid.3
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/1/trunk/docs/audit_getloginuid.3
+END
+ausearch.8
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/440/trunk/docs/ausearch.8
+END
+audit_log_user_avc_message.3
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/audit/!svn/ver/1/trunk/docs/audit_log_user_avc_message.3
+END
+auparse_find_field.3
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/1/trunk/docs/auparse_find_field.3
+END
+audit_add_watch.3
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/1/trunk/docs/audit_add_watch.3
+END
+auparse_destroy.3
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/1/trunk/docs/auparse_destroy.3
+END
+audit_log_user_message.3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/1/trunk/docs/audit_log_user_message.3
+END
+auparse_first_field.3
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/audit/!svn/ver/1/trunk/docs/auparse_first_field.3
+END
+auparse_get_field_int.3
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_field_int.3
+END
+audit_setloginuid.3
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/1/trunk/docs/audit_setloginuid.3
+END
+auparse_get_time.3
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_time.3
+END
+audit_set_pid.3
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/1/trunk/docs/audit_set_pid.3
+END
+audispd.conf.5
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/audit/!svn/ver/176/trunk/docs/audispd.conf.5
+END
+auditd.8
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/audit/!svn/ver/319/trunk/docs/auditd.8
+END
+auparse_get_timestamp.3
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_timestamp.3
+END
+ausearch_add_expression.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/1/trunk/docs/ausearch_add_expression.3
+END
+auparse_add_callback.3
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/1/trunk/docs/auparse_add_callback.3
+END
+audit_log_user_comm_message.3
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/audit/!svn/ver/1/trunk/docs/audit_log_user_comm_message.3
+END
+audit_set_rate_limit.3
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/1/trunk/docs/audit_set_rate_limit.3
+END
+auparse_next_record.3
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/audit/!svn/ver/1/trunk/docs/auparse_next_record.3
+END
+audit_add_rule_data.3
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/audit/!svn/ver/307/trunk/docs/audit_add_rule_data.3
+END
+auparse_next_event.3
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/1/trunk/docs/auparse_next_event.3
+END
+audispd-zos-remote.8
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/101/trunk/docs/audispd-zos-remote.8
+END
+auparse_find_field_next.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/1/trunk/docs/auparse_find_field_next.3
+END
+ausearch_clear.3
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/audit/!svn/ver/1/trunk/docs/ausearch_clear.3
+END
+auparse_reset.3
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/1/trunk/docs/auparse_reset.3
+END
+auparse_get_num_fields.3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_num_fields.3
+END
+audit_log_acct_message.3
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/audit/!svn/ver/419/trunk/docs/audit_log_acct_message.3
+END
+audit_delete_rule_data.3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/1/trunk/docs/audit_delete_rule_data.3
+END
+auparse_node_compare.3
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/1/trunk/docs/auparse_node_compare.3
+END
+ausearch_set_stop.3
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/1/trunk/docs/ausearch_set_stop.3
+END
+audit_encode_nv_string.3
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/audit/!svn/ver/420/trunk/docs/audit_encode_nv_string.3
+END
+audit_request_rules_list_data.3
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/audit/!svn/ver/1/trunk/docs/audit_request_rules_list_data.3
+END
+auditctl.8
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/449/trunk/docs/auditctl.8
+END
+audit_get_reply.3
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/1/trunk/docs/audit_get_reply.3
+END
+auparse_init.3
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/audit/!svn/ver/1/trunk/docs/auparse_init.3
+END
+auparse_feed.3
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/audit/!svn/ver/1/trunk/docs/auparse_feed.3
+END
+audit_open.3
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/1/trunk/docs/audit_open.3
+END
+auparse_get_num_records.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_num_records.3
+END
+auparse_get_type.3
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_type.3
+END
+auparse_get_record_text.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_record_text.3
+END
+audit_set_backlog_limit.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/1/trunk/docs/audit_set_backlog_limit.3
+END
+auparse_get_field_name.3
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/1/trunk/docs/auparse_get_field_name.3
+END
+auparse_get_field_type.3
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/95/trunk/docs/auparse_get_field_type.3
+END
+ausearch_add_timestamp_item.3
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/audit/!svn/ver/1/trunk/docs/ausearch_add_timestamp_item.3
+END
+aureport.8
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/403/trunk/docs/aureport.8
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/344/trunk/docs/Makefile.am
+END
+audit_log_user_semanage_message.3
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/audit/!svn/ver/1/trunk/docs/audit_log_user_semanage_message.3
+END

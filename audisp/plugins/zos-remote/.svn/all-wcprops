@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/295/trunk/audisp/plugins/zos-remote
+END
+audispd-zos-remote.conf
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/audispd-zos-remote.conf
+END
+zos-remote-plugin.c
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/audit/!svn/ver/295/trunk/audisp/plugins/zos-remote/zos-remote-plugin.c
+END
+zos-remote-ldap.c
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/zos-remote-ldap.c
+END
+zos-remote-log.c
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/zos-remote-log.c
+END
+zos-remote-queue.c
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/zos-remote-queue.c
+END
+zos-remote-config.c
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/zos-remote-config.c
+END
+zos-remote-ldap.h
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/zos-remote-ldap.h
+END
+zos-remote.conf
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/zos-remote.conf
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/audit/!svn/ver/295/trunk/audisp/plugins/zos-remote/Makefile.am
+END
+zos-remote-log.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/zos-remote-log.h
+END
+zos-remote-queue.h
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/zos-remote-queue.h
+END
+zos-remote-config.h
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/audit/!svn/ver/1/trunk/audisp/plugins/zos-remote/zos-remote-config.h
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/audit/!svn/ver/290/trunk/auparse/test
+END
+test.log
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/audit/!svn/ver/290/trunk/auparse/test/test.log
+END
+auparse_test.c
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/audit/!svn/ver/144/trunk/auparse/test/auparse_test.c
+END
+auparse_test.ref.py
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/audit/!svn/ver/271/trunk/auparse/test/auparse_test.ref.py
+END
+test2.log
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/290/trunk/auparse/test/test2.log
+END
+auparse_test.py
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/audit/!svn/ver/144/trunk/auparse/test/auparse_test.py
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/audit/!svn/ver/260/trunk/auparse/test/Makefile.am
+END
+auparse_test.ref
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/audit/!svn/ver/271/trunk/auparse/test/auparse_test.ref
+END

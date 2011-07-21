@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/audit/!svn/ver/446/trunk/contrib
+END
+stig.rules
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/446/trunk/contrib/stig.rules
+END
+skeleton.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/1/trunk/contrib/skeleton.c
+END
+lspp.rules
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/446/trunk/contrib/lspp.rules
+END
+avc_snap
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/1/trunk/contrib/avc_snap
+END
+capp.rules
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/446/trunk/contrib/capp.rules
+END
+nispom.rules
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/446/trunk/contrib/nispom.rules
+END

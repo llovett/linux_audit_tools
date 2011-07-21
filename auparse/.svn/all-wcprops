@@ -1,0 +1,215 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/audit/!svn/ver/548/trunk/auparse
+END
+nvpair.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/145/trunk/auparse/nvpair.c
+END
+captab.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/489/trunk/auparse/captab.h
+END
+famtab.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/1/trunk/auparse/famtab.h
+END
+clone-flagtab.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/audit/!svn/ver/1/trunk/auparse/clone-flagtab.h
+END
+fcntl-cmdtab.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/1/trunk/auparse/fcntl-cmdtab.h
+END
+nvpair.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/145/trunk/auparse/nvpair.h
+END
+data_buf.c
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/452/trunk/auparse/data_buf.c
+END
+data_buf.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/1/trunk/auparse/data_buf.h
+END
+private.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/1/trunk/auparse/private.h
+END
+nvlist.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/91/trunk/auparse/nvlist.c
+END
+nvlist.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/88/trunk/auparse/nvlist.h
+END
+message.c
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/1/trunk/auparse/message.c
+END
+auparse-defs.h
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/audit/!svn/ver/541/trunk/auparse/auparse-defs.h
+END
+socktab.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/1/trunk/auparse/socktab.h
+END
+ellist.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/477/trunk/auparse/ellist.c
+END
+expression.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/368/trunk/auparse/expression.c
+END
+auparse.c
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/audit/!svn/ver/530/trunk/auparse/auparse.c
+END
+ellist.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/1/trunk/auparse/ellist.h
+END
+open-flagtab.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/1/trunk/auparse/open-flagtab.h
+END
+expression.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/368/trunk/auparse/expression.h
+END
+flagtab.h
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/audit/!svn/ver/1/trunk/auparse/flagtab.h
+END
+auparse.h
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/88/trunk/auparse/auparse.h
+END
+ipctab.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/1/trunk/auparse/ipctab.h
+END
+rnode.h
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/audit/!svn/ver/1/trunk/auparse/rnode.h
+END
+interpret.c
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/audit/!svn/ver/548/trunk/auparse/interpret.c
+END
+auditd-config.c
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/audit/!svn/ver/1/trunk/auparse/auditd-config.c
+END
+typetab.h
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/audit/!svn/ver/541/trunk/auparse/typetab.h
+END
+interpret.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/audit/!svn/ver/117/trunk/auparse/interpret.h
+END
+internal.h
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/368/trunk/auparse/internal.h
+END
+epoll_ctl.h
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/audit/!svn/ver/194/trunk/auparse/epoll_ctl.h
+END
+nfprototab.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/497/trunk/auparse/nfprototab.h
+END
+tty_named_keys.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/audit/!svn/ver/270/trunk/auparse/tty_named_keys.h
+END
+icmptypetab.h
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/audit/!svn/ver/498/trunk/auparse/icmptypetab.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/audit/!svn/ver/497/trunk/auparse/Makefile.am
+END
+seek.h
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/audit/!svn/ver/194/trunk/auparse/seek.h
+END

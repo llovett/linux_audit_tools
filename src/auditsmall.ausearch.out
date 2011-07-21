@@ -1,0 +1,256 @@
+----
+time->Tue Jun 28 14:46:57 2011
+type=DAEMON_END msg=audit(1309286817.717:5660): auditd normal halt, sending auid=? pid=? subj=? res=success
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.690:2090042): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.690:2090043): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.690:2090044): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.690:2090045): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.690:2090046): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.690:2090047): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6bdf48 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.690:2090048): arch=c000003e syscall=14 success=yes exit=0 a0=2 a1=6bdf48 a2=0 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.690:2090049): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6bdf48 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.690:2090050): item=0 name="/etc/sysconfig/init" inode=5735127 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:etc_t:s0
+type=CWD msg=audit(1309286817.690:2090050):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.690:2090050): arch=c000003e syscall=4 success=yes exit=0 a0=13462210 a1=7fffdb0ec0d0 a2=7fffdb0ec0d0 a3=8 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.690:2090051): arch=c000003e syscall=14 success=yes exit=0 a0=2 a1=6bdf48 a2=0 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.690:2090052): item=0 name="/etc/sysconfig/init" inode=5735127 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:etc_t:s0
+type=CWD msg=audit(1309286817.690:2090052):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.690:2090052): arch=c000003e syscall=4 success=yes exit=0 a0=13456e30 a1=7fffdb0ec030 a2=7fffdb0ec030 a3=134620f3 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.690:2090053): item=0 name="/etc/sysconfig/init" inode=5735127 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:etc_t:s0
+type=CWD msg=audit(1309286817.690:2090053):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.690:2090053): arch=c000003e syscall=21 success=no exit=-13 a0=13456e30 a1=1 a2=0 a3=134620f3 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.690:2090054): item=0 name="/etc/sysconfig/init" inode=5735127 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:etc_t:s0
+type=CWD msg=audit(1309286817.690:2090054):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.690:2090054): arch=c000003e syscall=21 success=yes exit=0 a0=13456e30 a1=4 a2=d a3=134620f3 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.691:2090055): item=0 name="/etc/sysconfig/init" inode=5735127 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:etc_t:s0
+type=CWD msg=audit(1309286817.691:2090055):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.691:2090055): arch=c000003e syscall=2 success=yes exit=3 a0=134620e0 a1=0 a2=42ccf0 a3=1 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090056): arch=c000003e syscall=5 success=yes exit=0 a0=3 a1=7fffdb0ec0e0 a2=7fffdb0ec0e0 a3=1 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090057): arch=c000003e syscall=0 success=yes exit=1068 a0=3 a1=134571b0 a2=42c a3=1 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090058): arch=c000003e syscall=3 success=yes exit=0 a0=3 a1=134571b0 a2=134571b0 a3=1 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090059): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6bfc28 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090060): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090061): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090062): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090063): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090064): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090065): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090066): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090067): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090068): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090069): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090070): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090071): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090072): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090073): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090074): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090075): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090076): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090077): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090078): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090079): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090080): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090081): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090082): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.691:2090083): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090084): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090085): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6bdf48 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090086): arch=c000003e syscall=14 success=yes exit=0 a0=2 a1=6bdf48 a2=0 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090087): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090088): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090089): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6bdf48 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090090): arch=c000003e syscall=14 success=yes exit=0 a0=2 a1=6bdf48 a2=0 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090091): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090092): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090093): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090094): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090095): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090096): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090097): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090098): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090099): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090100): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090101): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090102): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090103): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090104): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090105): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.692:2090106): arch=c000003e syscall=14 success=yes exit=0 a0=0 a1=0 a2=6c0588 a3=8 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.693:2090107): item=0 name="/usr/share/locale/locale.alias" inode=32444204 dev=fd:00 mode=0100644 ouid=0 ogid=0 rdev=00:00 obj=system_u:object_r:locale_t:s0
+type=CWD msg=audit(1309286817.693:2090107):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.693:2090107): arch=c000003e syscall=2 success=yes exit=3 a0=7fffdb0eb280 a1=0 a2=1b6 a3=0 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.693:2090108): arch=c000003e syscall=5 success=yes exit=0 a0=3 a1=7fffdb0eb120 a2=7fffdb0eb120 a3=0 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.693:2090109): arch=c000003e syscall=9 success=yes exit=-1546108928 a0=0 a1=1000 a2=3 a3=22 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.693:2090110): arch=c000003e syscall=0 success=yes exit=2528 a0=3 a1=2b5fa3d84000 a2=1000 a3=22 items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.693:2090111): arch=c000003e syscall=0 success=yes exit=0 a0=3 a1=2b5fa3d84000 a2=1000 a3=a392d393538382d items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.693:2090112): arch=c000003e syscall=3 success=yes exit=0 a0=3 a1=1 a2=3856d52940 a3=a392d393538382d items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=SYSCALL msg=audit(1309286817.693:2090113): arch=c000003e syscall=11 success=yes exit=0 a0=2b5fa3d84000 a1=1000 a2=0 a3=a392d393538382d items=0 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.693:2090114): item=0 name="/usr/share/locale/en_US.UTF-8/LC_MESSAGES/initscripts.mo"
+type=CWD msg=audit(1309286817.693:2090114):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.693:2090114): arch=c000003e syscall=2 success=no exit=-2 a0=13457d80 a1=0 a2=0 a3=3856b238d3 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.693:2090115): item=0 name="/usr/share/locale/en_US.utf8/LC_MESSAGES/initscripts.mo"
+type=CWD msg=audit(1309286817.693:2090115):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.693:2090115): arch=c000003e syscall=2 success=no exit=-2 a0=13457ee0 a1=0 a2=0 a3=3856b238d3 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.693:2090116): item=0 name="/usr/share/locale/en_US/LC_MESSAGES/initscripts.mo"
+type=CWD msg=audit(1309286817.693:2090116):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.693:2090116): arch=c000003e syscall=2 success=no exit=-2 a0=13461de0 a1=0 a2=0 a3=3856b238d3 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.693:2090117): item=0 name="/usr/share/locale/en.UTF-8/LC_MESSAGES/initscripts.mo"
+type=CWD msg=audit(1309286817.693:2090117):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.693:2090117): arch=c000003e syscall=2 success=no exit=-2 a0=13457e60 a1=0 a2=0 a3=3856b238d3 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)
+----
+time->Tue Jun 28 14:46:57 2011
+type=PATH msg=audit(1309286817.693:2090118): item=0 name="/usr/share/locale/en.utf8/LC_MESSAGES/initscripts.mo"
+type=CWD msg=audit(1309286817.693:2090118):  cwd="/var/log/audit"
+type=SYSCALL msg=audit(1309286817.693:2090118): arch=c000003e syscall=2 success=no exit=-2 a0=13457f70 a1=0 a2=0 a3=3856b238d3 items=1 ppid=13230 pid=13432 auid=0 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=pts0 ses=236 comm="service" exe="/bin/bash" subj=root:system_r:unconfined_t:s0-s0:c0.c1023 key=(null)

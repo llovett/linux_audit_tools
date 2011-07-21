@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/audit/!svn/ver/544/trunk/audisp
+END
+audispd-llist.c
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/1/trunk/audisp/audispd-llist.c
+END
+audispd-builtins.c
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/audit/!svn/ver/425/trunk/audisp/audispd-builtins.c
+END
+audispd-config.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/176/trunk/audisp/audispd-config.h
+END
+audispd-pconfig.h
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/audit/!svn/ver/176/trunk/audisp/audispd-pconfig.h
+END
+audispd-llist.h
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/audit/!svn/ver/1/trunk/audisp/audispd-llist.h
+END
+queue.c
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/audit/!svn/ver/55/trunk/audisp/queue.c
+END
+audispd-builtins.h
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/1/trunk/audisp/audispd-builtins.h
+END
+Makefile.am
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/audit/!svn/ver/393/trunk/audisp/Makefile.am
+END
+audispd.c
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/audit/!svn/ver/511/trunk/audisp/audispd.c
+END
+queue.h
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/audit/!svn/ver/1/trunk/audisp/queue.h
+END
+audispd-config.c
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/audit/!svn/ver/414/trunk/audisp/audispd-config.c
+END
+audispd-pconfig.c
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/audit/!svn/ver/414/trunk/audisp/audispd-pconfig.c
+END
