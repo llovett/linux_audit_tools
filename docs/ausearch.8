@@ -16,7 +16,18 @@ Also be aware that not all record types have the requested information. For exam
 .SH OPTIONS
 .TP
 .BR \-a ,\  \-\-event \ \fIaudit-event-id\fP
-Search for an event based on the given \fIevent ID\fP. Messages always start with something like msg=audit(1116360555.329:2401771). The event ID is the number after the ':'. All audit events that are recorded from one application's syscall have the same audit event ID. A second syscall made by the same application will have a different event ID. This way they are unique.
+Search for an event based on the given \fIevent ID\fP. Messages always
+start with something like msg=audit(1116360555.329:2401771). The event
+ID is the number after the ':'. All audit events that are recorded
+from one application's syscall have the same audit event ID. A second
+syscall made by the same application will have a different event
+ID. This way they are unique.
+.TP
+.BR \-ew ,\  \-\-event\-window \ \fIspan\fP
+Set the maximum \fIspan\fP in milliseconds across which audit records in the
+log can be counted as a single event. Setting this number on the lower
+side provides very fast results, but may cause a single event to be
+counted as multiple events.
 .TP
 .BR \-c ,\  \-\-comm \ \fIcomm-name\fP
 Search for an event based on the given \fIcomm name\fP. The comm name is the executable's name from the task structure.

@@ -449,7 +449,7 @@ Copyright (C) 2010 Free Software Foundation, Inc.
 This config.status script is free software; the Free Software Foundation
 gives unlimited permission to copy, distribute and modify it."
 
-ac_pwd='/usr/users/noquota/osaudit/os_sources/linux_audit/trunk'
+ac_pwd='/usr/users/quota/students/13/llovett/code/linux_audit_tools'
 srcdir='.'
 INSTALL='/bin/install -c'
 MKDIR_P='/bin/mkdir -p'
@@ -583,7 +583,7 @@ FGREP='/bin/grep -F'
 LD='/usr/bin/ld -m elf_x86_64'
 NM='/usr/bin/nm -B'
 LN_S='ln -s'
-max_cmd_len='1572864'
+max_cmd_len='3458764513820540925'
 ac_objext='o'
 exeext=''
 lt_unset='unset'
@@ -918,7 +918,7 @@ S["CC"]="gcc"
 S["LIBTOOL"]="$(SHELL) $(top_builddir)/libtool"
 S["am__untar"]="${AMTAR} xf -"
 S["am__tar"]="${AMTAR} chof - \"$$tardir\""
-S["AMTAR"]="${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run tar"
+S["AMTAR"]="${SHELL} /usr/users/quota/students/13/llovett/code/linux_audit_tools/missing --run tar"
 S["am__leading_dot"]="."
 S["SET_MAKE"]=""
 S["AWK"]="gawk"
@@ -926,12 +926,12 @@ S["mkdir_p"]="/bin/mkdir -p"
 S["MKDIR_P"]="/bin/mkdir -p"
 S["INSTALL_STRIP_PROGRAM"]="$(install_sh) -c -s"
 S["STRIP"]="strip"
-S["install_sh"]="${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/install-sh"
-S["MAKEINFO"]="${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run makeinfo"
-S["AUTOHEADER"]="${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoheader"
-S["AUTOMAKE"]="${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run automake-1.11"
-S["AUTOCONF"]="${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run autoconf"
-S["ACLOCAL"]="${SHELL} /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/missing --run aclocal-1.11"
+S["install_sh"]="${SHELL} /usr/users/quota/students/13/llovett/code/linux_audit_tools/install-sh"
+S["MAKEINFO"]="${SHELL} /usr/users/quota/students/13/llovett/code/linux_audit_tools/missing --run makeinfo"
+S["AUTOHEADER"]="${SHELL} /usr/users/quota/students/13/llovett/code/linux_audit_tools/missing --run autoheader"
+S["AUTOMAKE"]="${SHELL} /usr/users/quota/students/13/llovett/code/linux_audit_tools/missing --run automake-1.11"
+S["AUTOCONF"]="${SHELL} /usr/users/quota/students/13/llovett/code/linux_audit_tools/missing --run autoconf"
+S["ACLOCAL"]="${SHELL} /usr/users/quota/students/13/llovett/code/linux_audit_tools/missing --run aclocal-1.11"
 S["VERSION"]="2.1.3"
 S["PACKAGE"]="audit"
 S["CYGPATH_W"]="echo"

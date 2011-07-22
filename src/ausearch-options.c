@@ -38,6 +38,7 @@
 /* Global vars that will be accessed by the main program */
 char *user_file = NULL;
 int force_logs = 0;
+extern int event_window;
 
 /* Global vars that will be accessed by the match model */
 unsigned int event_id = -1;
@@ -999,6 +1000,18 @@ int check_params(int count, char *vars[])
 				event_loginuid = pw->pw_uid;
                         }
 			c++;
+			break;
+		case S_EV_WINDOW:
+			if (!optarg) {
+				fprintf(stderr,
+					"Argument is required for %s\n",
+					vars[c]);
+				retval = -1;
+			}
+			else if (isdigit(optarg[0])) {
+				event_window = atoi(optarg);
+				c++;
+			}
 			break;
 		case S_VERSION:
 	                printf("ausearch version %s\n", VERSION);

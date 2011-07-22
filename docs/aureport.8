@@ -24,6 +24,12 @@ Report about crypto events
 .BR \-e ,\  \-\-event
 Report about events
 .TP
+.BR \-ew ,\  \-\-event\-window \ \fIspan\fP
+Set the maximum \fIspan\fP in milliseconds across which audit records in the
+log can be counted as a single event. Setting this number on the lower
+side provides very fast results, but may cause a single event to be
+counted as multiple events.
+.TP
 .BR \-f ,\  \-\-file
 Report about files
 .TP
