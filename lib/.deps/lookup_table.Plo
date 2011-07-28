@@ -17,7 +17,10 @@ lookup_table.lo: lookup_table.c ../config.h \
  /usr/include/alloca.h /usr/include/ctype.h /usr/include/errno.h \
  /usr/include/bits/errno.h /usr/include/linux/errno.h \
  /usr/include/asm/errno.h /usr/include/asm-generic/errno.h \
- /usr/include/asm-generic/errno-base.h libaudit.h \
+ /usr/include/asm-generic/errno-base.h /usr/include/stdio.h \
+ /usr/include/libio.h /usr/include/_G_config.h /usr/include/wchar.h \
+ /usr/lib/gcc/x86_64-unknown-linux-gnu/4.5.2/include/stdarg.h \
+ /usr/include/bits/stdio_lim.h /usr/include/bits/sys_errlist.h libaudit.h \
  /usr/include/asm/types.h /usr/include/asm-generic/types.h \
  /usr/include/asm-generic/int-ll64.h /usr/include/asm/bitsperlong.h \
  /usr/include/asm-generic/bitsperlong.h /usr/include/sys/socket.h \
@@ -29,13 +32,11 @@ lookup_table.lo: lookup_table.c ../config.h \
  /usr/include/linux/types.h /usr/include/linux/posix_types.h \
  /usr/include/linux/stddef.h /usr/include/asm/posix_types.h \
  /usr/include/asm/posix_types_64.h /usr/include/linux/audit.h \
- /usr/include/linux/elf-em.h \
- /usr/lib/gcc/x86_64-unknown-linux-gnu/4.5.2/include/stdarg.h \
- /usr/include/syslog.h /usr/include/sys/syslog.h \
- /usr/include/bits/syslog-path.h gen_tables.h private.h i386_tables.h \
- ia64_tables.h ppc_tables.h s390_tables.h s390x_tables.h x86_64_tables.h \
- actiontabs.h errtabs.h fieldtabs.h flagtabs.h ftypetabs.h machinetabs.h \
- msg_typetabs.h optabs.h
+ /usr/include/linux/elf-em.h /usr/include/syslog.h \
+ /usr/include/sys/syslog.h /usr/include/bits/syslog-path.h gen_tables.h \
+ private.h i386_tables.h ia64_tables.h ppc_tables.h s390_tables.h \
+ s390x_tables.h x86_64_tables.h actiontabs.h errtabs.h fieldtabs.h \
+ flagtabs.h ftypetabs.h machinetabs.h msg_typetabs.h optabs.h
 
 ../config.h:
 
@@ -119,6 +120,20 @@ lookup_table.lo: lookup_table.c ../config.h \
 
 /usr/include/asm-generic/errno-base.h:
 
+/usr/include/stdio.h:
+
+/usr/include/libio.h:
+
+/usr/include/_G_config.h:
+
+/usr/include/wchar.h:
+
+/usr/lib/gcc/x86_64-unknown-linux-gnu/4.5.2/include/stdarg.h:
+
+/usr/include/bits/stdio_lim.h:
+
+/usr/include/bits/sys_errlist.h:
+
 libaudit.h:
 
 /usr/include/asm/types.h:
@@ -166,8 +181,6 @@ libaudit.h:
 /usr/include/linux/audit.h:
 
 /usr/include/linux/elf-em.h:
-
-/usr/lib/gcc/x86_64-unknown-linux-gnu/4.5.2/include/stdarg.h:
 
 /usr/include/syslog.h:
 

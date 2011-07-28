@@ -17,7 +17,7 @@ old_library='libauparse.a'
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/lib/libaudit.la'
+dependency_libs=' /usr/users/quota/students/13/llovett/code/linux_audit_tools/lib/libaudit.la'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -39,4 +39,4 @@ dlpreopen=''
 
 # Directory that this library needs to be installed in:
 libdir='/usr/local/lib'
-relink_command="(cd /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/auparse; /bin/sh /usr/users/noquota/osaudit/os_sources/linux_audit/trunk/libtool  --tag CC --mode=relink gcc -fPIC -DPIC -D_GNU_SOURCE -g -DNDEBUG -pg -Wl,-z,relro -o libauparse.la -rpath /usr/local/lib nvpair.lo interpret.lo nvlist.lo ellist.lo auparse.lo auditd-config.lo message.lo data_buf.lo expression.lo ../lib/libaudit.la @inst_prefix_dir@)"
+relink_command="(cd /usr/users/quota/students/13/llovett/code/linux_audit_tools/auparse; /bin/sh /usr/users/quota/students/13/llovett/code/linux_audit_tools/libtool  --tag CC --mode=relink gcc -fPIC -DPIC -D_GNU_SOURCE -g -DNDEBUG -pg -Wl,-z,relro -o libauparse.la -rpath /usr/local/lib nvpair.lo interpret.lo nvlist.lo ellist.lo auparse.lo auditd-config.lo message.lo data_buf.lo expression.lo ../lib/libaudit.la @inst_prefix_dir@)"

@@ -240,6 +240,8 @@ static void check_events(lol *lo, htable *table, time_t sec, unsigned int milli)
 				ready++;
 			} else if (cur->l->e.type < AUDIT_FIRST_EVENT ||
 				    cur->l->e.type >= AUDIT_FIRST_ANOM_MSG) {
+				/** Q. Is there anything besides SYSCALL that is part of
+				    AUDIT_FIRST_EVENT? Testing with <= for syscalls. **/
 				// If known to be 1 record event, we are done
 				cur->status = L_COMPLETE;
 

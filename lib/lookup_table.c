@@ -30,6 +30,8 @@
 #include <ctype.h>
 #include <errno.h>
 
+#include <stdio.h>
+
 #include "libaudit.h"
 #include "gen_tables.h"
 #include "private.h"
@@ -202,8 +204,9 @@ int audit_name_to_msg_type(const char *msg_type)
 {
 	int rc;
 
-	if (msg_type_s2i(msg_type, &rc) != 0)
+	if (msg_type_s2i(msg_type, &rc) != 0) {
 		return rc;
+	}
 
 	/* Take a stab at converting */
 	if (strncmp(msg_type, "UNKNOWN[", 8) == 0) {

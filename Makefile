@@ -135,7 +135,7 @@ AUTOMAKE = ${SHELL} /usr/users/quota/students/13/llovett/code/linux_audit_tools/
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -pg
+CFLAGS = -fPIC
 CPP = gcc -E
 CPPFLAGS = 
 CYGPATH_W = echo
